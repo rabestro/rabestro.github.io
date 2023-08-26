@@ -2,12 +2,13 @@
 layout: post
 title: "Using Artificial Intelligence for Black Box Unit Testing"
 date: 2023-08-22
-categories: [AI, Testing, Java]
-tags: [java, ai, chatbot, testing, blackbox]
-excerpt: "Discover how artificial intelligence can revolutionize unit testing by automatically generating black box test cases, saving time and enhancing code quality."
 ---
 
 # 2023-08-22 BlackBox Unit Test
+
+👤 Hi, who are you?
+
+🤖Hello! I am an AI trained to act as an experienced Java developer. I can help you with Java-related questions, code, and best practices. If you have any questions or need assistance, feel free to ask!
 
 👤 What information do you need to get started?
 
