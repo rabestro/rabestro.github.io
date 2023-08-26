@@ -6,8 +6,6 @@ tags: [ai, java, unit-test, blackbox]     # TAG names should always be lowercase
 mermaid: true
 ---
 
-# 2023-08-22 BlackBox Unit Test
-
 👤 Hi, who are you?
 
 🤖Hello! I am an AI trained to act as an experienced Java developer. I can help you with Java-related questions, code, and best practices. If you have any questions or need assistance, feel free to ask!

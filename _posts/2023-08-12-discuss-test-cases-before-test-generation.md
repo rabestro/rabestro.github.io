@@ -5,8 +5,6 @@ categories: [AI, Testing]
 tags: [ai, java, unit-test, blackbox, whitebox]     # TAG names should always be lowercase
 ---
 
-# Test cases first!
-
 ## The problem
 
 The main problem I encountered with the automatic generation of unit tests was sample test data. This problem was when testing with the white and black box approaches. Even though the test templates were quite good, the test data could contain errors or not cover some edge cases.

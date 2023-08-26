@@ -6,8 +6,6 @@ tags: [ai, java, unit-test]     # TAG names should always be lowercase
 mermaid: true
 ---
 
-# Lowest Common Ancestor of a Binary Search Tree
-
 <details>
 <summary>Model: GPT-4, Temperature: 0</summary>
 # Act like a lead Java developer with significant experience with black box testing.
