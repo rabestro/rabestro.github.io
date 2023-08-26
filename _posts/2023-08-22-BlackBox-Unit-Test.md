@@ -4,6 +4,7 @@ date: 2023-08-22
 categories: [AI, Testing]
 tags: [ai, java, unit-test, blackbox]     # TAG names should always be lowercase
 mermaid: true
+excerpt: "Discover how artificial intelligence can revolutionize unit testing by automatically generating black box test cases, saving time and enhancing code quality."
 ---
 
 # 2023-08-22 BlackBox Unit Test
