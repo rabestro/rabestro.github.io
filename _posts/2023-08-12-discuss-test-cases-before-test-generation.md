@@ -347,13 +347,11 @@ For the second scenario, I created a prompt for the AI assistant provided by Jet
 On the first attempt, the AI assistant generated four test cases. I requested cases to be added црут `lhs` returns false. The AI then completed the missing four cases but made an inaccuracy in the last comment. I noted the error, and it was promptly corrected. After that, the AI successfully generated the tests. I then requested an additional check for the internal state, and the tests turned out to be excellent.
 
 
-<details>
-<summary>Here is the complete conversation with AI Assistant.</summary>
 
 👤 
 _I posted the code_
 
-**Assistant:**
+🤖 
 Here are the test cases for the provided code. We will resolve it in two phases:
 
 **Phase 1:** Check when state = false            
@@ -408,7 +406,7 @@ Please confirm these additional cases are correct for further implementation.
 👤 
 all test cases are correct. however for the test case8 the comment is incorrect. The state should revert back to false.
 
-**Assistant:**
+🤖 
 You're correct, I apologize for the oversight. Here's the corrected version of the test case:
 
 | Scenario | Starting State | LHS Output | RHS Output | Expected Output | Comments |
@@ -427,7 +425,7 @@ Thank you for your attention to detail. Shall I proceed to create the JUnit test
 👤 
 yes, please
 
-**Assistant:**
+🤖 
 Great! Here's the generated unit test code for testing the `FlipFlopPredicate` using JUnit 5 and AssertJ assertions:
 
 ```java
@@ -493,7 +491,7 @@ The test set now provides a full test coverage for the `FlipFlopPredicate`. If t
 👤 
 please add an assertion for the state
 
-**Assistant:**
+🤖 
 Sure, I've now added an additional assertion to check the final `state` variable. Here is the updated Java test code:
 
 ```java
@@ -552,10 +550,9 @@ This test now checks that not only the function returns the correct output, but 
 👤 
 You created an exceptional test!
 
-**Assistant:**
+🤖 
 Thank you! I'm glad to hear that you found the test to be exceptional. If there's anything else you need, feel free to ask. I'm here to help!
 
-</details>
 
 ## Conclusion
 
