@@ -79,19 +79,19 @@ Please use the mermaid format.
 🤖 Certainly! Here are the test cases in card format with a graphical representation of the tree using the Mermaid format:
 
 1. Test case with an empty tree (root is null).
-```
+```mermaid
 graph TD
     EmptyTree
 ```
 
 2. Test case with a single node tree.
-```
+```mermaid
 graph TD
     A[10]
 ```
 
 3. Test case with a valid binary search tree.
-```
+```mermaid
 graph TD
     A[10] --> B[5]
     A --> C[15]
@@ -102,46 +102,50 @@ graph TD
 ```
 
 4. Test case with an invalid binary search tree due to a left subtree node having a value greater than the root.
-```
+```mermaid
 graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
-    B --> E[11]  // Invalid: 11 > 10
+%% Invalid: 11 > 10
+    B --> E[11]  
     C --> F[12]
     C --> G[20]
 ```
 
 5. Test case with an invalid binary search tree due to a right subtree node having a value less than the root.
-```
+```mermaid
 graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
     B --> E[7]
-    C --> F[8]  // Invalid: 8 < 10
+%% Invalid: 8 < 10
+    C --> F[8]  
     C --> G[20]
 ```
 
 6. Test case with an invalid binary search tree due to a left subtree node having the same value as the root.
-```
+```mermaid
 graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
-    B --> E[10]  // Invalid: 10 == 10
+%% Invalid: 10 == 10
+    B --> E[10]  
     C --> F[12]
     C --> G[20]
 ```
 
 7. Test case with an invalid binary search tree due to a right subtree node having the same value as the root.
-```
+```mermaid
 graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
     B --> E[7]
-    C --> F[10]  // Invalid: 10 == 10
+%% Invalid: 10 == 10
+    C --> F[10]  
     C --> G[20]
 ```
 
@@ -258,5 +262,3 @@ Please replace `your.package.name` with the appropriate package name for your pr
 👤 The tests are good, thanks!
 
 🤖 You're welcome! I'm glad the tests are helpful. If you have any more questions or need further assistance with Java development or black box testing, feel free to ask. Good luck with your project!
-
-
