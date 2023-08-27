@@ -1,10 +1,11 @@
 ---
 title: "BlackBox Testing: Validate Binary Search Tree"
 date: 2023-08-27
-categories: [AI]
-tags: [ai]
+categories: [AI, Testing]
+tags: [ai, java, unit-test, black-box, binary-tree]
 mermaid: true
 ---
+
 👤 Hello!
 
 🤖 Hello! How can I help you today? Are you looking for assistance with Java development or black box testing?
@@ -107,7 +108,6 @@ graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
-%% Invalid: 11 > 10
     B --> E[11]  
     C --> F[12]
     C --> G[20]
@@ -120,7 +120,6 @@ graph TD
     A --> C[15]
     B --> D[3]
     B --> E[7]
-%% Invalid: 8 < 10
     C --> F[8]  
     C --> G[20]
 ```
@@ -131,7 +130,6 @@ graph TD
     A[10] --> B[5]
     A --> C[15]
     B --> D[3]
-%% Invalid: 10 == 10
     B --> E[10]  
     C --> F[12]
     C --> G[20]
@@ -144,7 +142,6 @@ graph TD
     A --> C[15]
     B --> D[3]
     B --> E[7]
-%% Invalid: 10 == 10
     C --> F[10]  
     C --> G[20]
 ```
