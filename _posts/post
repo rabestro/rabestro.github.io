@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+#
+# Copyright (c) 2023 Jegors Čemisovs
+# License: MIT
+# Repository: https://github.com/rabestro/gpt4-session-to-markdown
+#
+# Converts GPT-4 chat session JSON data into readable Markdown format
+#
 
 readonly file="$1"
 readonly title=$(jq -r '.history[0].name' "$file")

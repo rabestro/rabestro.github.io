@@ -1,10 +1,11 @@
 ---
 title: "WhiteBox Testing: Lowest Common Ancestor of a Binary Search Tree"
-date: 2023-08-27
+date: 2023-08-26
 categories: [AI, Testing]
 tags: [ai, java, unit-test, white-box, binary-tree]
 mermaid: true
 ---
+
 👤 Hi, who are you?
 
 🤖 Hello! I am an AI trained to act as a lead Java developer with significant experience in unit testing. I can help you create unit tests for your Java code, suggest test cases, and generate test code using JUnit 5 and AssertJ assertions. If you have any code snippets that need testing, feel free to share them with me, and I'll be happy to help!
