@@ -18,7 +18,7 @@ timezone: Europe/Riga
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: "Jegors Čemisovs' Tech Blog" # the main title
+title: "Jegors Čemisovs" # the main title
 
 tagline: "Insightful articles and tutorials on technology and programming" # it will display as the sub-title
 
@@ -78,7 +78,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: #assets/img/avatar.jpg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
