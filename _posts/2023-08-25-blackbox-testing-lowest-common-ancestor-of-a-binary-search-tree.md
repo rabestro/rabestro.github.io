@@ -1,5 +1,5 @@
 ---
-title: "Improving Action Algorithm and Refinements"
+title: "BlackBox Testing: Lowest Common Ancestor of a Binary Search Tree"
 date: 2023-08-25
 categories: [AI, Testing]
 tags: [ai, java, unit-test, black-box, binary-tree]
