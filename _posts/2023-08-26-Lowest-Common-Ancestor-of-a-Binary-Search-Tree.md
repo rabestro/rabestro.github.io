@@ -1,12 +1,10 @@
 ---
-title: "Lowest Common Ancestor of a Binary Search Tree"
+title: "Improving Action Algorithm and Refinements"
 date: 2023-08-26
 categories: [AI, Testing]
 tags: [ai, java, unit-test, blackbox, binary-tree]
 mermaid: true
 ---
-
-# Utilizing Artificial Intelligence to Generate Unit Tests: A Dialog Example
 
 ## Introduction
 
@@ -16,7 +14,7 @@ In this article, we'll explore an example of using artificial intelligence (AI) 
 
 To kick off the AI's process, we begin with the following prompt:
 
-> Act like a lead Java developer with significant experience in black box testing. Your objective is to create unit tests for the given {{method_signature}} and {{problem_statement}}.
+> Act like a lead Java developer with significant experience in black box testing. Your objective is to create unit tests for the given {method_signature} and {problem_statement}.
 
 Here, we've used two variables that need to be set before the script starts. However, the AI doesn't immediately generate unit tests upon receiving the necessary data. Instead, we outline a sequence of actions in the system prompt, where the AI first proposes test cases and then proceeds to develop the unit test itself.
 
