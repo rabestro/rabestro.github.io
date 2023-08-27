@@ -5,7 +5,6 @@ categories: [AI, Testing]
 tags: [ai, java, unit-test, black-box, binary-tree]
 pin: true
 mermaid: true
-comments: true
 ---
 
 👤 Hello!
