@@ -2,7 +2,7 @@
 title: "Using Artificial Intelligence for Black Box Unit Testing"
 date: 2023-08-22
 categories: [AI, Testing]
-tags: [ai, java, unit-test, blackbox]     # TAG names should always be lowercase
+tags: [ai, java, unit-test, black-box]     # TAG names should always be lowercase
 mermaid: true
 ---
 

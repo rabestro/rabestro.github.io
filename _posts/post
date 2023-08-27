@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+readonly file="$1"
+readonly title=$(jq -r '.history[0].name' "$file")
+readonly file_post=$(jq -r '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$file")
+readonly current_date=$(date '+%Y-%m-%d')
+
+echo "Title: $title"
+echo "File: $file_post"
+
+echo "---
+title: \"$title\"
+date: $current_date
+categories: [AI]
+tags: [ai]
+mermaid: true
+---" > "$file_post.md"
+
+cat "$file" | jq -r '.history[0].messages | map(
+    (
+      if .role == "user" then "👤" else "🤖" end
+    )+ " \(.content)\n") | join("\n")' >> "$current_date-$file_post.md"

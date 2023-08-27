@@ -2,7 +2,7 @@
 title: "Discuss test cases before test generation"
 date: 2023-08-12
 categories: [AI, Testing]
-tags: [ai, java, unit-test, blackbox, whitebox]     # TAG names should always be lowercase
+tags: [ai, java, unit-test, black-box, white-box]     # TAG names should always be lowercase
 ---
 
 ## The problem

@@ -2,7 +2,7 @@
 title: "Improving Action Algorithm and Refinements"
 date: 2023-08-26
 categories: [AI, Testing]
-tags: [ai, java, unit-test, blackbox, binary-tree]
+tags: [ai, java, unit-test, black-box, binary-tree]
 mermaid: true
 ---
 
