@@ -348,11 +348,9 @@ On the first attempt, the AI assistant generated four test cases. I requested ca
 
 
 
-👤 
-_I posted the code_
+👤 _I posted the code_
 
-🤖 
-Here are the test cases for the provided code. We will resolve it in two phases:
+🤖 Here are the test cases for the provided code. We will resolve it in two phases:
 
 **Phase 1:** Check when state = false            
 **Phase 2:** Check when state = true
@@ -374,8 +372,7 @@ Test Cases:
 
 The test cases cover all the possible scenarios for this piece of code, please confirm if these are correct for further implementation of unit testing in JUnit 5.
 
-👤 
-please add cases when lhs returns false
+👤 please add cases when lhs returns false
 
 Assistant:
 Thank you for the feedback. Here are the additional test cases when LHS returns `false`:
