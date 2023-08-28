@@ -28,6 +28,7 @@ sequenceDiagram
         H -->> A: Thanks!
     end
 ```
+
 ## The AI Conversation Log
 
 👤 Hello!
