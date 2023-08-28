@@ -1,45 +1,11 @@
 ---
 title: "BlackBox Testing: Validate Binary Search Tree"
-date: 2023-08-27
+date: 2023-08-27 11:33:00 +0300
 categories: [AI, Testing]
 tags: [ai, java, unit-test, black-box, binary-tree]
 pin: true
 mermaid: true
 ---
-
-## Introduction
-
-In this article, we'll explore an example of using artificial intelligence (AI) to create unit tests based on a problem
-description and method signature. Our example is taken from one of the tasks available on
-LeetCode: [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/).
-
-## The AI-Prompt Setup
-
-To kick off the AI's process, we begin with the following prompt:
-
-> Act like a lead Java developer with significant experience with black box testing.
-> {: .prompt-tip }
-
-## Schema of communication
-
-```mermaid
-sequenceDiagram
-  participant H as Human
-  participant A as Assistant
-  H ->> A: Task description
-  H ->> A: Method signature
-  opt More info
-    H -->> A: companion classes
-  end
-  A ->> H: Test cases
-  loop Review test cases
-    H -->> A: Great!
-  end
-  A ->> H: Unit Test
-  loop Review unit test
-    H -->> A: Thanks!
-  end
-```
 
 ## The AI Conversation Log
 
