@@ -15,11 +15,10 @@ sequenceDiagram
     participant A as Assistant
     H ->> A: Task description
     H ->> A: Method signature
-    opt Additional information
-        A ->> H: need more info ...
-        H -->> A: here you are
+    opt More info
+        H -->> A: companion classes
     end
-    A -->> H: Test cases
+    A ->> H: Test cases
     loop Review test cases
         H -->> A: Great!
     end
