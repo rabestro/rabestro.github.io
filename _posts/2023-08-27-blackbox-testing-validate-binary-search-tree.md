@@ -7,6 +7,38 @@ pin: true
 mermaid: true
 ---
 
+## Introduction
+
+In this article, we'll explore an example of using artificial intelligence (AI) to create unit tests based on a problem description and method signature. Our example is taken from one of the tasks available on LeetCode: [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/).
+
+## The AI-Prompt Setup
+
+To kick off the AI's process, we define a role for the AI to play.
+
+> Act like a lead Java developer with significant experience with black box testing.
+{: .prompt-tip }
+
+Next, we define the AI's objective and the rules it should follow to accomplish that objective. I have defined a general scheme of actions for artificial intelligence. Here is a diagram of the communication and a complete log of interactions with artificial intelligence.
+
+```mermaid
+sequenceDiagram
+  participant H as Human
+  participant A as Assistant
+  H ->> A: Task description
+  H ->> A: Method signature
+  opt More info
+    H -->> A: companion classes
+  end
+  A ->> H: Test cases
+  loop Review test cases
+    H -->> A: Great!
+  end
+  A ->> H: Unit Test
+  loop Review unit test
+    H -->> A: Thanks!
+  end
+``` 
+
 ## The AI Conversation Log
 
 👤 Hello!
