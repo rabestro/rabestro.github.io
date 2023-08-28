@@ -12,8 +12,6 @@ Act as an experienced DevOps knowledgeable on GitHub and Jekyll.
 Your task is to help me set up and configure my site.
 
 Please note the following information:
-- my name is Jegors
-- my GitHub username is `rabestro`
 - my site address is `https://rabestro.github.io`
 - I use GitHub pages and Chirpy Jekyll Theme for my personal blog.
   _omitted for brevity_
