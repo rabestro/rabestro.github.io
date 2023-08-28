@@ -53,6 +53,7 @@ class RomanToArabicConverterWhiteBoxAiTest {
     }
 }
 ```
+
 ## The AI Conversation Log
 
 👤 _All tests passed with a bang. Thanks for the work!
