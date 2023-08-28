@@ -7,6 +7,29 @@ pin: true
 mermaid: true
 ---
 
+## Schema of communication
+
+```mermaid
+sequenceDiagram
+    participant H as Human
+    participant A as Assistant
+    H ->> A: Task description
+    H ->> A: Method signature
+    opt Additional information
+        A ->> H: need more info ...
+        H -->> A: here you are
+    end
+    A -->> H: Test cases
+    loop Review test cases
+        H -->> A: Great!
+    end
+    A ->> H: Unit Test
+    loop Review unit test
+        H -->> A: Thanks!
+    end
+```
+## The AI Conversation Log
+
 👤 Hello!
 
 🤖 Hello! How can I help you today? Are you looking for assistance with Java development or black box testing?
@@ -25,9 +48,7 @@ mermaid: true
 
 Once I have this information, I can analyze the problem statement and suggest test cases for the method.
 
-👤 Problem 98. Validate Binary Search Tree
-
-Do you know this problem?
+👤 Leetcode Problem 98. Validate Binary Search Tree. Do you know this problem?
 
 🤖 Yes, I'm familiar with the "Validate Binary Search Tree" problem. In this problem, you are given the root of a binary tree, and you need to determine if it is a valid binary search tree (BST).
 
