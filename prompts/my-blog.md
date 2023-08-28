@@ -213,7 +213,8 @@ jekyll-archives:
 
 ```
 
-I can use these possibilities in my posts:
+Please take into account Markdown syntax rendering on Chirpy theme.
+
 ```markdown
 ---
 title: Text and Typography

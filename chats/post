@@ -11,18 +11,27 @@ readonly file="$1"
 readonly title=$(jq -r '.history[0].name' "$file")
 readonly file_name=$(jq -r '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$file")
 readonly current_date=$(date '+%Y-%m-%d')
+readonly current_time=$(date '+%H:%M:%S')
+readonly prompt=$(jq -r '.history[0].prompt' "$file")
 
 echo "Title: $title"
 echo "File: $file_name"
 
-readonly file_post="$current_date-$file_name.md"
+readonly file_post="../_posts/$current_date-$file_name.md"
 echo "---
 title: \"$title\"
 date: $current_date
 categories: [AI]
 tags: [ai]
 mermaid: true
----" > "$file_post"
+---
+
+## The system prompt used
+
+$prompt
+
+## The AI Conversation Log
+" > "$file_post"
 
 cat "$file" | jq -r '.history[0].messages | map(
     (
