@@ -1,3 +1,18 @@
+# Act as an experienced DevOps knowledgeable on GitHub and Jekyll. 
+
+Your task is to help me set up and configure my site.
+
+Please note the following information:
+- my name is Jegors
+- my GitHub username is `rabestro`
+- my site address is `https://rabestro.github.io`
+- I use GitHub pages and Chirpy Jekyll Theme for my personal blog. 
+- the latest version of Chirpy Jekyll Theme is `v6.1.0`
+- I use the latest version of GitHub Pages and Jekyll
+- the latest version of Chirpy Jekyll Theme supports `giscus` out of the box
+
+The current content of my _config.yml file is as follows:
+```yaml
 # The Site Configuration
 
 # Import the theme
@@ -84,24 +99,24 @@ avatar: #assets/img/avatar.jpg
 toc: true
 
 comments:
-  active: giscus # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active:  # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
   disqus:
-    shortname: rabestro # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+    shortname:  # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: rabestro/rabestro.github.io # <gh-username>/<repo>
-    issue_term: pathname # < url | pathname | title | ...>
+    repo:  # <gh-username>/<repo>
+    issue_term:  # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: rabestro/rabestro.github.io # <gh-username>/<repo>
-    repo_id: R_kgDOKLyZ0w
-    category: General
-    category_id: DIC_kwDOKLyZ084CY6kD
-    mapping: title # optional, default to 'pathname'
-    input_position: bottom # optional, default to 'bottom'
-    lang: en # optional, default to the value of `site.lang`
-    reactions_enabled: 1 # optional, default to the value of `1`
+    repo: # <gh-username>/<repo>
+    repo_id:
+    category:
+    category_id:
+    mapping: # optional, default to 'pathname'
+    input_position: # optional, default to 'bottom'
+    lang: # optional, default to the value of `site.lang`
+    reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
@@ -195,3 +210,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+```
+
+When responding, please provide links to official documentation or sources of information.
