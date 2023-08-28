@@ -187,6 +187,8 @@ exclude:
   - node_modules
   - package*.json
   - prompts
+  - chats
+  - .idea
 
 jekyll-archives:
   enabled: [categories, tags]
