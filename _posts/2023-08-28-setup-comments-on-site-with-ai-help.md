@@ -74,69 +74,6 @@ After making these changes, commit and push your updated `_config.yml` file to y
 
 For more information on giscus, you can refer to the [official giscus documentation](https://giscus.app/docs/).
 
-👤 When I fill in "repository:" on giscus configuration page I get this message: 
-
-> Cannot use giscus on this repository. Make sure all of the above criteria have been met.
-{: .prompt-danger}
-
-🤖 I apologize for the confusion. It seems that there might be an issue with the repository settings or the Discussions feature. Please follow these steps to troubleshoot the issue:
-
-1. Double-check that you have enabled "Discussions" in your repository settings. Go to your GitHub repository, click on the "Settings" tab, scroll down to the "Features" section, and ensure that the "Discussions" checkbox is checked.
-
-2. Make sure you're using the correct repository name in the giscus configuration page. The repository name should be in the format `username/repository`, in your case, it should be `rabestro/rabestro.github.io`.
-
-3. Ensure that you're logged in to your GitHub account when accessing the giscus configuration page. If you're not logged in, you might not have the necessary permissions to enable giscus for your repository.
-
-4. Verify that your GitHub account has the necessary permissions for the repository. You should have admin access to the repository to enable giscus.
-
-If you've checked all of the above and are still encountering the issue, it might be a temporary problem with the giscus service. In that case, I recommend waiting for a while and trying again later.
-
-If the issue persists, you can consider using an alternative commenting system like [utterances](https://utteranc.es/) or [Disqus](https://disqus.com/), both of which are also supported by the Chirpy Jekyll Theme.
-
-👤 I forget to install `giscus`. "Okay, giscus was installed on the @rabestro account." :)
-
-🤖 Great! Now that you have installed giscus, you should be able to proceed with the configuration steps I mentioned earlier. Just to recap, follow these steps:
-
-1. Go to the [giscus configuration page](https://giscus.app).
-2. Fill in the required fields:
-   - Repository: `rabestro/rabestro.github.io`
-   - Category: `General` (or any other category you prefer)
-   - Mapping: `pathname`
-   - Input position: `bottom`
-   - Language: `en`
-   - Reactions enabled: `Yes`
-
-3. Click "Preview widget".
-4. Scroll down to the "Configuration" section and copy the `data-repo-id` and `data-category-id` values.
-
-Now, update your `_config.yml` file with the giscus configuration:
-
-1. Locate the `comments` section in your `_config.yml` file.
-2. Set the `active` option to `giscus`:
-
-```yaml
-comments:
-  active: giscus
-```
-
-3. Fill in the `giscus` options:
-
-```yaml
-  giscus:
-    repo: rabestro/rabestro.github.io
-    repo_id: # Your repository ID (copied from the giscus configuration page)
-    category: General
-    category_id: # Your category ID (copied from the giscus configuration page)
-    mapping: pathname
-    input_position: bottom
-    lang: en
-    reactions_enabled: 1
-```
-
-After making these changes, commit and push your updated `_config.yml` file to your GitHub repository. Giscus comments should now be enabled on your site.
-
-If you have any further questions or need assistance, feel free to ask.
-
 👤 Tell me more and compare "Discussions Mapping"
 
 🤖 In giscus, "Discussions Mapping" determines how the comments on your website are linked to GitHub Discussions in your repository. There are several mapping options available, each with its own advantages and use cases. Here's a comparison of the different mapping options:

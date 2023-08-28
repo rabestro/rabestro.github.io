@@ -7,12 +7,12 @@
 # Converts GPT-4 chat session JSON data into readable Markdown format
 #
 
-readonly file="$1"
-readonly title=$(jq -r '.history[0].name' "$file")
-readonly file_name=$(jq -r '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$file")
+readonly file_json="$1"
+readonly title=$(jq -r '.history[0].name' "$file_json")
+readonly file_name=$(jq -r '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$file_json")
 readonly current_date=$(date '+%Y-%m-%d')
 readonly current_time=$(date '+%H:%M:%S')
-readonly prompt=$(jq -r '.history[0].prompt' "$file")
+readonly prompt=$(jq -r '.history[0].prompt' "$file_json")
 
 echo "Title: $title"
 echo "File: $file_name"
@@ -20,7 +20,7 @@ echo "File: $file_name"
 readonly file_post="../_posts/$current_date-$file_name.md"
 echo "---
 title: \"$title\"
-date: $current_date
+date: $current_date $current_time +0300
 categories: [AI]
 tags: [ai]
 mermaid: true
@@ -33,7 +33,7 @@ $prompt
 ## The AI Conversation Log
 " > "$file_post"
 
-cat "$file" | jq -r '.history[0].messages | map(
+cat "$file_json" | jq -r '.history[0].messages | map(
     (
       if .role == "user" then "👤" else "🤖" end
     )+ " \(.content)\n") | join("\n")' >> "$file_post"
