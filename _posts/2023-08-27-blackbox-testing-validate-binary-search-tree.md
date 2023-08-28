@@ -1,8 +1,8 @@
 ---
 title: "BlackBox Testing: Validate Binary Search Tree"
 date: 2023-08-27
-categories: [ AI, Testing ]
-tags: [ ai, java, unit-test, black-box, binary-tree ]
+categories: [AI, Testing]
+tags: [ai, java, unit-test, black-box, binary-tree]
 pin: true
 mermaid: true
 ---
