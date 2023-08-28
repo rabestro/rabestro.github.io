@@ -22,8 +22,8 @@ Next, we define the AI's objective and the rules it should follow to accomplish 
 
 ```mermaid
 sequenceDiagram
-  participant H as Human
-  participant A as Assistant
+  actor H as Human
+  participant A as AI
   H ->> A: Task description
   H ->> A: Method signature
   opt More info
