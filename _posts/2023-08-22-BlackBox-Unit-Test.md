@@ -1,6 +1,6 @@
 ---
 title: "Using Artificial Intelligence for Black Box Unit Testing"
-date: 2023-08-22
+date: 2023-08-22 11:00:00 +0300
 categories: [AI, Testing]
 tags: [ai, java, unit-test, black-box]     # TAG names should always be lowercase
 mermaid: true
@@ -8,8 +8,7 @@ mermaid: true
 
 ## Introduction
 
-In this article, we'll explore an example of using artificial intelligence (AI) to create unit tests based on a problem
-description and method signature.
+In this article, we'll explore an example of using artificial intelligence (AI) to create unit tests based on a problem description and method signature.
 
 ## The AI Conversation Log
 
