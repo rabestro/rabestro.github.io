@@ -43,11 +43,13 @@ social:
   email: jegors.cemisovs@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/rabestro # change to your twitter homepage
     - https://github.com/rabestro # change to your github homepage
+    - https://twitter.com/rabestro # change to your twitter homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/jegors.cemisovs
+    - https://app.pluralsight.com/profile/rabestro
+    - https://exercism.org/profiles/rabestro
 
 google_site_verification: # fill in to your verification string
 
@@ -78,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: #assets/img/avatar.jpg
+avatar: assets/img/avatar.svg
 
 # boolean type, the global switch for TOC in posts.
 toc: true
