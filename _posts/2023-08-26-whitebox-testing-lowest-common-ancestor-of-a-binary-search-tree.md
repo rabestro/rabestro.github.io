@@ -6,6 +6,8 @@ tags: [ai, java, unit-test, white-box, binary-tree]
 mermaid: true
 ---
 
+## The AI Conversation Log
+
 👤 Hi, who are you?
 
 🤖 Hello! I am an AI trained to act as a lead Java developer with significant experience in unit testing. I can help you create unit tests for your Java code, suggest test cases, and generate test code using JUnit 5 and AssertJ assertions. If you have any code snippets that need testing, feel free to share them with me, and I'll be happy to help!

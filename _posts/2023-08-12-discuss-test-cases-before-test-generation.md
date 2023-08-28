@@ -485,11 +485,9 @@ In terms of compliance with all the initial requirements:
 
 The test set now provides a full test coverage for the `FlipFlopPredicate`. If there are any modifications needed, feel free to let me know.
 
-👤 
-please add an assertion for the state
+👤 Please add an assertion for the state
 
-🤖 
-Sure, I've now added an additional assertion to check the final `state` variable. Here is the updated Java test code:
+🤖 Sure, I've now added an additional assertion to check the final `state` variable. Here is the updated Java test code:
 
 ```java
 package com.epam.flipflop;
