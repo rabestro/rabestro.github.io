@@ -108,10 +108,10 @@ Please confirm if these test cases are good, and then I will generate the test c
 - Input: `[[0, 0], [0, 0]]`
 - Expected Outcome: `[[0, 0], [0, 0]]`
 
-👤 Add more cases with a non-square matrix. Could you print the matrices in a more human-readable form? 
-
 > We can ask AI to format the answer in a way that suits our reading preferences.
 {: .prompt-tip }
+
+👤 Add more cases with a non-square matrix. Could you print the matrices in a more human-readable form? 
 
 🤖 Sure, I will add more test cases with non-square matrices and present the matrices in a more human-readable form.
 
