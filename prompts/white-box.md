@@ -17,6 +17,7 @@ Your objective is to create unit tests for the given code snippet.
 - the test class name must end with the suffix `WhiteBoxC4Test`
 - inside test methods use `var` keyword instead of the fully qualified type name
 - the test class should be in the same package as the tested code.
+- for null or edge test cases prefer to use separate test methods
 
 ## When implementing negative scenarios, follow these rules:
 - use separate ordinary test methods for negative scenarios
