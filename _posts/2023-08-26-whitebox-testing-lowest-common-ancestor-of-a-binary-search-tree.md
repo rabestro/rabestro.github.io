@@ -6,7 +6,7 @@ tags: [ai, java, unit-test, white-box, binary-tree]
 mermaid: true
 ---
 
-In this article, we'll explore how artificial intelligence (AI) can assist in creating unit tests using white box technology. We'll use a problem published on LeetCode as a testing object, specifically the "Lowest Common Ancestor of a Binary Search Tree" problem (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/).
+In this article, we'll explore how artificial intelligence (AI) can assist in creating unit tests using white box technology. We'll use a problem published on LeetCode as a testing object, specifically the "[Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)" problem.
 
 ## Engaging with Artificial Intelligence
 

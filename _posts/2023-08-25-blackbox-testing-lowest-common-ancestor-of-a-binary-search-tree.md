@@ -319,14 +319,10 @@ class SolutionBlackBoxC4Test {
     }
 }
 ```
+ 
+Now the test code compares the values of the `TreeNode` objects directly instead of comparing the objects themselves. The `actualLCA.val` and `expectedLCAValue` are compared using the `isEqualTo` method from AssertJ. This ensures that the test cases will work correctly even without the `equals` and `hashCode` methods being overridden in the `TreeNode` class.
 
-Now the test code compares the values of
-
-👤 continue
-
-🤖 Now the test code compares the values of the `TreeNode` objects directly instead of comparing the objects themselves. The `actualLCA.val` and `expectedLCAValue` are compared using the `isEqualTo` method from AssertJ. This ensures that the test cases will work correctly even without the `equals` and `hashCode` methods being overridden in the `TreeNode` class.
-
-👤 please extract "Empty BST" test case as separate method
+👤 Please extract the "Empty BST" test case as a separate method.
 
 🤖 Sure, I'll extract the "Empty BST" test case as a separate method.
 
