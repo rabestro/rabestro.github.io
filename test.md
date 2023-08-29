@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: home
 title: "Text and Typography"
 date: 2023-08-29
 categories: [Blog]
@@ -26,5 +26,8 @@ You can use the mark tag to highlight text.
 > A well-known quote, contained in a blockquote element.
 > Someone famous in Source Title
 {: .blockquote-footer}
+
+> A well-known quote, contained in a blockquote element.
+{: .blockquote .text-center} 
 
 ### Heading 3
