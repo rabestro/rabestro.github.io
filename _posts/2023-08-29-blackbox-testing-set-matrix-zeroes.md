@@ -110,6 +110,9 @@ Please confirm if these test cases are good, and then I will generate the test c
 
 👤 Add more cases with a non-square matrix. Could you print the matrices in a more human-readable form? 
 
+> We can ask AI to format the answer in a way that suits our reading preferences.
+{: .prompt-tip }
+
 🤖 Sure, I will add more test cases with non-square matrices and present the matrices in a more human-readable form.
 
 **Test Case 1: Empty matrix**
@@ -235,6 +238,10 @@ Please confirm if these test cases are good, and then I will generate the test c
   ```
 
 Please confirm if these test cases are good, and then I will generate the test code for you.
+
+> It's essential to review the results of artificial intelligence, as it can make mistakes in calculating expected outcomes. In this case, the AI made a mistake in the last test case.
+{: .prompt-danger } 
+
 
 👤 check the last case please
 
