@@ -34,6 +34,7 @@ The use of artificial intelligence for creating unit tests offers a promising ap
 🤖 To create test cases for this problem, I need to know the method signature of the function that will be implemented. Please provide the method signature, including the method name, input parameters, and return type.
 
 👤 
+
 ```java
 package leetcode.p73;
 
@@ -239,9 +240,9 @@ Please confirm if these test cases are good, and then I will generate the test c
 
 Please confirm if these test cases are good, and then I will generate the test code for you.
 
-> It's essential to review the results of artificial intelligence, as it can make mistakes in calculating expected outcomes. In this case, the AI made a mistake in the last test case.
+> It's essential to review the results of artificial intelligence, as it can make mistakes in calculating expected outcomes. 
+> In this case, the AI made a mistake in the last test case.
 {: .prompt-danger } 
-
 
 👤 check the last case please
 
