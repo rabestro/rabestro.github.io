@@ -7,12 +7,16 @@
 # Converts GPT-4 chat session JSON data into readable Markdown format
 #
 
+create_file_name() {
+  jq --raw-output '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$1"
+}
+
 readonly file_json="$1"
-readonly title=$(jq -r '.history[0].name' "$file_json")
-readonly file_name=$(jq -r '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$file_json")
+readonly title=$(jq --raw-output '.history[0].name' "$file_json")
+readonly file_name=$(create_file_name "$file_json")
 readonly current_date=$(date '+%Y-%m-%d')
 readonly current_time=$(date '+%H:%M:%S')
-readonly prompt=$(jq -r '.history[0].prompt' "$file_json")
+readonly prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
 
 echo "Title: $title"
 echo "File: $file_name"

@@ -284,8 +284,9 @@ class SolutionBlackBoxC4Test {
     void setZeroes(String description, int[][] input, int[][] expected) {
         var solution = new Solution();
         solution.setZeroes(input);
-        assertThat(input).as("Matrix after setting zeroes should match the expected matrix")
-                         .isEqualTo(expected);
+        assertThat(input)
+                .as("Matrix after setting zeroes should match the expected matrix")
+                .isEqualTo(expected);
     }
 
     private static Stream<Arguments> testCases() {

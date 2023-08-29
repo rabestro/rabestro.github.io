@@ -6,6 +6,30 @@ tags: [ai, java, unit-test, white-box, binary-tree]
 mermaid: true
 ---
 
+In this article, we'll explore how artificial intelligence (AI) can assist in creating unit tests using white box technology. We'll use a problem published on LeetCode as a testing object, specifically the "Lowest Common Ancestor of a Binary Search Tree" problem (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/).
+
+## Engaging with Artificial Intelligence
+
+First, let's introduce the AI and discuss the role it plays in ensuring our script is functioning properly. We'll provide our code to the AI, and our goal is to generate unit tests that will effectively examine our solution.
+
+## AI's Request for Information
+
+As the AI follows the system prompt instructions, it encounters an unfamiliar class and requests more information. After reviewing the provided details, the AI proceeds to suggest different test options.
+
+## Visualizing Test Cases
+
+We ask the AI to present these test cases as cards and to display the corresponding graphs in the Mermaid format. As we analyze the test cases, we request the AI to include a few more options.
+
+## Evaluating and Generating Unit Tests
+
+The AI effectively incorporates our suggestions, resulting in a comprehensive set of test options. Our next step is generating the unit tests based on these test cases.
+
+## Refining the Unit Tests with AI Assistance
+
+Although the initial tests function well, we believe that they can be even more effective. We ask the AI to make some adjustments, and after a few revisions, we arrive at the final version of our improved unit tests.
+
+In conclusion, leveraging artificial intelligence greatly benefited the process of generating and refining unit tests. With its enhanced efficiency and precision, AI proves to be an invaluable tool in ensuring the accurate functioning of our code.
+
 ## The AI Conversation Log
 
 👤 Hi, who are you?
