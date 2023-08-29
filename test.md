@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Text and Typography"
 date: 2023-08-29
 categories: [Blog]
@@ -21,3 +22,9 @@ You can use the mark tag to highlight text.
 {: .mark}
 
 ## Heading 2
+
+> A well-known quote, contained in a blockquote element.
+> Someone famous in Source Title
+{: .blockquote-footer}
+
+### Heading 3
