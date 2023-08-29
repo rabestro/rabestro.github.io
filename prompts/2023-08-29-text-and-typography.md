@@ -1,5 +1,4 @@
 ---
-layout: home
 title: "Text and Typography"
 date: 2023-08-29
 categories: [Blog]
@@ -21,9 +20,15 @@ This line of text is meant to be treated as fine print.
 You can use the mark tag to highlight text.
 {: .mark}
 
+You can use the mark tag to highlight{:.mark} text.
+
 ## Heading 2
 
 > A well-known quote, contained in a blockquote element.
+> Someone famous in Source Title
+
+> A well-known quote, contained in a blockquote element.
+{: .blockquote}
 > Someone famous in Source Title
 {: .blockquote-footer}
 
