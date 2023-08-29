@@ -11,17 +11,29 @@ create_file_name() {
   jq --raw-output '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$1"
 }
 
+conversation() {
+  jq --raw-output '.history[0].messages | map(
+    (
+      if .role == "user" then "👤" else "🤖" end
+    )+ " \(.content)\n") | join("\n")' "$1" | gawk '
+    /^```java/ {print "\n{% raw %}\n"}
+    {print}
+    /^```$/ {print "\n{% endraw %}\n"}
+    '
+}
+
 readonly file_json="$1"
-readonly title=$(jq --raw-output '.history[0].name' "$file_json")
 readonly file_name=$(create_file_name "$file_json")
 readonly current_date=$(date '+%Y-%m-%d')
 readonly current_time=$(date '+%H:%M:%S')
+readonly file_post="../_posts/$current_date-$file_name.md"
+
+readonly title=$(jq --raw-output '.history[0].name' "$file_json")
 readonly prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
 
 echo "Title: $title"
 echo "File: $file_name"
 
-readonly file_post="../_posts/$current_date-$file_name.md"
 echo "---
 title: \"$title\"
 date: $current_date $current_time +0300
@@ -37,7 +49,4 @@ $prompt
 ## The AI Conversation Log
 " > "$file_post"
 
-cat "$file_json" | jq -r '.history[0].messages | map(
-    (
-      if .role == "user" then "👤" else "🤖" end
-    )+ " \(.content)\n") | join("\n")' >> "$file_post"
+conversation "$file_json" >> "$file_post"
