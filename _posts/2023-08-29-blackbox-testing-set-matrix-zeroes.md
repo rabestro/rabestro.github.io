@@ -2,7 +2,7 @@
 title: "BlackBox Testing: Set Matrix Zeroes"
 date: 2023-08-29 11:58:58 +0300
 categories: [AI, Testing]
-tags: [ai, java, unit-test, black-box, matrix]
+tags: [ai, java, unit-test, blackbox, matrix]
 mermaid: true
 ---
 

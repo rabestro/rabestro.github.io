@@ -1,8 +1,8 @@
 ---
-title: "Using Artificial Intelligence for Black Box Unit Testing"
+title: "BlackBox Testing: Binary Tree Inorder Traversal"
 date: 2023-08-22 11:00:00 +0300
 categories: [AI, Testing]
-tags: [ai, java, unit-test, black-box]     # TAG names should always be lowercase
+tags: [ai, java, unit-test, blackbox, binary-tree]     # TAG names should always be lowercase
 mermaid: true
 ---
 

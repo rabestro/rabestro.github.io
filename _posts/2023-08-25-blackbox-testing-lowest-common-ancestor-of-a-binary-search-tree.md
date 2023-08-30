@@ -2,7 +2,7 @@
 title: "BlackBox Testing: Lowest Common Ancestor of a Binary Search Tree"
 date: 2023-08-25
 categories: [AI, Testing]
-tags: [ai, java, unit-test, black-box, binary-tree]
+tags: [ai, java, unit-test, blackbox, binary-tree]
 mermaid: true
 ---
 
