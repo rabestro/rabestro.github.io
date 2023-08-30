@@ -12,14 +12,9 @@ create_file_name() {
 }
 
 conversation() {
-  jq --raw-output '.history[0].messages | map(
-    (
-      if .role == "user" then "👤" else "🤖" end
-    )+ " \(.content)\n") | join("\n")' "$1" | gawk '
-    /^```java/ {print "\n{% raw %}\n"}
-    {print}
-    /^```$/ {print "\n{% endraw %}\n"}
-    '
+  jq --raw-output '.history[0].messages | map((
+    if .role == "user" then "👤" else "🤖" end
+    )+ " \(.content)\n") | join("\n")' "$1"
 }
 
 readonly file_json="$1"
