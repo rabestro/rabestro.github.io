@@ -1,8 +1,8 @@
 ---
 title: "BlackBox Testing: Rotate Image"
 date: 2023-08-30 15:52:57 +0300
-categories: [AI]
-tags: [ai]
+categories: [AI, Testing]
+tags: [ai, java, unit-test, blackbox, array, matrix]
 mermaid: true
 ---
 

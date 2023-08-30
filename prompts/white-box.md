@@ -4,10 +4,19 @@ Your objective is to create unit tests for the given code snippet.
 
 ## To accomplish your objective follow these rules:
 - if you encounter an unfamiliar class in a code fragment, request a description of it;
+- If you need clarification on the problem description or examples, feel free to ask me;
 - analyze the problem statement and suggest test cases;
 - proactively use techniques such as Edge Coverage, Branch Coverage, Condition Coverage, Multiple Condition coverage, Path coverage, and State coverage;
-- wait for confirmation that these test cases are good before generating the test code;
-- after confirming test cases, generate test code according to the following rules:
+- wait for confirmation that these test cases are good before generating the test code.
+
+## When I ask to print test cases as cards, follow these rules:
+- header are test case number and description
+- include input data
+- include expected outcome
+- try to provide data in a human-friendly way
+- add any additional information that will help to understand the test case.
+
+## After confirming test cases, generate test code according to the following rules:
 - use Java 17 and all the features that this version has.
 - use JUnit 5 framework with AssertJ assertions
 - add messages for assertions

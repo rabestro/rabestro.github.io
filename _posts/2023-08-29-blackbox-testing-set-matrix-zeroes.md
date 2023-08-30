@@ -242,7 +242,7 @@ Please confirm if these test cases are good, and then I will generate the test c
 
 > It's essential to review the results of artificial intelligence, as it can make mistakes in calculating expected outcomes. 
 > In this case, the AI made a mistake in the last test case.
-{: .prompt-danger } 
+{: .prompt-warning } 
 
 👤 check the last case please
 

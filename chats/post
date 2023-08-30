@@ -12,9 +12,20 @@ create_file_name() {
 }
 
 conversation() {
-  jq --raw-output '.history[0].messages | map((
-    if .role == "user" then "👤" else "🤖" end
-    )+ " \(.content)\n") | join("\n")' "$1"
+  local -r input_file="$1"
+  cat <<EOF
+
+## The AI Conversation Log
+
+{% raw %}
+
+$(jq --raw-output '.history[0].messages | map((
+  if .role == "user" then "👤" else "🤖" end
+  )+ " \(.content)\n") | join("\n")' "$input_file")
+
+{% endraw %}
+
+EOF
 }
 
 readonly file_json="$1"
@@ -29,8 +40,9 @@ readonly prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
 echo "Title: $title"
 echo "File: $file_name"
 
-echo "---
-title: \"$title\"
+cat << EOF > "$file_post"
+---
+title: "$title"
 date: $current_date $current_time +0300
 categories: [AI]
 tags: [ai]
@@ -41,7 +53,6 @@ mermaid: true
 
 $prompt
 
-## The AI Conversation Log
-" > "$file_post"
+EOF
 
-conversation "$file_json" >> "$file_post"
+conversation "$file_json" >>"$file_post"
