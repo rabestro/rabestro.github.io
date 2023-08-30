@@ -3,7 +3,7 @@ title: "BlackBox Testing: Validate Binary Search Tree"
 date: 2023-08-27 11:33:00 +0300
 categories: [AI, Testing]
 tags: [ai, java, unit-test, blackbox, binary-tree]
-pin: true
+pin: false
 mermaid: true
 ---
 
