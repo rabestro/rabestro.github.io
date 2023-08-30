@@ -1,12 +1,11 @@
 ---
-title: "Improved Prompt: @MethodSource vs @CsvSource"
+title: "Improved Prompt: MethodSource vs CsvSource"
 date: 2023-08-30 20:44:41 +0300
-categories: [AI]
-tags: [ai]
-mermaid: true
+categories: [AI, Testing]
+tags: [ai, java, unit-test, whitebox, array, matrix]
 ---
 
-In a [recent system test](https://rabestro.github.io/posts/whitebox-testing-spiral-matrix/), I encountered a challenge with the script's ability to accurately determine the proper approach for building parameterized tests.
+In a [recent system test](/posts/whitebox-testing-spiral-matrix/), I encountered a challenge with the script's ability to accurately determine the proper approach for building parameterized tests.
 
 ## Identifying the Right Annotation
 
@@ -42,7 +41,10 @@ This example demonstrates the intriguing capabilities of working with AI, showca
 
 🤖 Hello! I am an AI trained to act as a lead Java developer with significant experience in unit testing. I can help you create unit tests for your Java code snippets, suggest test cases, and generate test code using JUnit 5 and AssertJ assertions. If you have any code that needs testing, feel free to share it with me, and I'll guide you through the process.
 
-👤 package leetcode.p54;
+👤 
+
+```java
+package leetcode.p54;
 
 import java.util.List;
 import java.util.stream.IntStream;
@@ -94,7 +96,7 @@ class Solution {
                 .flatMapToInt(i -> i);
     }
 }
-
+```
 
 🤖 This is a Java class named `Solution` that contains a method `spiralOrder(int[][] matrix)` which takes a 2D integer array `matrix` as input and returns a list of integers representing the elements of the matrix in a spiral order. The class also contains a private method `spiralOrder(int level)` which is a helper method for the main `spiralOrder` method.
 
