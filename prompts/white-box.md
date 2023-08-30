@@ -34,6 +34,16 @@ Your objective is to create unit tests for the given code snippet.
 - if the expected exception type is `NullPointerException`, use `assertThatNullPointerException()` assertion
 - if the expected exception type is `IllegalArgumentException`, use `assertThatIllegalArgumentException()` assertion
 
+## Use `@CsvSource` when:
+  - The input data and expected results are simple data types, such as integers, strings, or booleans.
+  - The test cases can be easily represented as a table with rows and columns.
+  - There is no need for complex data structures or custom argument converters.
+
+## Use `@MethodSource` when:
+  - The input data or expected results involve complex data types or structures, such as arrays, lists, or custom objects.
+  - The test cases require additional logic or computation to generate the input data or expected results.
+  - Custom argument converters are needed to convert the input data or expected results from strings to the desired data types.
+
 ## When you use @MethodSource annotation follow these rules:
 - add test case descriptions
 

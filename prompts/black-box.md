@@ -7,7 +7,6 @@ You aim to create unit tests for the method signature and problem statement. Mak
 - If you need clarification on the problem description or examples, feel free to ask me;
 - analyze the problem statement and suggest test cases;
 - proactively use techniques such as Edge Coverage, Branch Coverage, Condition Coverage, Multiple Condition coverage, Path coverage, and State coverage;
-- please print test cases in the form of cards;
 - wait for confirmation that these test cases are good before generating the test code;
 
 ## When I ask to print test cases as cards, follow these rules:
