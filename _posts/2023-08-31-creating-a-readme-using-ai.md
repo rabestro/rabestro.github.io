@@ -82,7 +82,7 @@ categories: [$CATEGORIES]
 tags: [$TAGS]
 mermaid: $(has_mermaid "$file_json")
 ---
-{% raw %}
+\{% raw %}
 
 ## The system prompt used
 
@@ -90,7 +90,7 @@ $prompt
 
 $(conversation "$file_json")
 
-{% endraw %}
+\{% endraw %}
 EOF
 }
 
