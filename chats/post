@@ -28,43 +28,39 @@ conversation() {
 
 ## The AI Conversation Log
 
-{% raw %}
-
 $(jq --raw-output '.history[0].messages | map((
   if .role == "user" then "👤" else "🤖" end
   )+ " \(.content)\n") | join("\n")' "$file_json")
 
-{% endraw %}
-
 EOF
 }
 
-mermaid() {
-  jq 'any(.history[].messages[]; .content | contains("```mermaid"))' "$1" &&
-    echo "mermaid: true" ||
-    echo "mermaid: false"
+has_mermaid() {
+  jq 'any(.history[].messages[]; .content | contains("```mermaid"))' "$1"
 }
 
-readonly file_json="$1"
-readonly file_name=$(create_file_name "$file_json")
-readonly current_date=$(date '+%Y-%m-%d')
-readonly current_time=$(date '+%H:%M:%S')
-readonly file_post="${POSTS_DIR}/$current_date-$file_name.md"
+main() {
+  local -r file_json="$1"
+  local -r file_name=$(create_file_name "$file_json")
+  local -r current_date=$(date '+%Y-%m-%d')
+  local -r current_time=$(date '+%H:%M:%S')
+  local -r file_post="${POSTS_DIR}/$current_date-$file_name.md"
 
-readonly title=$(jq --raw-output '.history[0].name' "$file_json")
-readonly prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
+  local -r title=$(jq --raw-output '.history[0].name' "$file_json")
+  local -r prompt=$(jq --raw-output '.history[0].prompt' "$file_json")
 
-echo "Title: $title"
-echo "File: $file_name"
+  echo "Title: $title"
+  echo "File: $file_name"
 
-cat << EOF > "$file_post"
+  cat << EOF > "$file_post"
 ---
 title: "$title"
 date: $current_date $current_time $TIMEZONE
 categories: [$CATEGORIES]
 tags: [$TAGS]
-$(mermaid "$file_json")
+mermaid: $(has_mermaid "$file_json")
 ---
+{% raw %}
 
 ## The system prompt used
 
@@ -72,4 +68,8 @@ $prompt
 
 $(conversation "$file_json")
 
+{% endraw %}
 EOF
+}
+
+main "$1"
