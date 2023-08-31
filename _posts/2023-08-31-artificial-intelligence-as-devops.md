@@ -62,6 +62,6 @@ jq '.history[].messages[] | select(.content | contains("```mermaid"))' input.jso
 
 Replace `input.json` with the path to your JSON file. If the command returns any output, it means the substring "```mermaid" was found in the `content` field of at least one message.
 
-You can learn more about `jq` and its syntax in the official documentation: https://stedolan.github.io/jq/manual/
+You can learn more about `jq` and its syntax in the official documentation: [https://stedolan.github.io/jq/manual/](https://stedolan.github.io/jq/manual/)
 
 {% endraw %}
