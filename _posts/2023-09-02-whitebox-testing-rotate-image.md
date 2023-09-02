@@ -1,5 +1,5 @@
 ---
-title: "WhiteBox Testing: Rotate Image"
+title: "Unit Testing With AI: Enhancing Assertion Generation"
 date: 2023-09-02 16:09:06 +0300
 categories: [AI, Testing]
 tags: [ai, testing, java, junit, assertj, whitebox]
@@ -7,15 +7,42 @@ mermaid: false
 ---
 {% raw %}
 
-I conducted an experiment to test the effectiveness of adding a prompt to the system regarding the rules for creating assertions. To ensure clear understanding, I formulated the following rules:
+I recently had a conversation with an artificial intelligence (AI) that specializes in generating unit tests for Java code. The primary goal of this interaction was to test my latest addition to the AI prompt, which provided specific guidelines for creating assertions.
 
-> When creating assertions, adhere to the following guidelines:
-> - Use the `assertThat()` assertion.
-> - Add a customized message to clearly explain the expected outcome.
-> - Keep it concise by chaining multiple assertions.
-> - Place each chaining method on a separate line.
+In this blog post, you'll find highlights from our conversation, insights gained, and helpful tips for working with AI in unit testing. At the end of the post, we've included the full conversation log to provide you with an in-depth understanding of our engaging and educational discussion.
 
-Before creating unit tests, I consulted with an AI to confirm its comprehension of the assertion rules. The AI demonstrated complete understanding of the guidelines and was able to generate test cases and a unit test for the proposed class. Below is a log of our conversation.
+## Exploring the AI's Understanding of Assertion Rules
+
+The focal point of our conversation was to ensure that the AI accurately understood the assertion generation guidelines I added to its prompt. The guidelines were as follows:
+
+1. Use the `assertThat()` assertion.
+2. Add a customized message to clearly explain the expected outcome.
+3. Keep it concise by chaining multiple assertions.
+4. Place each chaining method on a separate line.
+
+By asking the AI about the rules it follows, we confirmed that it accurately incorporated these guidelines into its process, setting a solid foundation for our unit testing discussion.
+
+## Test Case Generation and Analysis
+
+To further demonstrate the AI's unit testing capabilities, we discussed how it generates test cases based on different coverage methods. We focused on complex methods involving matrices, which showcased the AI's ability to provide useful inputs, outputs, and insights related to these methods.
+
+Having established the AI's understanding of the assertion generation guidelines, we were able to construct test cases that follow these rules alongside these proposed methods.
+
+## Understanding JUnit 5 and Arguments Syntax Choices
+
+Our conversation allowed me to clarify the differences between using `new Object[]` and `Arguments.of()` in JUnit 5 parameterized tests. The AI provided clear explanations for both syntax choices while highlighting how using `Arguments.of()` is more commonly recommended and provides better readability.
+
+Throughout the exchange, the AI conveyed helpful insights into JUnit 5 syntax and best practices when using parameterized tests with `Arguments.of()`.
+
+## Key Takeaways
+
+This conversation with AI resulted in several crucial takeaways:
+
+1. The AI demonstrated its ability to understand and apply guidelines for assertion generation effectively.
+2. The AI is well-versed in creating unit tests for complex Java methods and, subsequently, suggested best practices.
+3. The AI provided useful insights into JUnit 5 syntax choices and their implications on readability and style.
+
+The full conversation log between me and the AI can be found below this blog post. Employing AI for building unit tests not only saves developers time but also offers a fun and informative learning experience. As developers, we can enhance our skills by collaborating with AI-powered assistants, creating higher-quality codebases and more robust unit tests.
 
 ## The AI Conversation Log
 
@@ -188,7 +215,7 @@ class SolutionWhiteBoxC4Test {
 
 This test class contains a parameterized test method `testRotate` that uses the `@MethodSource` annotation to provide test cases. The `matrixRotationTestCases` method returns a stream of test case data, including a description, input matrix, and expected matrix. The test method then calls the `rotate` method on the `Solution` class and asserts that the rotated matrix matches the expected matrix.
 
-👤 I noticed that you sometimes use new `Arguments.of()` and now you use `new Object[]`. What's the difference?
+👤 I noticed that you sometimes use `Arguments.of()` and now you use `new Object[]`. What's the difference?
 
 🤖 You're right, I used `new Object[]` in the previous example, but you can also use `Arguments.of()` when providing test cases for parameterized tests in JUnit 5. Both approaches serve the same purpose, which is to provide a set of arguments for each test case in a parameterized test. The main difference is in the way they are constructed and used.
 
