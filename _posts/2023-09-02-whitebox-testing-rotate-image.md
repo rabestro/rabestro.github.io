@@ -2,20 +2,20 @@
 title: "WhiteBox Testing: Rotate Image"
 date: 2023-09-02 16:09:06 +0300
 categories: [AI, Testing]
-tags: [ai, testing, java, junit, assertj]
+tags: [ai, testing, java, junit, assertj, whitebox]
 mermaid: false
 ---
 {% raw %}
 
-## The system prompt used
+I conducted an experiment to test the effectiveness of adding a prompt to the system regarding the rules for creating assertions. To ensure clear understanding, I formulated the following rules:
 
-```plain
-When you use assertions follow these rules:
-- use `assertThat()` assertion
-- add a customized message to assertions to better explain what we are expecting
-- be concise by chaining multiple assertions
-- put each chaining method on a separate line
-```
+> When creating assertions, adhere to the following guidelines:
+> - Use the `assertThat()` assertion.
+> - Add a customized message to clearly explain the expected outcome.
+> - Keep it concise by chaining multiple assertions.
+> - Place each chaining method on a separate line.
+
+Before creating unit tests, I consulted with an AI to confirm its comprehension of the assertion rules. The AI demonstrated complete understanding of the guidelines and was able to generate test cases and a unit test for the proposed class. Below is a log of our conversation.
 
 ## The AI Conversation Log
 
