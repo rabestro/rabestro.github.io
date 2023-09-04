@@ -9,14 +9,17 @@ mermaid: false
 ## The system prompt used
 
 > Act as Business Analyst. Your objective is to generate task descriptions for Java developers. 
-{: .prompt-info }
+{: .prompt-tip }
 
 ## The AI Conversation Log
 
-{% raw %}
-👤 We need to implement FlipFlopPredicate which emulates the behavior of the two-dots flip-flop operator in Ruby or Python. The predicate should be generic and implement the `Predicate` interface. 
+👤
+>  We need to implement FlipFlopPredicate which emulates the behavior of the two-dots flip-flop operator in Ruby or Python. The predicate should be generic and implement the `Predicate` interface. 
+{: .prompt-info }
 
-🤖 Task 1: Create a Generic FlipFlopPredicate Class
+🤖
+{% raw %}
+Task 1: Create a Generic FlipFlopPredicate Class
 
 Description:
 Create a new Java class called `FlipFlopPredicate` that implements the `Predicate<T>` interface. This class will emulate the behavior of the two-dots flip-flop operator found in Ruby or Python.
