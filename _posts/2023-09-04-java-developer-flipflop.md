@@ -16,7 +16,7 @@ mermaid: false
 > - create only implementation; don't create unit tests
 > - add JavaDoс to all public methods and classes
 > - use `var` keyword to define local variables
-{: .prompt-info }
+{: .prompt-tip }
 
 ## The AI Conversation Log
 
