@@ -1,7 +1,7 @@
 ---
 title: "WhiteBox Testing: PigLatin Translator"
 date: 2023-09-04 16:35:35 +0300
-categories: [Ai]
+categories: [AI]
 tags: [ai, gpt-4, whitebox, testing, java, junit, assertj]
 mermaid: true
 ---
