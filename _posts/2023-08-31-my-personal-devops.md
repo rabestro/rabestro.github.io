@@ -5,7 +5,6 @@ categories: [AI, DevOps]
 tags: [ai, jekyll, chirpy]
 mermaid: false
 ---
-{% raw %}
 
 ## The system prompt used
 
@@ -27,6 +26,8 @@ Your objective is to help me set up and configure my site.
 #### To accomplish your objective follow these rules:
 - if you need more information, ask me before your response.
 - provide links to official documentation or sources of information.
+
+{% raw %}
 
 ## The AI Conversation Log
 

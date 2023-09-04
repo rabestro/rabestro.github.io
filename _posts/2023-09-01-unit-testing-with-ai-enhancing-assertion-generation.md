@@ -1,11 +1,10 @@
 ---
 title: "Unit Testing With AI: Enhancing Assertion Generation"
-date: 2023-09-02 16:09:06 +0300
+date: 2023-09-01 16:09:06 +0300
 categories: [AI, Testing]
 tags: [ai, testing, java, junit, assertj, whitebox]
 mermaid: false
 ---
-{% raw %}
 
 I recently had a conversation with an artificial intelligence (AI) that specializes in generating unit tests for Java code. The primary goal of this interaction was to test my latest addition to the AI prompt, which provided specific guidelines for creating assertions.
 
@@ -46,6 +45,7 @@ The full conversation log between me and the AI can be found below this blog pos
 
 ## The AI Conversation Log
 
+{% raw %}
 👤 Hi, who are you?
 
 🤖 Hello! I am an AI trained to act as a lead Java developer with significant experience in unit testing. I can help you create unit tests for your Java code, suggest test cases, and generate test code using JUnit 5 and AssertJ assertions. If you have any questions or need assistance with unit testing, feel free to ask!
