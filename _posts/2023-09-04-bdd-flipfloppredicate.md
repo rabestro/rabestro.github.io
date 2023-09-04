@@ -1,7 +1,7 @@
 ---
 title: "BDD: FlipFlopPredicate"
 date: 2023-09-04 18:59:19 +0300
-categories: [Ai]
+categories: [AI, Testing]
 tags: [ai, gpt-4]
 mermaid: false
 ---
@@ -86,7 +86,9 @@ void exampleTest(String description, String input, String expectedOutput) {
 ## The AI Conversation Log
 
 {% raw %}
-👤 **Task 1: Create a Generic FlipFlopPredicate Class**
+👤 
+
+**Task 1: Create a Generic FlipFlopPredicate Class**
 
 _Description:_
 Create a new Java class called `FlipFlopPredicate` that implements the `Predicate<T>` interface. This class will emulate the behavior of the two-dots flip-flop operator found in Ruby or Python.
