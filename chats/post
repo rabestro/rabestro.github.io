@@ -15,8 +15,9 @@
 # set these variables as needed for your environment
 readonly POSTS_DIR="../_posts"
 readonly TIMEZONE="+0300"
-readonly CATEGORIES="AI"
-readonly TAGS="ai"
+readonly CATEGORIES=${CATEGORIES:-"Ai"}
+readonly TAGS=${TAGS:-"ai, gpt-4"}
+readonly INCLUDE_PROMPT=${TAGS:-false}
 
 create_file_name() {
   jq --raw-output '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$1"
@@ -30,6 +31,21 @@ conversation() {
 
 has_mermaid() {
   jq 'any(.history[].messages[]; .content | contains("```mermaid"))' "$1"
+}
+
+prompt() {
+  if [[ "$INCLUDE_PROMPT" == false ]]; then
+    return
+  fi
+
+  cat <<EOF
+
+## The system prompt used
+
+{% raw %}
+$(jq --raw-output '.history[0].prompt' "$1")
+{% endraw %}
+EOF
 }
 
 main() {
@@ -53,17 +69,15 @@ categories: [$CATEGORIES]
 tags: [$TAGS]
 mermaid: $(has_mermaid "$file_json")
 ---
-{% raw %}
 
-## The system prompt used
-
-$prompt
+$(prompt "$file_json")
 
 ## The AI Conversation Log
 
+{% raw %}
 $(conversation "$file_json")
-
 {% endraw %}
+
 EOF
 }
 
