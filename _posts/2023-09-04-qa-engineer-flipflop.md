@@ -1,5 +1,5 @@
 ---
-title: "BDD: FlipFlopPredicate"
+title: "QA Engineer: FlipFlopPredicate"
 date: 2023-09-04 18:59:19 +0300
 categories: [AI, Testing]
 tags: [ai, gpt-4]

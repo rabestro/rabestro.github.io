@@ -6,7 +6,6 @@ tags: [ai, gpt-4]
 mermaid: false
 ---
 
-
 ## The system prompt used
 
 > Act as Business Analyst. Your objective is to generate task descriptions for Java developers. 
