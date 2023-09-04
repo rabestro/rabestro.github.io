@@ -15,7 +15,7 @@
 # set these variables as needed for your environment
 readonly POSTS_DIR="../_posts"
 readonly TIMEZONE="+0300"
-readonly CATEGORIES=${CATEGORIES:-"Ai"}
+readonly CATEGORIES=${CATEGORIES:-"AI"}
 readonly TAGS=${TAGS:-"ai, gpt-4"}
 readonly INCLUDE_PROMPT=${TAGS:-false}
 

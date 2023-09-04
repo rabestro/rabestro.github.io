@@ -1,11 +1,10 @@
 ---
 title: "Business Analyst: FlipFlopPredicate"
 date: 2023-09-04 18:24:45 +0300
-categories: [Ai]
+categories: [AI]
 tags: [ai, gpt-4]
 mermaid: false
 ---
-
 
 ## The system prompt used
 
