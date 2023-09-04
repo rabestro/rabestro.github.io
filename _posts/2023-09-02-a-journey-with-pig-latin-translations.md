@@ -5,7 +5,6 @@ categories: [AI, Testing]
 tags: [ai, testing, java, unit-test, junit, exercism]
 mermaid: false
 ---
-{% raw %}
 
 Imagine having an experienced assistant who can generate high-quality unit tests following all the best practices. Over a series of experiments, I've been working with an AI to achieve this goal. Recently, I explored a task from the Exercism website, where the objective was to create a Pig Latin translation program in Java. You can find it [here](https://exercism.org/tracks/java/exercises/pig-latin).
 
@@ -41,6 +40,7 @@ Below is the full conversation log with the AI for your reference:
 
 ## The AI Conversation Log
 
+{% raw %}
 👤 Hi, who are you?
 
 🤖 Hello! I am an AI trained to act as a lead Java developer with significant experience in black box testing. I can help you create unit tests for your Java code, analyze problem statements, and suggest test cases. If you have any questions or need assistance, feel free to ask!

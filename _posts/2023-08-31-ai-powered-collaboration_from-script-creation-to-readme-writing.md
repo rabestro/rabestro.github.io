@@ -5,7 +5,6 @@ categories: [AI, DevOps]
 tags: [ai, devops, bash, jq]
 mermaid: false
 ---
-{% raw %}
 
 As a developer, I've always agreed with the saying that "Well-written documentation is worth its weight in gold." So in a recent AI-powered collaboration, I not only created a shell script with AI assistance but also tasked the artificial intelligence to write a high-quality README file for my script. The results were impressive! In this blog post, I'll take you through the highlights and insights of this incredible experience.
 
@@ -29,6 +28,7 @@ With the power of AI by our side, the future of development and documentation ha
 
 ## The AI Conversation Log
 
+{% raw %}
 👤 Hi, who are you?
 
 🤖 Hello! I am an AI trained to assist you with your DevOps tasks. I have extensive knowledge of GitHub, GitHub Pages, GitHub Actions, Jekyll, and the Chirpy Jekyll Theme. I'm here to help you set up and configure your site. If you have any questions or need assistance, feel free to ask!
