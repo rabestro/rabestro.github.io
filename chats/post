@@ -81,4 +81,9 @@ $(conversation "$file_json")
 EOF
 }
 
-main "$1"
+declare -r extension="${1##*.}"
+if [[ $extension == json ]]; then
+  main "$1"
+else
+  echo "Please provide JSON file"
+fi

@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+#
+# Copyright (c) 2023 Jegors Čemisovs
+# License: MIT
+# Repository: https://github.com/rabestro/gpt4-session-to-markdown
+#
+# Converts JetBrains AI Assistant chat session to markdown format.
+# Adds YAML front matter to the top of the file for Jekyll blogs.
+#
+# Usage:
+#   ./jbmd <file.txt>
+#
+
+# set these variables as needed for your environment
+readonly POSTS_DIR="../_posts"
+readonly TIMEZONE="+0300"
+readonly CATEGORIES=${CATEGORIES:-"AI"}
+readonly TAGS=${TAGS:-"ai, gpt-4"}
+
+title() {
+  head -1 "$1" | sed "s/.*text=\([^,]*\).*/\1/"
+}
+
+file_name() {
+  title "$1" | tr '[:upper:]' '[:lower:]' | tr -s -c '[:alnum:]' '-'
+}
+
+has_mermaid() {
+  if grep -q '```mermaid' "$1"; then
+    echo true
+  else
+    echo false
+  fi
+}
+
+prompt() {
+  gawk '/User:/,/Assistant:/ {print; if ($0 ~ /Assistant:/) exit}' "$1" \
+    | tail -n +2 | head -n -1
+}
+
+conversation() {
+  tail -n +7 "$1" | sed 's/^User:/👤/g; s/Assistant:/🤖/g'
+}
+
+main() {
+  local -r chat_session="$1"
+  local -r current_date=$(date '+%Y-%m-%d')
+  local -r current_time=$(date '+%H:%M:%S')
+  local -r file_post="${POSTS_DIR}/$current_date-$(file_name "$chat_session").md"
+  local -r title=$(title "$chat_session")
+
+  echo "Title: [$title]"
+  echo "File: $file_post"
+
+  cat <<EOF >"$file_post"
+---
+title: "$title"
+date: $current_date $current_time $TIMEZONE
+categories: [$CATEGORIES]
+tags: [$TAGS]
+mermaid: $(has_mermaid "$chat_session")
+---
+
+## The AI Conversation Log
+
+{% raw %}
+$(conversation "$chat_session")
+{% endraw %}
+
+EOF
+
+}
+
+main "$1"
