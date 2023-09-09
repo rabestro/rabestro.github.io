@@ -96,12 +96,12 @@ comments:
     issue_term: title # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: rabestro/rabestro.github.io # <gh-username>/<repo>
-    repo_id: R_kgDOKLyZ0w
+    repo: "rabestro/blog-discussions" # <gh-username>/<repo>
+    repo_id: R_kgDOKRa4Ug
     category: General
-    category_id: DIC_kwDOKLyZ084CY6kD
-    mapping: pathname # optional, default to 'pathname'
-    input_position: bottom # optional, default to 'bottom'
+    category_id: DIC_kwDOKRa4Us4CZMoi
+    mapping: title # optional, default to 'pathname'
+    input_position: top # optional, default to 'bottom'
     lang: en # optional, default to the value of `site.lang`
     reactions_enabled: 1 # optional, default to the value of `1`
 
