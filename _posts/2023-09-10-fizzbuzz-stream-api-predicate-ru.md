@@ -10,8 +10,8 @@ lang: ru
 
 > Создайте программу, которая выводит числа от 1 до n.
 > - Если число делится на 3, выведите 'Fizz';
-> - Если число делится на 5, выведите 'Buzz';
-> - Если число делится и на 3 и на 5, выведите 'FizzBuzz'.
+> - если число делится на 5, выведите 'Buzz';
+> - если число делится и на 3 и на 5, выведите 'FizzBuzz'.
 
 Это упражнение подтолкнуло меня к идее поработать над задачами с использованием Stream API, используя заранее определенные предикаты `fizz` и `buzz`. Наша цель – создать различные фильтры для потока чисел, используя эти предикаты.
 
@@ -94,17 +94,17 @@ assertThat(numbers.filter(fizzBuzz))
 
 ```java
 @Test
-@DisplayName("Filter out numbers between numbers divisible by three and by five.")
-void numbers_between_a_numbers_divisible_by_three_and_by_five() {
+@DisplayName("Filter out numbers between integers divisible by three and by five.")
+void numbers_between_integers_divisible_by_three_and_by_five() {
     var numbers = IntStream.rangeClosed(1, 20);
 
     // TODO: Define the predicate
     IntPredicate fizzBuzz = i -> false;
 
     assertThat(numbers.filter(fizzBuzz))
-            .as("Numbers between numbers divisible by three and by five")
+            .as("Numbers between interegers divisible by three and by five")
             .containsExactly(4, 7, 8, 9, 13, 14, 19);
 }
 ```
 
-Напишите в комментариях насколько быстро вам удалось решить эту задачу.
+Напишите в комментариях, насколько быстро вам удалось решить эту задачу.
