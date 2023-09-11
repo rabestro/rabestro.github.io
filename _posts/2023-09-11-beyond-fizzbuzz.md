@@ -4,6 +4,8 @@ date: 2023-09-11 12:11:35 +0300
 categories: [Java, Algorithm]
 tags: [java, algorithm, stream-api, predicates]
 mermaid: false
+excerpt: >
+  Going beyond the classic FizzBuzz programming problem, this article explores custom predicate construction using Java's Stream API. Transforming the problem with fizz and buzz predicates, we create various filters for integer streams to solve four basic tasks and a bonus challenge. We walk through the process of filtering numbers divisible by 3, by 5, or both, as well as selecting numbers within FizzBuzz sequences. With this approach, you will gain a deeper understanding of the power and flexibility of predicates when working with Stream API and improve your skills in building and applying predicates in Java programs.
 ---
 
 The FizzBuzz problem is a classic coding challenge often used in programming interviews. It is usually presented as follows:
