@@ -1,8 +1,8 @@
 ---
 title: "Sum of all primes - Method Creation using BDD"
 date: 2023-09-13 16:54:45 +0300
-categories: [AI]
-tags: [ai, gpt-4]
+categories: [AI, Development]
+tags: [ai, gpt-4, bdd, java, junit, assertj, mermaid]
 mermaid: true
 ---
 
