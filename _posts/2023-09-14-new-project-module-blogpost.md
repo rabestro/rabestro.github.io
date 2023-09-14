@@ -1114,6 +1114,6 @@ Incorporating these suggestions into the system prompt should help improve the i
 
 ## Screenshots
 
-![Application start](img/2023-09-14-blog-post-app.png)
+![Application start](/assets/img/2023-09-14-blog-post-app.png)
 
-![Integration Tests](img/2023-09-14-blog-post-tests.png)
+![Integration Tests](/assets/img/2023-09-14-blog-post-tests.png)
