@@ -178,6 +178,10 @@ compress_html:
   ignore:
     envs: [development]
 
+include:
+  - .adoc
+  - .asciidoc
+
 exclude:
   - "*.gem"
   - "*.gemspec"
@@ -200,3 +204,15 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+asciidoc: {}
+asciidoctor:
+  base_dir: :docdir
+  safe: :unsafe
+  attributes:
+    - data-uri!
+    - icons=font
+    - linkcss!
+    - source-highlighter=pygments
+  extensions:
+    - asciidoctor-diagram

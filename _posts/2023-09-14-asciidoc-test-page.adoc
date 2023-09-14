@@ -1,0 +1,230 @@
+---
+layout: post
+title: "AsciiDoc Test Page"
+date: 2023-09-14 12:00:00 +0300
+categories: [asciidoc, testing]
+mermaid: true
+math: true
+---
+
+== Introduction
+
+This is a comprehensive test page for trying out various AsciiDoc elements and checking their compatibility with the Chirpy Jekyll theme.
+
+== Headings and Text Formatting
+
+=== Level 3 Heading
+
+*Bold text*, _italic text_, and `monospaced text`.
+
+== Lists
+
+* Unordered list item 1
+* Unordered list item 2
+
+. Ordered list item 1
+. Ordered list item 2
+
+== Links
+
+https://asciidoctor.org[AsciiDoctor Website]
+
+== Code Blocks
+
+[source,ruby]
+----
+def hello_world
+  puts "Hello, World!"
+end
+----
+
+== Blockquotes
+
+[quote, Albert Einstein]
+____
+Insanity: doing the same thing over and over again and expecting different results.
+____
+
+== Admonitions
+
+NOTE: This is a note.
+
+TIP: This is a tip.
+
+IMPORTANT: This is an important note.
+
+CAUTION: This is a caution.
+
+WARNING: This is a warning.
+
+== Tables
+
+|===
+| Column 1 | Column 2
+| Value 1  | Value 2
+| Value 3  | Value 4
+|===
+
+== Inline Images
+
+image::https://jekyllrb.com/img/logo-2x.png[alt="Jekyll",width=200,align="center"]
+
+== Horizontal Rule
+
+'''
+
+== Checklist
+
+- [x] Completed task
+- [ ] Incomplete task
+
+== Sidebars
+
+.sidebar An informational sidebar
+This is some text inside a sidebar.
+
+== Keyboard Shortcuts
+
+kbd:[Ctrl + Alt + Delete]
+
+|===
+|Shortcut |Purpose
+
+|kbd:[F11]
+|Toggle fullscreen
+
+|kbd:[Ctrl+T]
+|Open a new tab
+
+|kbd:[Ctrl+Shift+N]
+|New incognito window
+
+|kbd:[\ ]
+|Used to escape characters
+
+|kbd:[Ctrl+\]]
+|Jump to keyword
+
+|kbd:[Ctrl + +]
+|Increase zoom
+|===
+
+== Footnotes
+
+This is some text with a footnote.footnote:[This is the footnote text.]
+
+== Mathematical Formulas
+
+AsciiMath formula:
+
+[asciimath]
+++++
+sum_(i=1)^(n) i^3=((n(n+1))/2)^2
+++++
+
+LaTeX formula:
+
+[latexmath]
+++++
+\frac{(6)}{3 \times 3} = 3 + \sqrt{5}
+++++
+
+== Discrete Headings
+
+[discrete]
+=== Discrete Heading
+
+== Complex Tables
+
+|===
+| Column 1 | Column 2 | Column 3 | Column 4
+
+| Value 1  | Value 2  | Value 3
+| Value 4  | Value 5  |          | Value 6
+
+| Value 7  | Value 8  | Value 9  | Value 10
+| Value 11 | Value 12 | Value 13 | Value 14
+|===
+
+== Definition Lists
+
+Term 1::
+Definition of term 1.
+Term 2::
+Definition of term 2.
+
+== Example Blocks
+
+====
+This is an example block.
+====
+
+== Mermaid Diagrams
+
+++++
+<div class="mermaid">
+sequenceDiagram
+    Alice->>Bob: Authentication Request
+    Bob->>Alice: Authentication Response
+    Alice->>Bob: Another authentication Request
+    Bob->>Alice: Another authentication Response
+</div>
+++++
+
+
+== YouTube Videos
+
+
+== PlantUML Diagrams
+
+[plantuml, diagram-sequence, png, role="center"]
+----
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+----
+
+== Callouts
+
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <2> <3>
+  "Hello World!"
+end
+----
+<1> Library import
+<2> URL mapping
+<3> Response block
+
+== Collapsible Sections
+
+.Click to reveal the answer
+[%collapsible]
+====
+This is the answer.
+====
+
+
+.Too much detail? Click here.
+[%collapsible%open]
+====
+This content is revealed by default.
+
+If it's taking up too much space, the reader can hide it.
+====
+
+.Show stacktrace
+[%collapsible]
+====
+....
+Error: Content repository not found (url: https://git.example.org/repo.git)
+    at transformGitCloneError
+    at git.clone.then.then.catch
+Caused by: HttpError: HTTP Error: 401 HTTP Basic: Access Denied
+    at GitCredentialManagerStore.rejected
+    at fill.then
+....
+====
