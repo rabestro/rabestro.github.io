@@ -1,8 +1,8 @@
 ---
 title: "EmployeeFactory: New Class Generation Using ChatGPT"
 date: 2023-09-14 05:37:26 +0300
-categories: [AI]
-tags: [ai, gpt-4]
+categories: [AI, Development]
+tags: [ai, gpt-4, java]
 mermaid: true
 ---
 
