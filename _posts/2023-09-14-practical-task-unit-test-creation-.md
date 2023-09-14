@@ -10,7 +10,9 @@ mermaid: false
 ## The AI Conversation Log
 
 {% raw %}
-👤 ```java
+👤 
+
+```java
 public class DiscountCalculator { 
  
     /** 
