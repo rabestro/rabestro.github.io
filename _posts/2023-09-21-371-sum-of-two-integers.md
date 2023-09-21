@@ -12,6 +12,7 @@ mermaid: false
 
 {% raw %}
 👤 
+
 ```java
 class Solution {
     public int getSum(int a, int b) {

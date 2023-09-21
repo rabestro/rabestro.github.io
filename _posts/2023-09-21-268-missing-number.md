@@ -10,6 +10,7 @@ mermaid: false
 
 {% raw %}
 👤 
+
 ```java
 class Solution {
     public int missingNumber(int[] nums) {
