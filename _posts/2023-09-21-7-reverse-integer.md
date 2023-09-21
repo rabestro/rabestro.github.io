@@ -11,11 +11,14 @@ mermaid: false
 ## The AI Conversation Log
 
 {% raw %}
-👤 class Solution {
+👤 
+```java
+class Solution {
     public int reverse(int x) {
         
     }
 }
+```
 
 🤖 To create unit tests for the `reverse` method, I need to know the problem statement and any additional information related to the method. Please provide the problem statement and any other relevant information.
 
@@ -156,4 +159,3 @@ class Solution {
 
 This implementation checks for overflow and underflow while reversing the integer. It should work correctly with the provided test cases.
 {% endraw %}
-
