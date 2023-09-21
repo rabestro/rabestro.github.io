@@ -9,11 +9,14 @@ mermaid: false
 ## The AI Conversation Log
 
 {% raw %}
-👤 class Solution {
+👤 
+```java
+class Solution {
     public int missingNumber(int[] nums) {
         
     }
 }
+```
 
 🤖 To create unit tests for the `missingNumber` method, I need to know the problem statement and any additional information related to the method. Please provide the problem statement and any other relevant information.
 

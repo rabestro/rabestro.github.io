@@ -11,11 +11,14 @@ mermaid: false
 ## The AI Conversation Log
 
 {% raw %}
-👤 class Solution {
+👤 
+```java
+class Solution {
     public int getSum(int a, int b) {
         
     }
 }
+```
 
 🤖 To create unit tests for the `getSum` method, I need more information about the problem statement and the expected behavior of the method. Please provide a detailed description of the problem, including any constraints and examples.
 
