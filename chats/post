@@ -17,7 +17,7 @@ readonly POSTS_DIR="../_posts"
 readonly TIMEZONE="+0300"
 readonly CATEGORIES=${CATEGORIES:-"AI"}
 readonly TAGS=${TAGS:-"ai, gpt-4"}
-readonly INCLUDE_PROMPT=${TAGS:-false}
+readonly INCLUDE_PROMPT=${INCLUDE_PROMPT:-false}
 
 create_file_name() {
   jq --raw-output '.history[0].name | ascii_downcase | gsub("[^a-z0-9]+"; "-")' "$1"
