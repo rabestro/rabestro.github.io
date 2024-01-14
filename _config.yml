@@ -135,6 +135,12 @@ collections:
   tabs:
     output: true
     sort_by: order
+  posts:
+    output: true
+    sort_by: date
+  chats:
+    output: true
+    sort_by: date
 
 defaults:
   - scope:
