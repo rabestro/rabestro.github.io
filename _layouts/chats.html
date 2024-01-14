@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<div class="post-list" id="post-list">
+  <div class="list">
+    {% for chat in site.chats %}
+    <div class="list-item py-2">
+      <h2 class="my-1" itemprop="name">
+        <a class="post-link" href="{{ site.baseurl }}{{ chat.url }}" itemprop="url">
+          {{ chat.title }}
+        </a>
+      </h2>
+      <time class="post-meta" datetime="{{ chat.date | date_to_xmlschema }}" itemprop="datePublished" content="{{ chat.date | date_to_xmlschema }}">{{ chat.date | date: "%b %-d, %Y" }}</time>
+    </div>
+    {% endfor %}
+  </div>
+</div>
