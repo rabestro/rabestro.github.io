@@ -1,6 +1,6 @@
 ---
-title: Chats
+title: AI Chats
 icon: fas fa-comments
 order: 4
-layout: chats
+layout: home
 ---
