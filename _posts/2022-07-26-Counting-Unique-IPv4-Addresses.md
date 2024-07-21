@@ -2,7 +2,7 @@
 title: "Counting Unique IPv4 Addresses"
 date: 2022-07-26 19:50:00 +0300
 categories: [Java]
-tags: [java, stream-api]
+tags: [java, stream-api, algorithms]
 mermaid: false
 ---
 
@@ -35,7 +35,7 @@ sort -u ips.txt | wc -l
 
 But on large files, the execution time will be very significant. In the end, instead of the result, we get an error message:
 
-```
+```log
 sort: write failed: /tmp/sortcQjXmj: No space left on device 
 0
 ```
@@ -119,9 +119,9 @@ Now let's rewrite our program using the converter:
 var converter = new MkyongConverter();
 
 var unique = lines
-				.mapToInt(converter)
-				.distinct()
-				.count();
+                .mapToInt(converter)
+                .distinct()
+                .count();
 ```
 
 Unfortunately, when we run the program, we get the same error message as before: `OutOfMemoryError`. This happens because the `distinct()` method does not have a specialized implementation for integers. If you look at the source code of the implementation, you will see that there is a "boxing" of numbers with conversion to a regular stream of objects, and then a call to the `distinct()` method for a regular stream. If an integer takes up 4 bytes in memory, the wrapper is four times larger - 16 bytes.
