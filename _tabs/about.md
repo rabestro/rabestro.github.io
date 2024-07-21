@@ -4,8 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-# About Me
-
 Hello! I'm Jegors, a Software Engineer with a diverse background in various technologies and a passion for learning and teaching.
 
 ## Skills and Certificates
