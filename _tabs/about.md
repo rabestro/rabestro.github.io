@@ -8,7 +8,7 @@ Hello! I'm Jegors, a Software Engineer with a diverse background in various tech
 
 ## Skills and Certificates
 
-I have experience in Java, Cloud, PowerPlatform, and .NET. I hold several certificates including OCP Java 11, AZ-204, AI-900, DP-900, PL-900, AZ-900, LE-1, and CCNA.
+I have experience in Java, Cloud, PowerPlatform, and .NET. I hold several certificates including [OCP Java 11](https://www.credly.com/badges/4aeb5ea6-5180-4adb-98f8-e5f879dd2c5f), [AZ-204](https://learn.microsoft.com/en-us/users/jegors-cemisovs/credentials/certification/azure-developer?tab=credentials-tab), AI-900, DP-900, PL-900, AZ-900, [LE-1](https://cs.lpi.org/caf/Xamman/certification/verify/LPI000503884/pzr92w9thg), and others.
 
 ## Work Experience
 
