@@ -136,36 +136,35 @@ quality = { sequence = ["lint", "mypy"] }
 
 ## Step 5: Local "Guardians" of Quality (`pre-commit`)
 
-We've defined our rules and tasks. Now, how do we enforce them? The first line of defense is the **`pre-commit` framework**. It uses Git hooks to run checks *before* you can even make a commit. If any check fails, the commit is aborted.
+We've defined our rules and tasks. Now, how do we enforce them? The first line of defense is the **`pre-commit` framework**. It uses Git hooks to run checks _before_ you can even make a commit. If any check fails, the commit is aborted.
 
 You declare the checks in a `.pre-commit-config.yaml` file, and these "guardians" automatically format your code, check for bugs, verify type hints, and scan for leaked secrets.
 
 ```yaml
 repos:
-  - repo: [https://github.com/pre-commit/pre-commit-hooks](https://github.com/pre-commit/pre-commit-hooks)
+  - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
       - id: check-added-large-files
       - id: check-yaml
-  - repo: [https://github.com/astral-sh/ruff-pre-commit](https://github.com/astral-sh/ruff-pre-commit)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.3
     hooks:
       - id: ruff-format
       - id: ruff-check
         args: [ --fix ]
-  - repo: [https://github.com/pre-commit/mirrors-mypy](https://github.com/pre-commit/mirrors-mypy)
+  - repo: https://github.com/pre-commit/mirrors-mypy
     rev: 'v1.17.0'
     hooks:
     -   id: mypy
-  - repo: [https://github.com/gitleaks/gitleaks](https://github.com/gitleaks/gitleaks)
+  - repo: https://github.com/gitleaks/gitleaks
     rev: v8.27.2
     hooks:
       - id: gitleaks
 ```
 
-> You no longer have to *remember* to run the formatter, the linter, or the type checker. You just write code and commit. The guardians do the rest. This is the first major step in letting us "stop thinking" about quality checks.
-> {: .prompt-tip }
-
+> You no longer have to remember to run the formatter, linter, or type checker. You just focus on your code and run git commit. The guardians handle the quality checks for you. This is the first major step in letting us "stop thinking" about quality checks.
+{: .prompt-tip }
 
 ## Step 6: The Ultimate Safety Net (CI/CD)
 
