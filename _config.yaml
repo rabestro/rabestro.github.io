@@ -48,7 +48,7 @@ social:
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     - https://www.linkedin.com/in/jegors.cemisovs
-    - https://app.pluralsight.com/profile/rabestro
+#    - https://app.pluralsight.com/profile/rabestro
     - https://exercism.org/profiles/rabestro
 
 google_site_verification:  # fill in to your verification string
