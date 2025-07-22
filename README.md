@@ -8,7 +8,7 @@ To fully use all the features of **Chirpy**, you need to copy the other critical
 
 ```shell
 .
-├── _config.yml
+├── _config.yaml
 ├── _plugins
 ├── _tabs
 └── index.html
