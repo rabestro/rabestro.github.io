@@ -131,8 +131,8 @@ build = "uv build"
 quality = { sequence = ["lint", "mypy"] }
 ```
 
-> Now, any developer can run `poe lint` or `poe test` without needing to know the underlying commands or their arguments. This standardization is another powerful way to reduce cognitive load and make onboarding new team members a breeze.
-> {: .prompt-info }
+> Now, any developer can run `poe lint` or `poe test` without needing to know the underlying commands or their arguments. This standardization dramatically reduces a cognitive load. A new developer can be productive in minutes, running poe test without needing to decipher complex CLI arguments.
+{: .prompt-info }
 
 ## Step 5: Local "Guardians" of Quality (`pre-commit`)
 
