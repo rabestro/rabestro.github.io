@@ -78,7 +78,7 @@ Nearly every developer knows `.gitignore`, but many overlook its equally powerfu
 
 ## Step 2: The Single Source of Truth (`pyproject.toml`)
 
-The modern Python ecosystem has a powerful answer to the chaos of older configuration files (`setup.py`, `requirements.txt`, `.flake8`): **`pyproject.toml`**. This single file is now the standardized center of your project’s universe.
+The modern Python ecosystem has a powerful answer to the chaos of older configuration files. This replaces the old, scattered approach of juggling `setup.py`, `requirements.txt`, `.flake8`, and a dozen other configuration files. **`pyproject.toml`** is now the standardized center of your project’s universe.
 
 It defines project metadata, dependencies, and, most importantly, the configuration for all your tools, creating a **single source of truth** that is clean and self-documenting.
 
