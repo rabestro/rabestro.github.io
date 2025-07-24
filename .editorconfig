@@ -15,5 +15,56 @@ quote_type = single
 [*.{yml,yaml}]
 quote_type = double
 
-[*.md]
+################################################################################
+# Markdown-Specific Settings (.md, .markdown)
+################################################################################
+#
+# This section defines formatting rules for Markdown files to ensure our
+# project documentation (e.g., READMEs, MkDocs pages) is consistent, readable,
+# and easy to maintain.
+#
+[{*.markdown,*.md}]
+# --- Core Editor Behavior -----------------------------------------------------
+# These are the most critical rules that affect how editors handle Markdown files.
+
+# CRITICAL: Disables trimming of trailing whitespace.
+# In Markdown, two trailing spaces create a hard line break (<br>).
+# Trimming whitespace would break this essential formatting feature.
 trim_trailing_whitespace = false
+
+# Prose should not be bound by the same strict line lengths as code.
+# Unsetting this allows for natural sentence flow without forcing awkward wraps.
+max_line_length = unset
+
+# --- JetBrains IDEs Specific Formatting ---------------------------------------
+# These rules fine-tune the Markdown formatter in PyCharm/IntelliJ for a
+# clean and standardized appearance across all our documents.
+
+# Enforce consistent spacing for common Markdown elements.
+ij_markdown_force_one_space_after_header_symbol = true
+ij_markdown_force_one_space_after_list_bullet = true
+ij_markdown_force_one_space_after_blockquote_symbol = true
+
+# Automatically format tables for consistent padding and alignment.
+ij_markdown_format_tables = true
+
+# Control wrapping behavior for long lines of prose.
+ij_markdown_wrap_text_if_long = true
+ij_markdown_wrap_text_inside_blockquotes = true
+ij_markdown_insert_quote_arrows_on_wrap = true
+
+# Preserve intentional line breaks within paragraphs. This is important for
+# things like poems, log snippets, or addresses.
+ij_markdown_keep_line_breaks_inside_text_blocks = true
+
+# Standardize vertical spacing (blank lines) around block elements for readability.
+ij_markdown_max_lines_around_block_elements = 1
+ij_markdown_max_lines_around_header = 1
+ij_markdown_max_lines_between_paragraphs = 1
+ij_markdown_min_lines_around_block_elements = 1
+ij_markdown_min_lines_around_header = 1
+ij_markdown_min_lines_between_paragraphs = 1
+
+# General cleanup and consistency rules.
+ij_markdown_force_one_space_between_words = true
+ij_markdown_keep_indents_on_empty_lines = false
