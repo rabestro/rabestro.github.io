@@ -106,3 +106,51 @@ This is your automatic cleanup crew. It removes any stray spaces or tabs at the 
 This property, now part of the official standard, is more powerful than it looks. Its most obvious benefit is standardizing the language for documentation and comments. But its real power lies in code itself.
 Imagine a team with both American and British developers. One might name a variable `modalColor` while another names it `modalColour`. This can lead to real bugs and confusion. By setting a single `spelling_language`, the IDE's built-in spell checker will flag the "incorrect" spelling as a potential typo, guiding the team to use a consistent vocabulary for variable names, function names, and string literals.
 
+
+### Beyond the Basics: Advanced Techniques
+
+A single set of rules for all files is a great start, but real-world projects are more complex. You have data files, special-purpose files, and auto-generated files, each with its own formatting needs. This is where `.editorconfig` truly shines, allowing you to create a sophisticated hierarchy of rules.
+
+Let's explore how to handle these common scenarios.
+
+#### Overriding Rules for Data and Config Files
+
+Your project likely contains files like `json`, `yml`, or `toml`. While your application code might use 4-space indentation, a 2-space indent is the common convention for these data formats. Furthermore, they can contain long strings that you don't want to wrap. You can easily set specific rules for them.
+
+```ini
+# Override for common data and config formats
+[*.{json,yml,yaml,xml,toml}]
+indent_size = 2
+max_line_length = unset
+```
+
+This block uses a glob pattern `{...}` to target multiple file extensions at once. It keeps the base rules from `[*]` but overrides `indent_size` to `2` and unsets the `max_line_length` check, making your data files consistent and readable.
+
+#### Handling Special File Formats
+
+Some tools have very strict formatting requirements. A perfect example is `Makefile`, which **must** use tab characters for indentation. Using spaces will cause it to fail with cryptic errors. `.editorconfig` can save your team from this frustration.
+
+```ini
+[Makefile]
+indent_style = tab
+```
+
+This simple rule ensures that whenever anyone on the team edits the `Makefile`, their editor will correctly use tabs for indentation, regardless of the global settings.
+
+#### Excluding Auto-Generated Files
+
+Some files in your project, like `poetry.lock` or `yarn.lock`, are generated and managed by tools. They should **never** be modified by hand, as this can corrupt them and break your project's dependency resolution. You need to tell editors to keep their hands off.
+
+```ini
+# Rules for lock files
+[{poetry.lock,uv.lock}]
+max_line_length = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+```
+
+Using the special value `unset` effectively turns off the rules inherited from the global `[*]` section for these specific files. This prevents the editor from making any formatting changes that could corrupt these critical, machine-generated files.
+
+Mastering these techniques allows you to move from a simple configuration to a robust formatting strategy that handles all the unique needs of your project, big or small.
+
