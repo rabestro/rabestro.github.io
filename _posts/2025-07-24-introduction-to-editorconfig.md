@@ -18,7 +18,7 @@ This isn't just a matter of preference; it's a drain on productivity. Every minu
 Enter .editorconfig. This is the one file your project is missing. It’s a simple, text-based file that defines and maintains consistent coding styles between different editors and IDEs for your entire team. In this guide, we'll break down exactly why this small file has a huge impact, how to configure it rule by rule, and how it can bring calm, consistency, and a beautifully clean Git history to your project.
 
 
-### The Wild West of Code Formatting
+## The Wild West of Code Formatting
 
 Before a tool like `.editorconfig` enters the scene, many development teams unknowingly operate in a state of low-key formatting chaos. While it might not crash your application, this chaos silently eats away at productivity and team morale. Let's look at the usual suspects.
 
@@ -38,7 +38,7 @@ Trailing whitespace consists of one or more space or tab characters at the end o
 
 You might be thinking, "My project already uses a powerful tool like `scalafmt`, `prettier`, or `black`. Don't they solve all this?" Yes, they do a fantastic job—but only for their specific language. What about your `Dockerfile`, your `.yml` configuration files, your shell scripts, your `JSON` fixtures, and your `Markdown` documentation? This is where the chaos creeps back in. A language-specific formatter leaves gaps, and `.editorconfig` is the perfect tool to fill them, creating a truly universal baseline for every file in your project.
 
-### The Elegant Solution: How `.editorconfig` Works
+## The Elegant Solution: How `.editorconfig` Works
 
 So, how do we fix the chaos described above? The solution is surprisingly simple and elegant. It’s not a complex new tool or a heavy background service, but a single, human-readable text file named `.editorconfig` that lives at the root of your project.
 
@@ -51,7 +51,7 @@ When you open a file, your editor or IDE (with the `.editorconfig` plugin, which
 It's worth noting that some editors, like Visual Studio, apply these settings to new lines of code by default. To ensure an entire existing file conforms to the project's rules, you might need to run a command like "Format Document" or "Code Cleanup". The real beauty is its "set it and forget it" nature. Once the file is committed, the team's formatting standards are enforced automatically, freeing up everyone's mental energy to focus on what truly matters: writing great code.
 
 
-### Anatomy of an `.editorconfig` File: The Core Rules
+## Anatomy of an `.editorconfig` File: The Core Rules
 
 Now that we understand the "why" and "how" at a high level, let's get practical. We'll dissect a standard `.editorconfig` file, exploring the most common properties you'll encounter. Most of these rules are universally supported and form the foundation of a consistent coding environment.
 
@@ -75,48 +75,48 @@ spelling_language = en-US
 
 Now, let's break it down, property by property.
 
-#### `root = true`
+### `root = true`
 
 This should always be the first line in your root `.editorconfig` file. As we discussed, editors search for this file up the directory tree. `root = true` tells the editor, "Stop searching here. This is the project's root." It prevents settings from other `.editorconfig` files in parent directories (e.g., in your home folder) from accidentally interfering with your project's standards.
 
-#### `[*]`
+### `[*]`
 
 This is a wildcard, or "glob," that means "these rules apply to all files." You'll almost always start with this global section to define a baseline for your entire project. Later, you can override these rules for specific file types.
 
-#### `charset = utf-8`
+### `charset = utf-8`
 
 This sets the character encoding for new files to UTF-8. In today's world of global collaboration, using UTF-8 is the universal standard. It ensures that text, comments, and symbols from any language are saved and displayed correctly, preventing garbled characters and subtle bugs.
 
-#### `end_of_line = lf`
+### `end_of_line = lf`
 
 This single line solves the "Cross-Platform Curse" we talked about earlier. By setting the line endings to `lf` (Line Feed), you ensure that every developer, whether on Windows, macOS, or Linux, uses the same line endings. Your Git history will thank you for it.
 
-#### `indent_style = space` and `indent_size = 4`
+### `indent_style = space` and `indent_size = 4`
 
 This pair of properties settles the indentation debate once and for all. `indent_style` can be set to `space` or `tab`. `indent_size` defines how many spaces constitute an indentation level (or the width of a tab character). Using spaces is the most compatible choice, and 4 is a widely accepted standard for many languages.
 
-#### `insert_final_newline = true`
+### `insert_final_newline = true`
 
 This seemingly minor rule is surprisingly important. Many command-line tools and version control systems, especially those with a Unix heritage like Git, expect text files to end with a single newline character. A file without one isn't considered a "proper" text file by POSIX standards.
 Lacking a final newline can cause issues with file concatenation (e.g., `cat file1 file2` might merge the last line of `file1` with the first line of `file2`) and can create messy diffs in Git when you add a new line to the end of the file. This rule prevents all of that.
 
-#### `trim_trailing_whitespace = true`
+### `trim_trailing_whitespace = true`
 
 This is your automatic cleanup crew. It removes any stray spaces or tabs at the end of lines before saving. This keeps your files clean and, most importantly, prevents the "invisible noise" in your pull requests, ensuring that diffs only show meaningful, intentional changes.
 
-#### `spelling_language = en-US`
+### `spelling_language = en-US`
 
 This property, now part of the official standard, is more powerful than it looks. Its most obvious benefit is standardizing the language for documentation and comments. But its real power lies in code itself.
 Imagine a team with both American and British developers. One might name a variable `modalColor` while another names it `modalColour`. This can lead to real bugs and confusion. By setting a single `spelling_language`, the IDE's built-in spell checker will flag the "incorrect" spelling as a potential typo, guiding the team to use a consistent vocabulary for variable names, function names, and string literals.
 
 
-### Beyond the Basics: Advanced Techniques
+## Beyond the Basics: Advanced Techniques
 
 A single set of rules for all files is a great start, but real-world projects are more complex. You have data files, special-purpose files, and auto-generated files, each with its own formatting needs. This is where `.editorconfig` truly shines, allowing you to create a sophisticated hierarchy of rules.
 
 Let's explore how to handle these common scenarios.
 
-#### Overriding Rules for Data and Config Files
+### Overriding Rules for Data and Config Files
 
 Your project likely contains files like `json`, `yml`, or `toml`. While your application code might use 4-space indentation, a 2-space indent is the common convention for these data formats. Furthermore, they can contain long strings that you don't want to wrap. You can easily set specific rules for them.
 
@@ -129,7 +129,7 @@ max_line_length = unset
 
 This block uses a glob pattern `{...}` to target multiple file extensions at once. It keeps the base rules from `[*]` but overrides `indent_size` to `2` and unsets the `max_line_length` check, making your data files consistent and readable.
 
-#### Handling Special File Formats
+### Handling Special File Formats
 
 Some tools have very strict formatting requirements. A perfect example is `Makefile`, which **must** use tab characters for indentation. Using spaces will cause it to fail with cryptic errors. `.editorconfig` can save your team from this frustration.
 
@@ -140,7 +140,7 @@ indent_style = tab
 
 This simple rule ensures that whenever anyone on the team edits the `Makefile`, their editor will correctly use tabs for indentation, regardless of the global settings.
 
-#### Excluding Auto-Generated Files
+### Excluding Auto-Generated Files
 
 Some files in your project, like `poetry.lock` or `yarn.lock`, are generated and managed by tools. They should **never** be modified by hand, as this can corrupt them and break your project's dependency resolution. You need to tell editors to keep their hands off.
 
@@ -158,7 +158,7 @@ Using the special value `unset` effectively turns off the rules inherited from t
 Mastering these techniques allows you to move from a simple configuration to a robust formatting strategy that handles all the unique needs of your project, big or small.
 
 
-### Beyond the Standard: Unlocking IDE-Specific Settings
+## Beyond the Standard: Unlocking IDE-Specific Settings
 
 The standard properties we've covered provide a universal baseline that works in nearly any editor. However, the true power of modern `.editorconfig` support lies in its extensibility. Because the specification requires editors to simply ignore properties they don't understand, vendors like JetBrains and Microsoft are free to add their own powerful, IDE-specific settings.
 
@@ -191,7 +191,7 @@ To dive deep into the specific properties available for your editor, their offic
 By leveraging these features, you ensure that anyone who clones your repository gets not just the basic formatting, but the full, rich code style configuration intended for the project, automatically.
 
 
-### Conclusion: A Small File, A Huge Impact
+## Conclusion: A Small File, A Huge Impact
 
 We've journeyed from the chaos of inconsistent formatting to an elegant solution. We've seen how `.editorconfig` scales from a simple set of universal rules, ensuring basic consistency for any file, to a powerful tool capable of enforcing rich, IDE-specific coding standards. It's a pact that removes friction, reduces cognitive load, and fosters a more professional and efficient development workflow. It automates the trivial debates so your team can focus on solving real problems.
 
