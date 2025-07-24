@@ -186,7 +186,7 @@ Both JetBrains (IntelliJ IDEA, PyCharm, etc.) and Microsoft (Visual Studio) offe
 To dive deep into the specific properties available for your editor, their official documentation is the best place to start:
 
 * **For JetBrains IDEs:** [EditorConfig settings documentation](https://www.jetbrains.com/help/idea/editorconfig.html)
-* **For Microsoft Visual Studio:** [Create portable, custom editor options](https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2022#add-and-remove-editorconfig-files)
+* **For Microsoft Visual Studio:** [Create portable, custom editor options](https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2022)
 
 By leveraging these features, you ensure that anyone who clones your repository gets not just the basic formatting, but the full, rich code style configuration intended for the project, automatically.
 
