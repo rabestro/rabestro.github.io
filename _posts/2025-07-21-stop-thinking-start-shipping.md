@@ -3,6 +3,7 @@ title: "Stop Thinking, Start Shipping: An Engineer's Guide to Automated Python Q
 date: 2025-07-21 12:00:00 +0300
 last_modified_at: 2025-07-21 12:00:00 +0300
 author: rabestro
+published: false
 categories: [Technology, Python]
 tags: [python, workflow, automation, ci-cd, ruff, uv, pre-commit, tooling, devops]
 pin: true
