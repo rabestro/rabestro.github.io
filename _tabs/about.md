@@ -8,7 +8,7 @@ Hello! I'm Jegors, a Software Engineer driven by a passion for creating robust s
 
 ## Passion for Open Source & Education
 
-I am deeply involved in the open-source education platform [Exercism.org](https://www.google.com/search?q=https://exercism.org/profiles/rabestro), where I serve as an official **maintainer** for the **Scala** and **AWK** language tracks. In this role, I help shape the curriculum, review contributions, and guide fellow developers.
+I am deeply involved in the open-source education platform [Exercism.org](https://exercism.org/profiles/rabestro), where I serve as an official **maintainer** for the **Scala** and **AWK** language tracks. In this role, I help shape the curriculum, review contributions, and guide fellow developers.
 
 As an active mentor for **Java, Scala, Python, Bash, and AWK**, I find it incredibly rewarding to help students overcome challenges and master new technologies. The most meaningful part of this work is seeing them succeed. I'm grateful to have received over one hundred testimonials from students I've mentored, which you can read on my [Exercism public profile](https://exercism.org/profiles/rabestro/testimonials).
 
