@@ -5,7 +5,7 @@ last_modified_at: 2025-07-24 17:07:00 +0300
 author: rabestro
 categories: [Technology, Development]
 tags: [editorconfig, code style, formatting, consistency, tooling, development, workflow, ide]
-pin: true
+pin: false
 toc: true
 comments: true
 img_path: /assets/img/posts/
