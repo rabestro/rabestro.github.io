@@ -65,6 +65,9 @@ mise install
 
 Mise automatically resolves, downloads, and installs every tool listed above — from language runtimes like Node and Python to CLI utilities like `gh`, `actionlint`, and even `powershell`. Everything is self-contained. No separate manuals are required.
 
+![mise install and mise ls output](/assets/img/2026-05-11-mise-install-ls.png)
+_Running `mise install` provisions the entire toolchain; `mise ls` confirms every resolved version and its source._
+
 ## Cleaning up the task running mess
 
 Next, I tackled the fragmentation between frontend and backend environments. 
@@ -95,7 +98,12 @@ run = "npm run check"
 dir = "frontend-pwa"
 ```
 
-This setup made it trivial to compose powerful workflows. For example, I created a single "Check Everything" command that fires all validation tasks across the whole ecosystem in parallel:
+This setup made it trivial to compose powerful workflows. Running `mise tasks` at the root now shows a unified dashboard of every available operation across the entire monorepo:
+
+![mise tasks output](/assets/img/2026-05-11-mise-tasks.png)
+_A single command reveals the full task landscape — from service control to quality checks and database operations._
+
+For example, I created a single "Check Everything" command that fires all validation tasks across the whole ecosystem in parallel:
 
 ```toml
 [tasks.check]
@@ -113,6 +121,11 @@ run = "pre-commit install"
 description = "📦 Install everything across the monorepo"
 depends = ["setup:*"]
 ```
+
+Running `mise tasks deps` reveals how Mise resolves these relationships into a clear dependency tree:
+
+![mise tasks deps output](/assets/img/2026-05-11-mise-tasks-deps.png)
+_The `setup:*` wildcard automatically expands to include every matching sub-task, while composite tasks like `check` and `dev` show their parallel branches._
 
 ## Standardizing on one Shell
 
