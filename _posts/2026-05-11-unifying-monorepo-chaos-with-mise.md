@@ -65,6 +65,18 @@ mise install
 
 Mise automatically resolves, downloads, and installs every tool listed above — from language runtimes like Node and Python to CLI utilities like `gh`, `actionlint`, and even `powershell`. Everything is self-contained. No separate manuals are required.
 
+### Beyond the built-in registry
+
+At first, I assumed I was limited to tools discoverable via `mise search` or listed in `mise registry`. When I searched for [Bruno](https://www.usebruno.com/) — an API client I use for exploring and testing the Dice Chess API — it was nowhere to be found. I almost gave up and went back to installing it manually.
+
+Then I discovered that Mise supports multiple **backends**. The `github:` backend can install any tool that publishes binaries as GitHub Releases. It even verifies [SLSA provenance](https://slsa.dev/) automatically when available. So adding Bruno was as simple as one extra line:
+
+```toml
+"github:usebruno/bruno" = "latest"
+```
+
+This unlocked the full picture: the built-in registry is just the starting point. In practice, the pool of installable tools is virtually unlimited.
+
 ![mise install and mise ls output](/assets/img/2026-05-11-mise-install-ls.png)
 _Running `mise install` provisions the entire toolchain; `mise ls` confirms every resolved version and its source._
 
