@@ -70,7 +70,10 @@ _Running `mise install` provisions the entire toolchain; `mise ls` confirms ever
 
 ## Cleaning up the task running mess
 
-Next, I tackled the fragmentation between frontend and backend environments. 
+Next, I tackled the fragmentation between frontend and backend environments. The end result speaks for itself — a single `mise run all` command now launches all three services in parallel, with color-coded output in one terminal window:
+
+![mise run all output](/assets/img/2026-05-11-mise-run-all.png)
+_No more juggling three terminal tabs. Backend, frontend, and docs all start concurrently from a single command._
 
 I started by decentralizing my backend dependencies. I stripped `poethepoet` from the core application packages and replaced it with a simple, localized `mise.toml` inside the `backend-api/` folder. Here is a simplified excerpt — in practice, the file grew to cover formatting, type checking, complexity analysis, and more:
 
