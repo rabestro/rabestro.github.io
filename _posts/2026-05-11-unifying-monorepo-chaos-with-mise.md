@@ -50,8 +50,11 @@ node = "26"
 python = "3.14"
 uv = "latest"
 gh = "latest"
+sqlite = "latest"
+gemini = "latest"
 powershell = "latest"
 pre-commit = "latest"
+actionlint = "latest"
 ```
 
 This completely changed how I onboard a new machine. Now, after cloning the repository, I just run:
@@ -60,13 +63,13 @@ This completely changed how I onboard a new machine. Now, after cloning the repo
 mise install
 ```
 
-Mise automatically resolves, downloads, and installs exact versions of Node, Python, `uv`, `gh`, and even PowerShell, and sets up an isolated `pre-commit` binary. Everything is self-contained. No separate manuals are required.
+Mise automatically resolves, downloads, and installs every tool listed above — from language runtimes like Node and Python to CLI utilities like `gh`, `actionlint`, and even `powershell`. Everything is self-contained. No separate manuals are required.
 
 ## Cleaning up the task running mess
 
 Next, I tackled the fragmentation between frontend and backend environments. 
 
-I started by decentralizing my backend dependencies. I stripped `poethepoet` from the core application packages and replaced it with a simple, localized `mise.toml` inside the `backend-api/` folder:
+I started by decentralizing my backend dependencies. I stripped `poethepoet` from the core application packages and replaced it with a simple, localized `mise.toml` inside the `backend-api/` folder. Here is a simplified excerpt — in practice, the file grew to cover formatting, type checking, complexity analysis, and more:
 
 ```toml
 # backend-api/mise.toml
@@ -100,7 +103,7 @@ description = "✅ Run all code validation in parallel"
 depends = ["backend:check", "frontend:check"]
 ```
 
-Even my automatic Git hook registration got streamlined into the aggregate setup command using a wildcare dependency:
+Even my automatic Git hook registration got streamlined into the aggregate setup command using a wildcard dependency:
 
 ```toml
 [tasks."setup:pre-commit"]
@@ -113,7 +116,7 @@ depends = ["setup:*"]
 
 ## Standardizing on one Shell
 
-One of the coolest side effects was integrating `powershell` directly into Mise's global tools. This guaranteed that the exact same Shell environment is available to me on both Windows and macOS.
+One of the coolest side effects was integrating `powershell` directly into Mise's global tools. This guaranteed that the exact same shell environment is available to me on both Windows and macOS.
 
 Previously, pulling a database backup meant carefully syncing logic across a `.sh` script and a `.ps1` copy. By trusting Mise to provide `pwsh` across the board, I killed the duplicated scripts entirely. Now I use one universal PowerShell script and execute it via a Mise task everywhere:
 
@@ -139,6 +142,28 @@ env = { MOCK_AUTH = "true", VITE_MOCK_AUTH = "true" }
 
 Now, executing `mise run e2e` fires up exactly the right context for that specific job and cleans itself up afterward. 
 
+## First-Class IDE Integration
+
+As awesome as the terminal is, sometimes you just want a visual workflow. To my delight, `mise` enjoys first-class citizen treatment inside modern editors.
+
+I installed the [official Mise plugin](https://plugins.jetbrains.com/plugin/24904-mise) for JetBrains, and it seamlessly hooked into my environment. 
+
+![Mise tool window and runner in JetBrains IDE](/assets/img/2026-05-12-mise-jetbrains-tool-window.png)
+_The plugin provides a dedicated Tool Window to visualize active tools, monitor running tasks, and provide deep integration with the native Run configurations system._
+
+Right within the editor, I now have access to:
+
+1.  **Visual Task Runner**: A dedicated pane listing all available tasks. I can trigger `mise dev` or `mise all` with a single click without leaving the IDE.
+2.  **Dependency Discovery**: The plugin automatically parses `mise.toml` files across the entire monorepo.
+3.  **Visualizing the Dependency Graph (DAG)**: This is the "killer feature" for complex workflows. You can render an interactive flowchart of your operations. Seeing the orchestration logic of the backend, frontend, and docs laid out automatically was incredibly satisfying.
+
+![Mise Task Dependency Graph](/assets/img/2026-05-12-mise-jetbrains-dag.png)
+_Visualizing the inter-task dependency tree (DAG) allows instant validation of complex parallel orchestration logic._
+
+For VS Code users, there is also an [official extension](https://marketplace.visualstudio.com/items?itemName=hverlin.mise-vscode) offering similar functionality.
+
+Having native editor support ensures that regardless of whether I am writing code or wiring up the environment, I never lose focus and can command my entire monorepo with visual confidence.
+
 ## Conclusion
 
 Refactoring my side project architecture to Mise cleared a tremendous amount of mental noise. I managed to unify three painful separate fronts:
@@ -146,5 +171,6 @@ Refactoring my side project architecture to Mise cleared a tremendous amount of 
 1.  **Provisioning**: Installing all tools by typing one command.
 2.  **Tasks**: Moving away from manual multi-terminal orchestration to smart parallel triggers.
 3.  **Consistency**: Sticking to one central repository config, rather than scattered, legacy `.python-version` fragments.
+4.  **Visibility**: Gaining a visual, in-editor understanding of the entire orchestration graph.
 
 If you find yourself moving between distinct environments or dealing with fractured toolchains in a pet project, giving Mise a try could be exactly the consolidation your workflow is missing.
