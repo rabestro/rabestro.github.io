@@ -1,0 +1,31 @@
+[tools]
+ruby = "3.3"
+
+[tasks."setup:bundle"]
+description = "Install Ruby dependencies"
+run = "bundle install"
+sources = ["Gemfile"]
+# We don't use Gemfile.lock since it's gitignored in this repo
+
+[tasks.dev]
+description = "Run Jekyll development server"
+depends = ["setup:bundle"]
+run = "bundle exec jekyll serve"
+
+[tasks.build]
+description = "Build the site for production"
+depends = ["setup:bundle"]
+run = "JEKYLL_ENV=production bundle exec jekyll build"
+
+[tasks.check]
+description = "Run HTML Proofer to check for broken links"
+depends = ["build"]
+run = "bundle exec htmlproofer _site --disable-external --ignore-urls '/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/'"
+
+[tasks.update]
+description = "Update Ruby gems to latest versions"
+run = "bundle update"
+
+[tasks.clean]
+description = "Clean build artifacts"
+run = "rm -rf _site .jekyll-cache"
