@@ -27,7 +27,7 @@ Because Leapers are never blocked along a path, the squares they *attack* from a
 
 ### Enter the Bitboard
 
-As discussed in my [previous post](/2026/05/13/zero-cost-domain-modeling-with-scala-3-opaque-types.html), our engine represents the chess board using **Bitboards** — simple 64-bit integers (`Long` in Scala) where each bit corresponds to one of the 64 squares. 
+As discussed in my [previous post]({% post_url 2026-05-13-zero-cost-domain-modeling-with-scala-3-opaque-types %}), our engine represents the chess board using **Bitboards** — simple 64-bit integers (`Long` in Scala) where each bit corresponds to one of the 64 squares. 
 
 If we place a Knight on `b1`, we just flip the 1st bit (since `a1` is 0, `b1` is 1). That's our Bitboard.
 
