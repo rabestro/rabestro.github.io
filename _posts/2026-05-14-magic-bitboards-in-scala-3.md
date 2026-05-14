@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "O(1) Sliding Attacks in Chess: The Magic Bitboard Illusion in Scala 3"
-date: 2026-05-14 12:00:00 +0300
+date: 2026-05-14 10:30:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
 tags: [scala3, bitboards, algorithms, gamedev, chess-engine, optimization, hashing]
 math: true
