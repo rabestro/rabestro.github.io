@@ -5,13 +5,14 @@ Branch naming rules and agent guidance for the Blog repository.
 ## Branch Naming Conventions
 
 Allowed branch prefixes:
+
 - `post` — new blog posts
-- `fix`  — fixes for existing content or links
+- `fix` — fixes for existing content or links
 - `feat` — new site features or theme adjustments
 - `task` — maintenance tasks (updates, configuration)
 
 Branch name pattern (required):
-  (post|fix|feat|task)/<short-description>
+(post|fix|feat|task)/<short-description>
 Example: `post/magic-bitboards-explanation`
 
 ## Agent Rules (AI Assistance)

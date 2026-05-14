@@ -5,7 +5,8 @@ last_modified_at: 2025-07-21 12:00:00 +0300
 author: rabestro
 published: false
 categories: [Technology, Python]
-tags: [python, workflow, automation, ci-cd, ruff, uv, pre-commit, tooling, devops]
+tags:
+  [python, workflow, automation, ci-cd, ruff, uv, pre-commit, tooling, devops]
 pin: true
 toc: true
 comments: true
@@ -33,10 +34,10 @@ Before we even install a single Python package, we lay the foundation. These are
 
 ### The Universal Translator: `.editorconfig`
 
-The eternal "tabs vs. spaces" war, resulting in a chaotic mix of indentation styles. In his seminal book, *Clean Code*, Robert C. Martin argues that consistent formatting is a cornerstone of professional development. Code that is difficult to read is where bugs hide and multiply.
+The eternal "tabs vs. spaces" war, resulting in a chaotic mix of indentation styles. In his seminal book, _Clean Code_, Robert C. Martin argues that consistent formatting is a cornerstone of professional development. Code that is difficult to read is where bugs hide and multiply.
 
 > `.editorconfig` enforces a consistent coding style across different editors. A robust configuration, which serves as a great starting point, looks like this:
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ```ini
 # This is the top-most EditorConfig file.
@@ -102,7 +103,6 @@ strict = true
 
 A quick look at this file tells a new developer almost everything they need to know about the project's structure and tooling.
 
-
 ## Step 3: Choosing Your Weapons: The Modern Toolchain
 
 The choice of tools directly impacts your productivity. The old way involved a whole zoo of them: `pip`, `venv`, `pip-tools`, `pylint`, `flake8`, `black`, `isort`, and more. This wasn't just complex; it was slow.
@@ -112,7 +112,7 @@ The modern approach is **consolidation**.
 > **`uv`**: An extremely fast, all-in-one project and package manager written in Rust. `uv` replaces `pip`, `venv`, and `pip-tools` with a single, coherent command-line interface.
 >
 > **`ruff`**: Another tool written in Rust, `ruff` is a linter and formatter that is orders of magnitude faster than its predecessors. It replaces the entire suite of `flake8`, `black`, `isort`, and `pydocstyle` with a single tool.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 By choosing `uv` and `ruff`, we drastically simplify our setup, reduce configuration overhead, and make our local development and CI pipelines significantly faster.
 
@@ -133,7 +133,7 @@ quality = { sequence = ["lint", "mypy"] }
 ```
 
 > Now, any developer can run `poe lint` or `poe test` without needing to know the underlying commands or their arguments. This standardization dramatically reduces a cognitive load. A new developer can be productive in minutes, running poe test without needing to decipher complex CLI arguments.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ## Step 5: Local "Guardians" of Quality (`pre-commit`)
 
@@ -153,11 +153,11 @@ repos:
     hooks:
       - id: ruff-format
       - id: ruff-check
-        args: [ --fix ]
+        args: [--fix]
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 'v1.17.0'
+    rev: "v1.17.0"
     hooks:
-    -   id: mypy
+      - id: mypy
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.27.2
     hooks:
@@ -165,7 +165,7 @@ repos:
 ```
 
 > You no longer have to remember to run the formatter, linter, or type checker. You just focus on your code and run git commit. The guardians handle the quality checks for you. This is the first major step in letting us "stop thinking" about quality checks.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ## Step 6: The Ultimate Safety Net (CI/CD)
 
@@ -179,10 +179,10 @@ This workflow is our main line of defense. It runs a comprehensive suite of chec
 
 > **Key features of this workflow:**
 >
-> * **Multi-version Testing**: The `strategy.matrix` runs our entire test suite on multiple Python versions, guaranteeing compatibility.
-> * **Perfect Reproducibility**: The `uv sync --locked` command is crucial. It uses the `uv.lock` file to install the *exact* same package versions, eliminating any "it works on my machine" issues.
-> * **Comprehensive Checks**: It runs the formatter, linter, type checker, and all unit tests, providing a complete quality report.
-{: .prompt-tip }
+> - **Multi-version Testing**: The `strategy.matrix` runs our entire test suite on multiple Python versions, guaranteeing compatibility.
+> - **Perfect Reproducibility**: The `uv sync --locked` command is crucial. It uses the `uv.lock` file to install the _exact_ same package versions, eliminating any "it works on my machine" issues.
+> - **Comprehensive Checks**: It runs the formatter, linter, type checker, and all unit tests, providing a complete quality report.
+>   {: .prompt-tip }
 
 ### Docs as Code: `docs.yaml`
 
@@ -193,7 +193,7 @@ name: Publish Docs to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ['docs/**', 'mkdocs.yml']
+    paths: ["docs/**", "mkdocs.yml"]
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -207,7 +207,7 @@ jobs:
 ```
 
 > Now, whenever we update our documentation, the system automatically rebuilds and deploys the website to GitHub Pages. We simply write, and the system publishes.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ### Full Autopilot: Release and Publish
 
@@ -217,7 +217,7 @@ The final step is to automate the release process itself. With two more workflow
 2. **`publish.yaml`**: This workflow is triggered by the creation of a new release. It builds the Python package and publishes it directly to PyPI.
 
 > This is the pinnacle of our "stop thinking, start shipping" philosophy. The entire, error-prone release dance — updating versions, writing changelogs, building, and publishing — is now automated and reduced to a few confident clicks.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 ## Conclusion: Your Blueprint for Speed and Quality
 
@@ -225,6 +225,6 @@ We have journeyed from the invisible foundation of `.editorconfig` to a fully au
 
 The result is a development system where quality isn't an obstacle, but an automated tailwind. It's not just about better code; it's about a better, less stressful development experience. This setup frees you from the cognitive load of remembering style guides, running manual checks, or performing tedious release steps. It allows you to pour all your energy into what truly matters: solving problems and shipping great software.
 
-I encourage you to use this article and my [public repository](https://github.com/rabestro/hyperskill-python-portfolio){:target="_blank"} as a blueprint for your own projects. Adapt it, improve it, and most importantly, use it to help you stop thinking and start shipping.
+I encourage you to use this article and my [public repository](https://github.com/rabestro/hyperskill-python-portfolio){:target="\_blank"} as a blueprint for your own projects. Adapt it, improve it, and most importantly, use it to help you stop thinking and start shipping.
 
 What are your thoughts on this setup? Do you use a different set of tools or have a workflow that has served you well? I'd love to hear about your experiences and suggestions in the comments below.

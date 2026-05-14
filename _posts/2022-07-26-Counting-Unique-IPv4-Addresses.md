@@ -36,7 +36,7 @@ sort -u ips.txt | wc -l
 But on large files, the execution time will be very significant. In the end, instead of the result, we get an error message:
 
 ```log
-sort: write failed: /tmp/sortcQjXmj: No space left on device 
+sort: write failed: /tmp/sortcQjXmj: No space left on device
 0
 ```
 
@@ -55,7 +55,7 @@ class IPCounter {
         try (var lines = Files.lines(path)) {
 
             // count the number of unique addresses
-            var unique = ... 
+            var unique = ...
 
             System.out.println(unique);
         } catch (IOException e) {
@@ -74,7 +74,7 @@ We just need to add code to count unique addresses, and below we will consider p
 Our first attempt to solve this task will look like this:
 
 ```java
-var unique = lines.distinct().count();    
+var unique = lines.distinct().count();
 ```
 
 Just like in the case with the command line, this solution will work only on small data volumes. On our test file of 120 Gb, the program, launched on a personal computer with 8 Gb RAM, ended with an error:
@@ -147,7 +147,7 @@ Since we will only use a sequential stream, we can omit the implementation of th
 ```java
 public interface IntContainer {
     // accumulator
-    void add(int number); 
+    void add(int number);
 
     // combiner
     default void addAll(IntContainer other) {
@@ -289,7 +289,7 @@ public class LongArrayContainer implements IntContainer {
     public void add(final int number) {
         final int index = number >>> VALUE_SIZE;
         final int value = number & VALUE_MASK;
-        
+
         storage[index] |= 1L << value;
     }
 

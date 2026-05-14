@@ -6,17 +6,17 @@ tags: [ai, gpt-4]
 mermaid: false
 ---
 
-
 ## The AI Conversation Log
 
 {% raw %}
-👤 Hello, 
+👤 Hello,
 
 🤖 Hello! How can I help you today? If you have a task or a problem related to Java development that you'd like me to assist with, please provide a description, and we can get started.
 
 👤 I have to implement a static method for the Service interface, which returns true if the user is over 18 years old.
 
 The classes are:
+
 ```java
 package com.epam.jmp.dto;
 
@@ -174,6 +174,7 @@ class ServiceAiTest {
     }
 }
 ```
+
 As shown, we've injected a fixed `Clock` instance to the `UserService` so it doesn't depend on the system time. Please let me know if this solution is acceptable, and we can continue from there.
 
 👤 We don't have access to the User class, and therefore we can't change it. However, we can add a predicate class alongside the Service interface. For example, it can be class implementing Predicate<User> and this class can have Clock filed. In static method we can use this class and for testing we can add second constructor to the predicate class and mock clock.
@@ -269,7 +270,7 @@ class ServiceAiTest {
 
 This solution should fulfill your requirements, as it doesn't depend on the system time and allows using a mocked `Clock` in test cases. Please let me know if this solution works for your use case.
 
-👤 I prefer to separate a test case where the user is null and create a separate test method for it. also add a test case where user is not null but birthday is null. 
+👤 I prefer to separate a test case where the user is null and create a separate test method for it. also add a test case where user is not null but birthday is null.
 
 🤖 Understood, let's separate the test case where the user is null and where the user's birthday is null into their own test methods. We will also need to adjust the `UserPayablePredicate` class to handle the case when the user's birthday is null.
 
@@ -406,7 +407,7 @@ With this implementation, the predicate will return `true` when the user is at l
 
 Please kindly evaluate this new implementation.
 
-👤 fine! Now generate the Service class with a static method that uses the instance of this predicate. You may define a constant in the interface or create a predicate inside the static method. Suggest what is better.  
+👤 fine! Now generate the Service class with a static method that uses the instance of this predicate. You may define a constant in the interface or create a predicate inside the static method. Suggest what is better.
 
 🤖 Both options can be valid depending on the use case, but considering that the `UserPayablePredicate` does not have any state aside from the `Clock`, it would be more efficient to define a constant for the default predicate instance in the `Service` interface. This way, we can reuse the same default predicate instance in multiple invocations of the static method, minimizing object creation overhead.
 

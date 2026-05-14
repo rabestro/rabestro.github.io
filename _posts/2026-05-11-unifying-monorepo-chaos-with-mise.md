@@ -2,13 +2,14 @@
 title: "Streamlining a Multi-Stack Monorepo Workspace with Mise"
 date: 2026-05-11 22:35:00 +0300
 categories: [DevOps, Workflow]
-tags: [mise, taskrunner, monorepo, developer-experience, python, svelte, powershell]
+tags:
+  [mise, taskrunner, monorepo, developer-experience, python, svelte, powershell]
 mermaid: false
 ---
 
-I am building a pet project called [Dice Chess Lab](https://dicechess-lab.jegors-cemisovs.workers.dev/). It is a monorepo comprising three distinct parts: a Python FastAPI backend, a Svelte frontend, and an Astro-based documentation site. 
+I am building a pet project called [Dice Chess Lab](https://dicechess-lab.jegors-cemisovs.workers.dev/). It is a monorepo comprising three distinct parts: a Python FastAPI backend, a Svelte frontend, and an Astro-based documentation site.
 
-As the sole developer, I frequently switch between a MacBook Air and a Windows laptop depending on where I am. As the project grew, I began to notice a lot of friction accumulating in my daily workflow. 
+As the sole developer, I frequently switch between a MacBook Air and a Windows laptop depending on where I am. As the project grew, I began to notice a lot of friction accumulating in my daily workflow.
 
 Eventually, I decided it was time to clean up the mess. In this article, I'll walk through how I resolved these issues by adopting a single orchestration tool: [Mise-en-place](https://mise.jdx.dev/) (or `mise`).
 
@@ -29,11 +30,13 @@ I discovered **Mise-en-place**. Most people know it as a fast, drop-in replaceme
 The installation was straightforward using the native package managers I already use.
 
 On macOS (MacBook Air):
+
 ```bash
 brew install mise
 ```
 
 On Windows:
+
 ```powershell
 winget install jdx.mise
 ```
@@ -101,6 +104,7 @@ run = "uv run ruff check src"
 ```
 
 ### Root Orchestration
+
 With separate component tasks set up, I turned the root configuration file into a global dashboard. I used the `--cd` flag to fire component commands without actually leaving the root directory.
 
 ```toml
@@ -156,7 +160,7 @@ run = "pwsh ./scripts/ops/refresh_local_db.ps1"
 
 ## Making isolation easy
 
-Finally, Mise is really smart about scoping environment variables to specific tasks. 
+Finally, Mise is really smart about scoping environment variables to specific tasks.
 
 For End-to-End (E2E) Playwright testing, I need to enable mock authentication to iterate rapidly without querying live cloud servers. Instead of forcing my global `.env` files to hold these test keys permanently, I restricted them directly to the testing command:
 
@@ -168,13 +172,13 @@ dir = "frontend-pwa"
 env = { MOCK_AUTH = "true", VITE_MOCK_AUTH = "true" }
 ```
 
-Now, executing `mise run e2e` fires up exactly the right context for that specific job and cleans itself up afterward. 
+Now, executing `mise run e2e` fires up exactly the right context for that specific job and cleans itself up afterward.
 
 ## First-Class IDE Integration
 
 As awesome as the terminal is, sometimes you just want a visual workflow. To my delight, `mise` enjoys first-class citizen treatment inside modern editors.
 
-I installed the [official Mise plugin](https://plugins.jetbrains.com/plugin/24904-mise) for JetBrains, and it seamlessly hooked into my environment. 
+I installed the [official Mise plugin](https://plugins.jetbrains.com/plugin/24904-mise) for JetBrains, and it seamlessly hooked into my environment.
 
 ![Mise tool window and runner in JetBrains IDE](/assets/img/2026-05-12-mise-jetbrains-tool-window.png)
 _The plugin provides a dedicated Tool Window to visualize active tools, monitor running tasks, and provide deep integration with the native Run configurations system._

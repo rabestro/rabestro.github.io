@@ -19,9 +19,9 @@ title: Jegors Čemisovs
 tagline: Articles and tutorials on technology and programming
 
 description: >- # used by seo meta and the atom feed
-    Jegors Čemisovs' Tech Blog is your destination for informative articles,
-    tutorials, and discussions on various technology topics, including
-    programming, software development best practices, and more.
+  Jegors Čemisovs' Tech Blog is your destination for informative articles,
+  tutorials, and discussions on various technology topics, including
+  programming, software development best practices, and more.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -43,9 +43,9 @@ social:
     - https://exercism.org/profiles/rabestro
     - https://github.com/rabestro
     # - https://twitter.com/rabestro
-      # Uncomment below to add more social links
-      # - https://www.facebook.com/username
-      #    - https://app.pluralsight.com/profile/rabestro
+    # Uncomment below to add more social links
+    # - https://www.facebook.com/username
+    #    - https://app.pluralsight.com/profile/rabestro
 
 # Site Verification Settings
 webmaster_verifications:

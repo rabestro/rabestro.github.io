@@ -1,5 +1,14 @@
 [tools]
 ruby = "3.3"
+pre-commit = "latest"
+
+[tasks.setup]
+description = "Setup all project dependencies"
+depends = ["setup:bundle", "setup:pre-commit"]
+
+[tasks."setup:pre-commit"]
+description = "Install pre-commit hooks"
+run = "pre-commit install"
 
 [tasks."setup:bundle"]
 description = "Install Ruby dependencies"

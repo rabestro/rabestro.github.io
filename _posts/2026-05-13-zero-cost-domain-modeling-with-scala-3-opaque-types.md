@@ -2,16 +2,25 @@
 title: "Zero-Cost Domain Modeling in Scala 3: From Heavy Heap to Packed Primitives"
 date: 2026-05-13 19:30:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
-tags: [scala3, architecture, optimization, domain-driven-design, performance, zero-cost-abstractions, chess-engine]
+tags:
+  [
+    scala3,
+    architecture,
+    optimization,
+    domain-driven-design,
+    performance,
+    zero-cost-abstractions,
+    chess-engine,
+  ]
 math: true
 mermaid: false
 ---
 
-I am currently building a high-performance Scala 3 search engine for a variation of chess called **Dice Chess**. 
+I am currently building a high-performance Scala 3 search engine for a variation of chess called **Dice Chess**.
 
 When writing an engine that needs to traverse millions (or billions) of game states using Expectimax or Alpha-Beta search, **object allocation is the ultimate enemy**. Every single byte allocated on the heap during hot loops creates garbage collector (GC) pressure, induces CPU cache misses due to pointer chasing, and robs the engine of speed.
 
-For my core domain—representing things like `Color`, `Piece`, `Square`, and `Move`—I wanted the best of both worlds: **type-safe, readable domain code** during development, and **absolute zero overhead** at runtime. 
+For my core domain—representing things like `Color`, `Piece`, `Square`, and `Move`—I wanted the best of both worlds: **type-safe, readable domain code** during development, and **absolute zero overhead** at runtime.
 
 In this article, I will walk through how my AI pair-programmer and I refactored our core models from traditional heap-allocated structures to **Scala 3 Opaque Types** and bitwise packed primitives. Along the way, we ran into three fascinating compiler restrictions that forced us to deepen our understanding of Scala 3's internal mechanics.
 
@@ -37,7 +46,7 @@ In Scala 2, we could try using **Value Classes** (`extends AnyVal`). However, Va
 
 ## The Scala 3 Savior: Opaque Types
 
-Scala 3 introduces **Opaque Types**. Unlike type aliases (which are transparent), an `opaque type` hides its underlying primitive representation from the outside world, but compiles down *exactly* to that primitive.
+Scala 3 introduces **Opaque Types**. Unlike type aliases (which are transparent), an `opaque type` hides its underlying primitive representation from the outside world, but compiles down _exactly_ to that primitive.
 
 At compile-time, it's a strong, distinct type. At runtime, it is just an `Int` or a `Long`. Absolutely zero memory footprint.
 
@@ -102,22 +111,23 @@ extension (s: Square) def toNotation: String = ???
 extension (mv: MicroMove) def toNotation: String = ???
 ```
 
-The compiler screamed! Why? Because inside the defining package, both `Square` and `MicroMove` are seen as their underlying type: `Int`. 
+The compiler screamed! Why? Because inside the defining package, both `Square` and `MicroMove` are seen as their underlying type: `Int`.
 
 To the compiler, we were trying to define two different functions named `toNotation` that both accepted a raw `Int`. This is a direct method overload collision at the JVM bytecode level (Type Erasure)!
 
 **The Fix: Companion Scoping**
-By nesting the `extension` blocks directly **inside each companion object**, Scala 3 compiles the extension methods independently into distinct companion binaries (`Square$` and `MicroMove$`). 
+By nesting the `extension` blocks directly **inside each companion object**, Scala 3 compiles the extension methods independently into distinct companion binaries (`Square$` and `MicroMove$`).
 
 ```scala
 object Square:
-  extension (s: Square) 
+  extension (s: Square)
     def toNotation: String = ...
 
 object MicroMove:
-  extension (mv: MicroMove) 
+  extension (mv: MicroMove)
     def toNotation: String = ...
 ```
+
 This cleanly organizes the API surface and completely bypasses JVM erasure conflicts!
 
 ---
@@ -135,19 +145,22 @@ The compiler rejected this with a very informative error:
 `The type of an inline val cannot be an opaque type. To inline, consider using inline def instead`.
 
 So we dutifully changed them to `inline def`:
+
 ```scala
 object PieceType:
   inline def Pawn: PieceType = 1
 ```
 
 This fixed the constant definition, but completely broke our **pattern matching**!
+
 ```scala
 somePieceType match
   case PieceType.Pawn => "p" // Compiler Error!
 ```
+
 Error: `Stable identifier required, but PieceType.Pawn found`.
 
-In Scala, you cannot pattern match against a `def` because it's a method call, not a stable value. 
+In Scala, you cannot pattern match against a `def` because it's a method call, not a stable value.
 
 **The Fix: Plain old `val`**
 It turns out `inline` was complete overkill here. For simple opaque primitive constants, a standard final `val` is 100% permitted. It satisfies the Stable Identifier requirement for fast pattern matching, and the JIT compiler easily inlines it into an absolute constant at runtime anyway!
@@ -173,8 +186,8 @@ extension (mv: MicroMove)
 The strict compiler suddenly issued a fascinating warning:
 `Warning: Infinite loop in function body`.
 
-Wait, why an infinite loop? 
-Because in the local scope of `Models.scala`, both `Square` and `MicroMove` erase to `Int`. So when we called `mv.from.toNotation`, the compiler resolved `toNotation` to the *current* method (`MicroMove.toNotation`) instead of `Square.toNotation`! It was accidentally predicting a runtime StackOverflow before we even ran a single test!
+Wait, why an infinite loop?
+Because in the local scope of `Models.scala`, both `Square` and `MicroMove` erase to `Int`. So when we called `mv.from.toNotation`, the compiler resolved `toNotation` to the _current_ method (`MicroMove.toNotation`) instead of `Square.toNotation`! It was accidentally predicting a runtime StackOverflow before we even ran a single test!
 
 **The Fix: Unambiguous Invocation**
 We bypassed the extension method sugar and invoked the companion object's extension explicitly:
@@ -184,6 +197,7 @@ extension (mv: MicroMove)
   def toNotation: String =
     s"${Square.toNotation(mv.from)}${Square.toNotation(mv.to)}"
 ```
+
 This was unambiguous, 100% safe, and compiled cleanly.
 
 ---

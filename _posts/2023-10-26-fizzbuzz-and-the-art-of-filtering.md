@@ -5,6 +5,7 @@ categories: [Java]
 tags: [java, stream-api, predicates]
 mermaid: false
 ---
+
 # FizzBuzz and the art of filtering
 
 #### Stream API-based Tasks Inspired by the Classic Problem
@@ -12,7 +13,6 @@ mermaid: false
 The FizzBuzz problem is a classic coding challenge often used in programming interviews. It is usually presented as follows:
 
 > Create a program that prints numbers from 1 to n. - If the number is divisible by 3, print ‘Fizz’; - If the number is divisible by 5, print ‘Buzz’; - If the number is divisible by both 3 and 5, print ‘FizzBuzz’.
->
 
 This problem inspired me to work with Stream API using predefined `fizz` and `buzz` predicates. We aim to create various filters for a stream of integers using these predicates.
 
@@ -46,8 +46,8 @@ However, a more convenient and preferable approach would be to use the `and` met
 ```java
 IntPredicate fizzBuzz = fizz.and(buzz);
 
-assertThat(numbers.filter(fizzBuzz))        
-		.as("Numbers divisible by three and five")        
+assertThat(numbers.filter(fizzBuzz))
+		.as("Numbers divisible by three and five")
 		.containsExactly(15);
 ```
 
@@ -58,8 +58,8 @@ This solution is similar to the previous one but uses the `or` method instead of
 ```java
 IntPredicate fizzBuzz = fizz.or(buzz);
 
-assertThat(numbers.filter(fizzBuzz))        
-		.as("Numbers divisible by three or five")        
+assertThat(numbers.filter(fizzBuzz))
+		.as("Numbers divisible by three or five")
 		.containsExactly(3, 5, 6, 9, 10, 12, 15, 18, 20);
 ```
 
@@ -70,8 +70,8 @@ In order to filter numbers that are not divisible by 3 or 5, we can use the `Int
 ```java
 IntPredicate fizzBuzz = fizz.or(buzz).negate();
 
-assertThat(numbers.filter(fizzBuzz))        
-		.as("Numbers not divisible by three or five")        
+assertThat(numbers.filter(fizzBuzz))
+		.as("Numbers not divisible by three or five")
 		.containsExactly(1, 2, 4, 7, 8, 11, 13, 14, 16, 17, 19);
 ```
 
@@ -82,8 +82,8 @@ The next task is to filter numbers that are divisible by either 3 or 5, but not 
 ```java
 IntPredicate fizzBuzz = i -> fizz.test(i) ^ buzz.test(i);
 
-assertThat(numbers.filter(fizzBuzz))        
-		.as("Numbers divisible by either three or five")        
+assertThat(numbers.filter(fizzBuzz))
+		.as("Numbers divisible by either three or five")
 		.containsExactly(3, 5, 6, 9, 10, 12, 18, 20);
 ```
 
@@ -119,7 +119,7 @@ assertThat(result)
 
 ## Bonus Task: FizzBuzz as a Flip-Flop predicate
 
-Programming languages like Ruby or Raku have a [flip-flop operator](https://en.wikipedia.org/wiki/Flip-flop_(programming)), which is not available in Java by default. However, we can create it from scratch.
+Programming languages like Ruby or Raku have a [flip-flop operator](<https://en.wikipedia.org/wiki/Flip-flop_(programming)>), which is not available in Java by default. However, we can create it from scratch.
 
 As a final task, I invite you to test your predicate-building skills. Create a method that takes two predicates, `fizz` and `buzz` as input and returns a flip-flop predicate. This predicate must filter down a series of numbers, starting with a number satisfying the predicate `fizz` and ending with a number satisfying the predicate `buzz`. The method signature looks like this:
 

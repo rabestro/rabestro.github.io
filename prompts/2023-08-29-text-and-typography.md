@@ -2,7 +2,7 @@
 title: "Text and Typography"
 date: 2023-08-29
 categories: [Blog]
-tags: [typography]     # TAG names should always be lowercase
+tags: [typography] # TAG names should always be lowercase
 ---
 
 This post tests different text styles.
@@ -28,11 +28,11 @@ You can use the mark tag to highlight{:.mark} text.
 > Someone famous in Source Title
 
 > A well-known quote, contained in a blockquote element.
-{: .blockquote}
+> {: .blockquote}
 > Someone famous in Source Title
-{: .blockquote-footer}
+> {: .blockquote-footer}
 
 > A well-known quote, contained in a blockquote element.
-{: .blockquote .text-center} 
+> {: .blockquote .text-center}
 
 ### Heading 3

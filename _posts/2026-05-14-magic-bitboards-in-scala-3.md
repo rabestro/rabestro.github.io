@@ -3,11 +3,12 @@ layout: post
 title: "Sliding Attacks in Chess: The Magic Bitboard Illusion in Scala 3"
 date: 2026-05-14 10:30:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
-tags: [scala3, bitboards, algorithms, gamedev, chess-engine, optimization, hashing]
+tags:
+  [scala3, bitboards, algorithms, gamedev, chess-engine, optimization, hashing]
 math: true
 ---
 
-In my [previous post]({% post_url 2026-05-14-leaper-algorithms-and-bitboards-in-scala-3 %}), we explored how to generate moves for "Leapers" (Kings and Knights) using fast bitwise shifts. Because Leapers ignore other pieces, we could precalculate all their moves at startup. 
+In my [previous post]({% post_url 2026-05-14-leaper-algorithms-and-bitboards-in-scala-3 %}), we explored how to generate moves for "Leapers" (Kings and Knights) using fast bitwise shifts. Because Leapers ignore other pieces, we could precalculate all their moves at startup.
 
 But what about **Sliders** — Rooks, Bishops, and Queens?
 
@@ -41,7 +42,7 @@ Instead of $2^{64}$ possibilities, we now only have to deal with $2^{12} = 4096$
 
 ### Step 2: The Magic Trick (Perfect Hashing)
 
-We now have a 64-bit number, but we know that at most 12 specific bits might be set to `1`. The rest are guaranteed to be `0`. 
+We now have a 64-bit number, but we know that at most 12 specific bits might be set to `1`. The rest are guaranteed to be `0`.
 
 We need to map these 4096 possible scattered bit patterns to a dense array index from `0` to `4095`.
 
@@ -55,7 +56,7 @@ We then simply shift those bits back down to the bottom to get our index!
 val index = (RelevantOccupancy * MagicNumber) >>> (64 - 12)
 ```
 
-Finding these Magic Numbers is the tricky part. There is no mathematical formula to derive them; they are found via brute-force scripts that try random 64-bit numbers until they find one that maps all 4096 patterns to 4096 unique slots without a single collision. 
+Finding these Magic Numbers is the tricky part. There is no mathematical formula to derive them; they are found via brute-force scripts that try random 64-bit numbers until they find one that maps all 4096 patterns to 4096 unique slots without a single collision.
 
 ### The Scala 3 Implementation
 
@@ -68,10 +69,10 @@ During the actual game search, the code to find a sliding attack is astonishingl
 def rookAttacks(sq: Square, occupancy: Bitboard): Bitboard =
   val i     = sq.index
   val occ   = occupancy & RookMasks(i) // 1. Mask the board
-  
+
   // 2. The Magic Hash!
   val index = ((occ.value * RookMagics(i)) >>> (64 - RookRelevantBits(i))).toInt
-  
+
   // 3. O(1) Array Lookup
   RookTable(RookOffsets(i) + index)
 ```

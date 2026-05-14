@@ -6,17 +6,15 @@ tags: [ai, gpt-4]
 mermaid: false
 ---
 
-
-
 ## The AI Conversation Log
 
 {% raw %}
-👤 
+👤
 
 ```java
 class Solution {
     public int getSum(int a, int b) {
-        
+
     }
 }
 ```
@@ -39,31 +37,35 @@ Constraints:
 
     -1000 <= a, b <= 1000
 
-
-
 🤖 Thank you for providing the problem statement. Based on the given information, I will suggest the following test cases for black box testing:
 
 Test Case 1: Normal case
+
 - Input: a = 1, b = 2
 - Expected Output: 3
 
 Test Case 2: Normal case
+
 - Input: a = 2, b = 3
 - Expected Output: 5
 
 Test Case 3: Edge case - minimum values
+
 - Input: a = -1000, b = -1000
 - Expected Output: -2000
 
 Test Case 4: Edge case - maximum values
+
 - Input: a = 1000, b = 1000
 - Expected Output: 2000
 
 Test Case 5: Edge case - zero values
+
 - Input: a = 0, b = 0
 - Expected Output: 0
 
 Test Case 6: Edge case - negative and positive values
+
 - Input: a = -500, b = 500
 - Expected Output: 0
 
@@ -74,10 +76,12 @@ Please confirm if these test cases are good to proceed with generating the test 
 🤖 Sure, I have added two more test cases as per your request:
 
 Test Case 7: Edge case - one value is zero and the other is positive
+
 - Input: a = 0, b = 5
 - Expected Output: 5
 
 Test Case 8: Edge case - one value is zero and the other is negative
+
 - Input: a = 0, b = -5
 - Expected Output: -5
 
@@ -88,10 +92,12 @@ Please confirm if these test cases are good to proceed with generating the test 
 🤖 I have added two more test cases where b = 0:
 
 Test Case 9: Edge case - one value is positive and the other is zero
+
 - Input: a = 5, b = 0
 - Expected Output: 5
 
 Test Case 10: Edge case - one value is negative and the other is zero
+
 - Input: a = -5, b = 0
 - Expected Output: -5
 

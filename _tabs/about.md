@@ -30,7 +30,6 @@ Previously, at EPAM Systems, I was involved in developing an internal training p
 
 - **Key Certificates:** [OCP Java 11](https://www.credly.com/badges/4aeb5ea6-5180-4adb-98f8-e5f879dd2c5f), [Azure Developer (AZ-204)](https://learn.microsoft.com/en-us/users/jegors-cemisovs/credentials/certification/azure-developer?tab=credentials-tab), and several Azure fundamentals certificates (AI-900, DP-900, AZ-900).
 
-
 ## Beyond the Keyboard
 
 When I'm not coding, I enjoy strategic challenges like Dice Chess. In 2024, I was thrilled to participate in the [3rd Latvian Dice Chess Championship](https://dicechess.net/3rd-latvian-dice-chess-championship-how-it-went/ "null"), an experience that was both challenging and incredibly fun.
