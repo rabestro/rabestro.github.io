@@ -3,6 +3,7 @@ title: "Zero-Cost Domain Modeling in Scala 3: From Heavy Heap to Packed Primitiv
 date: 2026-05-13 19:30:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
 tags: [scala3, architecture, optimization, domain-driven-design, performance, zero-cost-abstractions, chess-engine]
+math: true
 mermaid: false
 ---
 

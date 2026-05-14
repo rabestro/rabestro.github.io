@@ -4,6 +4,7 @@ title: "O(1) Sliding Attacks in Chess: The Magic Bitboard Illusion in Scala 3"
 date: 2026-05-14 12:00:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
 tags: [scala3, bitboards, algorithms, gamedev, chess-engine, optimization, hashing]
+math: true
 ---
 
 In my [previous post]({% post_url 2026-05-14-leaper-algorithms-and-bitboards-in-scala-3 %}), we explored how to generate moves for "Leapers" (Kings and Knights) using fast bitwise shifts. Because Leapers ignore other pieces, we could precalculate all their moves at startup. 

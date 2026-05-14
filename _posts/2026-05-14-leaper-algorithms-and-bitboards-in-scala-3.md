@@ -4,6 +4,7 @@ title: "Why Kings and Knights Are the Same: Blazing Fast Leaper Attacks in Scala
 date: 2026-05-14 10:00:00 +0300
 categories: [Scala 3, Chess Engine, Performance]
 tags: [scala3, bitboards, algorithms, gamedev, chess-engine, optimization]
+math: true
 ---
 
 Yesterday, I was explaining the architecture of my new Dice Chess Engine to a friend. We were talking about move generation — the core algorithm that determines where a piece can legally move. 
