@@ -4,8 +4,8 @@ ruby = "3.3"
 [tasks."setup:bundle"]
 description = "Install Ruby dependencies"
 run = "bundle install"
-sources = ["Gemfile"]
-# We don't use Gemfile.lock since it's gitignored in this repo
+sources = ["Gemfile", "Gemfile.lock"]
+# Gemfile.lock is now tracked for reproducibility
 
 [tasks.dev]
 description = "Run Jekyll development server"
