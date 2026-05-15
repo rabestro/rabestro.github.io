@@ -41,6 +41,24 @@ On Windows:
 winget install jdx.mise
 ```
 
+### Shell Activation
+
+There is one critical step that many newcomers (including myself at first) miss: **Shell Activation**. 
+
+While `mise install` puts the tools on your disk, your terminal won't "see" them automatically unless you activate Mise in your shell profile. Without this, running `python --version` might still show an old system version instead of the one defined in your `mise.toml`.
+
+To fix this, you need to add the activation line to your shell configuration:
+
+**For macOS (zsh):** Add `eval "$(mise activate zsh)"` to your `~/.zshrc`.
+
+**For PowerShell (Windows/macOS):** Add the following to your `$PROFILE`:
+
+```powershell
+Invoke-Expression (& mise activate pwsh | Out-String)
+```
+
+Once activated, Mise becomes "invisible" — it automatically swaps tool versions in the background as you `cd` into different project directories.
+
 Once installed, I stopped configuring my machines manually and started describing my entire developer landscape in a single `mise.toml` file at the root of my repo.
 
 ## One configuration to install them all
