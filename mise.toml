@@ -5,7 +5,7 @@ ruby = "3.3"                   # Required for Jekyll static site generation
 # --- CLI Utilities ---
 gh = "latest"                  # GitHub CLI for PRs and site maintenance
 fd = "latest"                  # Fast file finder
-tldr = "latest"                # Quick CLI command reference
+"aqua:tealdeer-rs/tealdeer" = "latest" # Quick CLI command reference (tldr)
 
 # --- AI & Automation (Agentic Tools) ---
 jq = "latest"                  # JSON processor
