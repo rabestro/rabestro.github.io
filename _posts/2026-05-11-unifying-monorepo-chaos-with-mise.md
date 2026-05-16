@@ -74,7 +74,7 @@ gh = "latest"
 sqlite = "latest"
 gemini = "latest"
 powershell = "latest"
-pre-commit = "latest"
+"pipx:pre-commit" = "latest"
 actionlint = "latest"
 ```
 
@@ -85,6 +85,40 @@ mise install
 ```
 
 Mise automatically resolves, downloads, and installs every tool listed above — from language runtimes like Node and Python to CLI utilities like `gh`, `actionlint`, and even `powershell`. Everything is self-contained. No separate manuals are required.
+
+## The First-Run Experience: Windows ARM64 Gotchas
+
+While Mise aims for a "zero-friction" setup, my recent experience helping a friend set up their new Windows ARM64 laptop revealed two important steps that every cross-platform developer should know.
+
+### 1. Trust is Earned
+
+When you clone a repository containing a `mise.toml` for the first time, Mise will protect you by refusing to execute any tasks or load the configuration until you explicitly "trust" it. This is a security measure to prevent malicious repositories from running arbitrary code on your machine as soon as you `cd` into them.
+
+If you see a red `ERROR Config files ... are not trusted`, don't panic. Simply run:
+
+```powershell
+mise trust
+```
+
+![Mise trust error and resolution](/assets/img/2026-05-13-win-mise-trust.png)
+_Mise requires explicit trust before loading project-specific configurations on a new machine._
+
+### 2. The Pre-Commit ARM64 Puzzle
+
+The second hurdle was more specific to the Windows ARM64 architecture. The default installation method for `pre-commit` (which uses the `aqua` registry in Mise) doesn't currently provide a pre-compiled binary for Windows on ARM.
+
+![Mise install failure for pre-commit](/assets/img/2026-05-13-win-mise-install.png)
+_A standard `mise install` might fail on ARM64 for certain tools that lack pre-compiled binaries in the default registry._
+
+The solution? Leveraging Mise's backend flexibility. Since `pre-commit` is a Python tool, I switched the backend from the default to **`pipx:`**. This tells Mise to install the tool using Python (via `uv`), which works perfectly regardless of the underlying processor architecture.
+
+```toml
+[tools]
+"pipx:pre-commit" = "latest"
+```
+
+![Fixed pre-commit installation](/assets/img/2026-05-13-win-mise-pipx-pre-commit.png)
+_By switching to the `pipx:` backend, I bypassed the missing binary issue and successfully provisioned pre-commit on ARM64._
 
 ### Beyond the built-in registry
 
