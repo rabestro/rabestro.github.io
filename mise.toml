@@ -1,12 +1,19 @@
 [tools]
-ruby = "3.3"
-gh = "latest"
+# --- Core Runtime & Build ---
+ruby = "3.3"                   # Required for Jekyll static site generation
+
+# --- CLI Utilities ---
+gh = "latest"                  # GitHub CLI for PRs and site maintenance
+fd = "latest"                  # Fast file finder
+tldr = "latest"                # Quick CLI command reference
+
+# --- AI & Automation (Agentic Tools) ---
 jq = "latest"                  # JSON processor
-yq = "latest"                  # YAML processor
+yq = "latest"                  # YAML processor (Astro/Starlight and GitHub Actions configs)
 "aqua:SonarSource/sonarqube-cli" = "latest" # SonarQube CLI
-fd = "latest"                  # Better find
-tldr = "latest"                # Simplified man pages
-pre-commit = "latest"
+
+# --- Security & Quality ---
+pre-commit = "latest"          # Git hooks manager
 
 [tasks.setup]
 description = "Setup all project dependencies"
