@@ -10,7 +10,6 @@ fd = "latest"                  # Fast file finder
 # --- AI & Automation (Agentic Tools) ---
 jq = "latest"                  # JSON processor
 yq = "latest"                  # YAML processor (Astro/Starlight and GitHub Actions configs)
-"aqua:SonarSource/sonarqube-cli" = "latest" # SonarQube CLI
 
 # --- Security & Quality ---
 pre-commit = "latest"          # Git hooks manager
@@ -37,12 +36,16 @@ run = "bundle exec jekyll serve"
 [tasks.build]
 description = "Build the site for production"
 depends = ["setup:bundle"]
-run = "JEKYLL_ENV=production bundle exec jekyll build"
+env = { JEKYLL_ENV = 'production' }
+run = "bundle exec jekyll build --incremental"
 
 [tasks.check]
 description = "Run HTML Proofer to check for broken links"
 depends = ["build"]
-run = "bundle exec htmlproofer _site --disable-external --ignore-urls '/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/'"
+run = """
+bundle exec htmlproofer _site --disable-external \
+  --ignore-urls '/^http:\\/\\/127.0.0.1/,/^http:\\/\\/0.0.0.0/,/^http:\\/\\/localhost/'
+"""
 
 [tasks.update]
 description = "Update Ruby gems to latest versions"
