@@ -1,6 +1,8 @@
 [tools]
 ruby = "3.3"
-pre-commit = "latest"
+"pipx:pre-commit" = "latest"
+python = "3.14"
+uv = "latest"
 
 [tasks.setup]
 description = "Setup all project dependencies"
