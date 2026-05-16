@@ -1,5 +1,11 @@
 [tools]
 ruby = "3.3"
+gh = "latest"
+jq = "latest"                  # JSON processor
+yq = "latest"                  # YAML processor
+"aqua:SonarSource/sonarqube-cli" = "latest" # SonarQube CLI
+fd = "latest"                  # Better find
+tldr = "latest"                # Simplified man pages
 pre-commit = "latest"
 
 [tasks.setup]
