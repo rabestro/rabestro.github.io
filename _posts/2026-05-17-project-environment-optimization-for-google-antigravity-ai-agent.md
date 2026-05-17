@@ -14,6 +14,8 @@ tags:
     tokei,
   ]
 mermaid: false
+hidden: true
+draft: true
 ---
 
 We are living in the era of AI-assisted software development. Large Language Models (LLMs) have evolved from simple chat completions into fully autonomous coding agents like **Google Antigravity**. These agents can checkout branches, run local validation suites, create pull requests, and debug complex multi-stack codebases.
