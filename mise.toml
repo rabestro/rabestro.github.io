@@ -2,17 +2,15 @@
 # --- Core Runtime & Build ---
 ruby = "3.3"                   # Required for Jekyll static site generation
 
-# --- CLI Utilities ---
-gh = "latest"                  # GitHub CLI for PRs and site maintenance
-fd = "latest"                  # Fast file finder
-"aqua:tealdeer-rs/tealdeer" = "latest" # Quick CLI command reference (tldr)
+# --- Security & Quality ---
+pre-commit = "latest"          # Git hooks manager
 
 # --- AI & Automation (Agentic Tools) ---
 jq = "latest"                  # JSON processor
 yq = "latest"                  # YAML processor (Astro/Starlight and GitHub Actions configs)
-
-# --- Security & Quality ---
-pre-commit = "latest"          # Git hooks manager
+gh = "latest"                  # GitHub CLI for PRs and site maintenance
+fd = "latest"                  # Fast file finder
+"aqua:tealdeer-rs/tealdeer" = "latest" # Quick CLI command reference (tldr)
 
 [tasks.setup]
 description = "Setup all project dependencies"
