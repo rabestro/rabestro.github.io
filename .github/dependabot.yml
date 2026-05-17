@@ -2,11 +2,15 @@ version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    assignees:
+      - "rabestro"
+    reviewers:
+      - "rabestro"
     schedule:
       interval: "weekly"
       day: "monday"
       time: "08:00"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 5
     labels:
       - "ci-cd"
     commit-message:
@@ -14,12 +18,32 @@ updates:
 
   - package-ecosystem: "bundler"
     directory: "/"
+    assignees:
+      - "rabestro"
+    reviewers:
+      - "rabestro"
     schedule:
       interval: "weekly"
-      day: "monday"
+      day: "tuesday"
       time: "08:00"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 5
     labels:
       - "dependencies"
+    commit-message:
+      prefix: "chore"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    assignees:
+      - "rabestro"
+    reviewers:
+      - "rabestro"
+    schedule:
+      interval: "weekly"
+      day: "thursday"
+      time: "08:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "ci-cd"
     commit-message:
       prefix: "chore"
