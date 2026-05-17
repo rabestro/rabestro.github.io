@@ -14,7 +14,7 @@ fd = "latest"                  # Fast file finder
 
 [tasks.setup]
 description = "Setup all project dependencies"
-depends = ["setup:bundle", "setup:pre-commit"]
+depends = ["setup:bundle", "setup:pre-commit", "setup:tools"]
 
 [tasks."setup:pre-commit"]
 description = "Install pre-commit hooks"
@@ -25,6 +25,14 @@ description = "Install Ruby dependencies"
 run = "bundle install"
 sources = ["Gemfile", "Gemfile.lock"]
 # Gemfile.lock is now tracked for reproducibility
+
+[tasks."setup:tools"]
+description = "🛠️ Install system and build dependencies (universal-ctags, tree)"
+run_windows = """
+winget install --id UniversalCtags.UniversalCtags --accept-package-agreements --accept-source-agreements
+winget install --id GnuWin32.Tree --accept-package-agreements --accept-source-agreements
+"""
+run = "brew install universal-ctags tree"
 
 [tasks.dev]
 description = "Run Jekyll development server"
