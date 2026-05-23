@@ -30,6 +30,15 @@ Previously, at EPAM Systems, I was involved in developing an internal training p
 
 - **Key Certificates:** [OCP Java 11](https://www.credly.com/badges/4aeb5ea6-5180-4adb-98f8-e5f879dd2c5f), [Azure Developer (AZ-204)](https://learn.microsoft.com/en-us/users/jegors-cemisovs/credentials/certification/azure-developer?tab=credentials-tab), and several Azure fundamentals certificates (AI-900, DP-900, AZ-900).
 
+## Current Projects
+
+I am actively developing the **Dice Chess Engine & Lab**, a comprehensive ecosystem for analyzing and playing Dice Chess:
+
+- [**Dice Chess Engine**](https://github.com/rabestro/dicechess-engine-scala): A high-performance open-source search engine written in Scala 3, featuring magic bitboards, Expectimax search with virtual threads, and Zobrist hashing.
+- [**Dice Chess Lab**](https://dc.jc.id.lv) ([Docs](https://dicechess-lab.jegors-cemisovs.workers.dev/)): A modern, progressive web app (PWA) built with Svelte 5 and FastAPI, serving as a training simulator and analytical tool for players.
+
+These projects combine my passion for AI, high-performance computing, and modern web development.
+
 ## Beyond the Keyboard
 
 When I'm not coding, I enjoy strategic challenges like Dice Chess. In 2024, I was thrilled to participate in the [3rd Latvian Dice Chess Championship](https://dicechess.net/3rd-latvian-dice-chess-championship-how-it-went/ "null"), an experience that was both challenging and incredibly fun.
