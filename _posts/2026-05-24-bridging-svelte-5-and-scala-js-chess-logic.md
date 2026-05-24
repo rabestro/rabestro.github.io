@@ -6,6 +6,7 @@ tags:
   [scala3, svelte, architecture, refactoring, scala-js, dice-chess, frontend]
 math: false
 mermaid: false
+published: false
 ---
 
 Building a robust chess application involves managing incredibly complex game state. But what happens when your frontend needs to understand the rules of the game just as well as your backend?

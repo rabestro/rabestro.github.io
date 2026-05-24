@@ -7,7 +7,7 @@ published: false
 categories: [Technology, Python]
 tags:
   [python, workflow, automation, ci-cd, ruff, uv, pre-commit, tooling, devops]
-pin: true
+pin: false
 toc: true
 comments: true
 img_path: /assets/img/posts/
