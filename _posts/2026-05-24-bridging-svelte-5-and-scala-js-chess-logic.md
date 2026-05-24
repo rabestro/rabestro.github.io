@@ -109,6 +109,11 @@ const nextBoardFenRaw = DiceChess.applyMove(
   promotionStr,
 );
 
+if (!nextBoardFenRaw) {
+  // Move was invalid or rejected by engine
+  return;
+}
+
 // Dice Chess: preserve active color & fullmove until the turn explicitly ends.
 const rawParts = nextBoardFenRaw.split(" ");
 const oldParts = this.currentBoardFen.split(" ");
