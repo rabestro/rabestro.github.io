@@ -127,7 +127,10 @@ private inline def parseEnPassant(
         break(Left(s"Invalid en-passant notation '$fileChar$rankChar'"))
 
       val sq = Square.fromIndex((rankChar - '1') * 8 + (fileChar - 'a'))
-      // ... process square
+      if enPassantBb.contains(sq) then break(Left(s"Duplicate en-passant square '$fileChar$rankChar'"))
+
+      epFiles |= (1 << (fileChar - 'a'))
+      enPassantBb = enPassantBb.add(sq)
       idx += 2
     }
     (epFiles, enPassantBb)
@@ -143,7 +146,7 @@ Here are the JMH results for En-Passant parsing:
 | **`-`** (None) | 1.95 ns | **1.35 ns** | ~30% faster |
 | **`e3`** (Standard) | 12.29 ns | **2.09 ns** | **~82% faster** |
 
-We applied this identical pattern to other fields, such as our custom dice-pool extension and the half-move/full-move clocks. For the integer parsing, we completely bypassed `String.toIntOption` (which allocates a `Some` object or throws exceptions on failure) by rolling our own fast ASCII digit scanner that returns `-1` on error—perfectly triggering our `break` validation without instantiating a single object.
+We applied this identical pattern to other fields, such as our custom dice-pool extension and the half-move/full-move clocks. For the integer parsing, we completely bypassed `String.toIntOption` (which wraps values in `Some` or `None` objects and relies on internal exception handling under the hood) by rolling our own fast ASCII digit scanner that returns `-1` on error—perfectly triggering our `break` validation without instantiating a single object.
 
 ### Conclusion
 
