@@ -2,7 +2,7 @@
 layout: post
 title: "Why Dice Chess Needs a Custom FEN (DFEN)"
 date: 2026-05-26 12:00:00 +0300
-categories: [Architecture, Dice Chess]
+categories: [Architecture, Dice Chess, Chess Engine]
 tags: [scala, web, typescript, design-patterns]
 ---
 
