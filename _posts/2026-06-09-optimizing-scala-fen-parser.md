@@ -14,6 +14,7 @@ tags:
 pin: false
 toc: true
 comments: true
+published: false
 description: "How evolving an MVP chess FEN parser into a robust, validating library component improved both code quality and execution speed using Scala 3 boundaries."
 ---
 

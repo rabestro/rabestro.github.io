@@ -4,6 +4,7 @@ title: "Why Dice Chess Needs a Custom FEN (DFEN)"
 date: 2026-05-26 12:00:00 +0300
 categories: [Architecture, Dice Chess, Chess Engine]
 tags: [scala, web, typescript, design-patterns]
+published: false
 ---
 
 When building a game engine, one of the most critical components is how you represent the game state. In traditional chess, this is a solved problem thanks to **FEN (Forsyth-Edwards Notation)**. FEN allows you to describe any board position using a simple string.
