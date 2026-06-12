@@ -30,8 +30,7 @@ The first decision was to switch the hook manager to
 [Lefthook](https://github.com/evilmartians/lefthook): a single Go binary, YAML
 configuration, parallel execution, no runtime dependencies. It installs cleanly through
 [mise](https://mise.jdx.dev/), which I already use as the task runner and toolchain manager
-everywhere ([I wrote about that setup earlier]({% post_url
-2026-05-11-unifying-monorepo-chaos-with-mise %})).
+everywhere ([I wrote about that setup earlier]({% post_url 2026-05-11-unifying-monorepo-chaos-with-mise %})).
 
 My initial Lefthook configuration deliberately left Scala formatting out of the pre-commit
 stage. The comment in the config said it plainly: *"Scala formatting is too slow for
