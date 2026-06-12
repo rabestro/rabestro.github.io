@@ -157,27 +157,34 @@ pre-commit:
       glob: "backend/**.{scala,sbt}"
       run: scalafmt --config backend/.scalafmt.conf --test {staged_files}
 
-    # Python linting while the legacy code is still around. check --fix and
-    # format both rewrite files: one sequential job avoids concurrent writes
-    - name: ruff
-      glob: "**/*.py"
-      run: uv run ruff check --fix {staged_files} && uv run ruff format {staged_files}
-
-# Full backend validation (tests + coverage) is too slow for per-commit:
-# run it only when backend/ files are pushed.
+# Pre-push is a hermetic one-second safety net, not a test gate: a
+# full-project format check with no Docker and no network involved.
 pre-push:
   jobs:
-    - name: backend-check
-      glob: "backend/**/*"
-      run: mise run backend:check
+    - name: scalafmt-all
+      glob: "backend/**.{scala,sbt}"
+      run: scalafmt --config backend/.scalafmt.conf --test backend
 ```
 
 - **Pre-commit, milliseconds:** formatting and secret scanning on staged files only.
-- **Pre-push, twenty seconds:** the full sbt gate — compile, scalafmt across the project,
-  tests against a real PostgreSQL in testcontainers, coverage threshold — and only when
-  files under `backend/` are actually part of the push.
-- **CI, minutes:** the same gate again, on every pull request, because local hooks are a
-  courtesy, not a guarantee — anyone can commit with `--no-verify`.
+- **Pre-push, one second:** the same native formatter across the whole module. It exists
+  to catch what the per-commit hook structurally cannot: commits made with `--no-verify`,
+  rebase and merge fallout, files touched by tools outside the commit flow. On its very
+  first live run it also flagged `project/plugins.sbt` — a file `sbt scalafmtCheckAll`
+  had silently never covered.
+- **CI, minutes:** the full gate — compile, tests against a real PostgreSQL in
+  testcontainers, coverage threshold — on every pull request.
+
+My first draft of the pre-push stage ran the entire test suite. I removed it after
+checking what practitioners actually report, and the arguments stack up quickly. Hooks
+slower than a minute or so train the `--no-verify` reflex, and a hook people bypass is
+worse than no hook. Integration tests need infrastructure — mine require a running Docker
+daemon for testcontainers and network access to resolve artifacts, which means a push from
+a train, or with the container runtime stopped, fails for reasons that have nothing to do
+with the code. And pushing is not releasing: shoving a work-in-progress branch to the
+remote as a backup is a legitimate move that red tests should never block. The full
+validation still runs before every pull request — `mise run check` locally as a habit,
+and CI as the enforcement that does not depend on anyone's discipline.
 
 A pleasant detail about Lefthook worth knowing: `{staged_files}` already excludes deleted
 files, and a job whose glob matches nothing is skipped entirely. A code-review bot
