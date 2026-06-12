@@ -166,6 +166,17 @@ pre-push:
       run: scalafmt --config backend/.scalafmt.conf --test backend
 ```
 
+One more line makes the directory scan safe. By default the CLI walks everything under
+the target path — including `target/` with its generated sources when they exist. Add
+this to `.scalafmt.conf` so only git-tracked files are considered:
+
+```
+project.git = true
+```
+
+(I verified the failure mode by planting a misformatted file under `target/`: without the
+setting it fails the check, with it the plant is invisible.)
+
 - **Pre-commit, milliseconds:** formatting and secret scanning on staged files only.
 - **Pre-push, one second:** the same native formatter across the whole module. It exists
   to catch what the per-commit hook structurally cannot: commits made with `--no-verify`,
