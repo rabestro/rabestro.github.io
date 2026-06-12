@@ -92,17 +92,22 @@ and agrees with the native CLI byte for byte. One config file, two runners, no d
 My first glob for the hook was `backend/**/*.scala` — and then I extended it to cover
 `build.sbt`, because sbt build definitions are Scala too and `scalafmtCheckAll` checks
 them. The obvious pattern `backend/**/*.{scala,sbt}` silently missed `backend/build.sbt`:
-in glob semantics, `**/` requires at least one intermediate directory.
+in Lefthook's matcher (v2.1.9), `**/` insists on at least one intermediate directory.
 
-The pattern that matches both nested sources and top-level build files:
+The pattern that matches both nested sources and top-level build files there:
 
 ```yaml
 glob: "backend/**.{scala,sbt}"
 ```
 
 I only caught this because I tested the hook by actually staging a `.sbt` file and watching
-which jobs Lefthook dispatched. Globs are exactly the kind of code that looks correct in
-review and fails silently in production — test them with real files.
+which jobs Lefthook dispatched. And here is the kicker: glob semantics are not portable.
+Different libraries disagree on whether a bare `**` crosses directory separators and on
+whether `**/` matches zero directories — when this article was reviewed, a code-review bot
+confidently cited textbook `doublestar` semantics to argue this exact pattern could not
+match nested files; staging a nested file and watching the hook fire settled it in under a
+minute. Globs are exactly the kind of code that looks correct in review and fails silently
+in production — test them with real files, against the binary you actually run.
 
 ## Replacing the secret scanner along the way
 
