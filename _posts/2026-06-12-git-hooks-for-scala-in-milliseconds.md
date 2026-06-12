@@ -1,6 +1,6 @@
 ---
 title: "Git Hooks for Scala in Milliseconds: Lefthook, Native Scalafmt, and Betterleaks"
-date: 2026-06-13 10:00:00 +0300
+date: 2026-06-12 10:00:00 +0300
 categories: [DevOps, Scala]
 tags:
   [scala, git-hooks, lefthook, scalafmt, gitleaks, betterleaks, mise, developer-experience]
