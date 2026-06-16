@@ -7,7 +7,7 @@ tags:
 mermaid: false
 ---
 
-I am building a pet project called [Dice Chess Lab](https://dicechess-lab.jegors-cemisovs.workers.dev/). It is a monorepo comprising three distinct parts: a Python FastAPI backend, a Svelte frontend, and an Astro-based documentation site.
+I am building a pet project called [Dice Chess Lab](https://dicechess-lab.pages.dev/). It is a monorepo comprising three distinct parts: a Python FastAPI backend, a Svelte frontend, and an Astro-based documentation site.
 
 As the sole developer, I frequently switch between a MacBook Air and a Windows laptop depending on where I am. As the project grew, I began to notice a lot of friction accumulating in my daily workflow.
 

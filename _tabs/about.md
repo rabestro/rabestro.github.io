@@ -35,7 +35,7 @@ Previously, at EPAM Systems, I was involved in developing an internal training p
 I am actively developing the **Dice Chess Engine & Lab**, a comprehensive ecosystem for analyzing and playing Dice Chess:
 
 - [**Dice Chess Engine**](https://github.com/rabestro/dicechess-engine-scala): A high-performance open-source search engine written in Scala 3, featuring magic bitboards, Expectimax search with virtual threads, and Zobrist hashing.
-- [**Dice Chess Lab**](https://dc.jc.id.lv) ([Docs](https://dicechess-lab.jegors-cemisovs.workers.dev/)): A modern, progressive web app (PWA) built with Svelte 5 and FastAPI, serving as a training simulator and analytical tool for players.
+- [**Dice Chess Lab**](https://dc.jc.id.lv) ([Docs](https://dicechess-lab.pages.dev/)): A modern, progressive web app (PWA) built with Svelte 5 and FastAPI, serving as a training simulator and analytical tool for players.
 
 These projects combine my passion for AI, high-performance computing, and modern web development.
 
