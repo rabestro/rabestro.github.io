@@ -5,7 +5,7 @@ date: 2026-06-30 12:00:00 +0300
 categories: [Security, Dice Chess]
 tags: [cryptography, provably-fair, scala, game-design]
 mermaid: true
-published: false
+published: true
 ---
 
 In Dice Chess, the dice *are* the game. You roll, you get a pool of three values, and everything you can do that turn flows from those numbers. So when we moved the platform to a **server-authoritative** model — where the server, not your browser, rolls the dice — an uncomfortable question came with it:
