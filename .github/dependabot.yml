@@ -4,8 +4,6 @@ updates:
     directory: "/"
     assignees:
       - "rabestro"
-    reviewers:
-      - "rabestro"
     schedule:
       interval: "weekly"
       day: "monday"
@@ -20,8 +18,6 @@ updates:
     directory: "/"
     assignees:
       - "rabestro"
-    reviewers:
-      - "rabestro"
     schedule:
       interval: "weekly"
       day: "tuesday"
@@ -35,8 +31,6 @@ updates:
   - package-ecosystem: "pre-commit"
     directory: "/"
     assignees:
-      - "rabestro"
-    reviewers:
       - "rabestro"
     schedule:
       interval: "weekly"
