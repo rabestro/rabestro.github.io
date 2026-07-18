@@ -9,17 +9,19 @@ mermaid: true
 
 Earlier this year I set up [Paperless-ngx](https://docs.paperless-ngx.com/) in my homelab for our family documents. It is a genuinely excellent piece of software: scan or upload anything, OCR runs automatically, and every contract, invoice, and certificate becomes searchable and tagged. I was happy. My family was not.
 
-The first working version of the fix took about two evenings. Turning that fix into something I would let strangers run took another two weeks of evenings — and that gap turned out to be the most instructive part of the project. This post is the story of both.
+Not out of stubbornness. For them the archive was one more web application with one more login to learn, and its search could not answer the questions they actually had — *"when does the apartment insurance expire?"*, *"how much did we spend on utilities this year?"* Keyword search returns documents; my family wanted answers.
+
+So I built them a different interface: a Telegram bot backed by an LLM agent that talks to the archive on each user's behalf. The first working version took about two evenings, assembled from off-the-shelf parts. Turning it into an open-source project I would let strangers run took another two weeks of evenings — and that gap turned out to be the most instructive part. This post is the story of both.
 
 ## The problem wasn't the software
 
-Paperless-ngx is built for the person who runs it. The web UI is an archivist's tool — filters, tags, document types, saved views — and for me, the archivist, it is exactly right. For the rest of my family it was a login to yet another web application they would have to learn. They didn't refuse out of principle; they just never opened it.
+Paperless-ngx is built for the person who runs it. The web UI is an archivist's tool — filters, tags, document types, saved views — and for me, the archivist, it is exactly right. My family had no reason to learn any of it: they never file documents, they only ever need something *from* the archive, and rarely more than once a month.
 
 Search was the deeper issue. Paperless-ngx has solid full-text search, and the community mobile apps wrap it in perfectly fine interfaces. But keyword search answers one kind of question: *which documents contain this word*. Family questions are not shaped like that:
 
-- "When does the apartment insurance expire?"
-- "How much did we spend on utilities this year?"
 - "Is the boiler still under warranty?"
+- "What is the notice period in our rental agreement?"
+- "Which of us signed the internet contract?"
 
 A search box returns documents, not answers. That is not a flaw — it is what search is. But it means the archive could not answer the questions my family actually had, and no amount of UI polish on top of keyword search was going to change that.
 
@@ -74,7 +76,9 @@ _Illustrative demo — a mock-up chat with sample data, not a recording of a liv
 
 I shipped this to my own family first and to strangers second, so the limitations were never abstract to me.
 
-**Document text goes to Google.** The agent runs on the Gemini API: retrieved document text and your queries are sent to Google's servers. This is not a fully local setup. A free-tier AI Studio key works, but read the free tier's data-use terms — a paid key comes with different ones. Telegram bot chats are not end-to-end encrypted either. For us the trade-off is acceptable; we already share these documents in our family chat. If it is a dealbreaker for you, this tool is not for you — yet. Local model support is the obvious future direction if people want it.
+**Document text goes to Google.** The agent runs on the Gemini API: retrieved document text and your queries are sent to Google's servers. This is not a fully local setup. A free-tier AI Studio key works, but read the free tier's data-use terms — a paid key comes with different ones. Telegram bot chats are not end-to-end encrypted either.
+
+For our family the extra exposure is close to zero, and it is worth being precise about why. Almost all of these documents arrive by email, and our mailboxes are Gmail: the bills and contracts already live on Google's servers the moment they reach us. We also already forward them to each other in our family chat. Letting a Google API read them to answer a question does not meaningfully change where our data lives. If your documents do not flow through a Google mailbox, your math is different — and if that makes this a dealbreaker, this tool is not for you, yet. Local model support is the obvious future direction if people want it.
 
 **The totals are an assistant's summary, not accounting.** The LLM computes them from the text of the documents it retrieved. Accuracy depends on OCR quality and the model. Treat the numbers as a smart summary and spot-check anything important against the originals — that is what the download buttons are for.
 
