@@ -5,6 +5,7 @@ categories: [AI, Python]
 tags:
   [telegram, paperless-ngx, gemini, mcp, ai-agents, python, self-hosted, open-source]
 mermaid: true
+published: false
 ---
 
 Earlier this year I set up [Paperless-ngx](https://docs.paperless-ngx.com/) in my homelab for our family documents. It is an excellent piece of software: scan or upload anything, OCR runs automatically, and every contract, invoice, and certificate becomes searchable and tagged. I was happy. My family was not.
