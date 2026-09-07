@@ -99,14 +99,61 @@ Here are the results (average time in nanoseconds per operation, lower is better
 | **`kq`** (Black only) | 6.01 ns | **4.29 ns** |
 | **`KQkq`** (All rights) | **8.19 ns** | 10.46 ns |
 
+### Going Zero-Allocation: Eliminating String Overhead
+
+While the `boundary/break` approach gave us a massive structural win for castling, there was another hidden performance killer in our parser: String allocations.
+
+Take the *En-Passant* square parser. The MVP implementation parsed the file and rank characters, often relying on high-level Scala functions or string slicing. Since FEN parsing happens millions of times during search algorithms (like Perft) and opening book initializations, we needed to go deeper.
+
+Instead of `foreach` or string operations, we rewrote the en-passant parser to use a classic `while` loop over string indices, coupled with direct `.charAt()` access and ASCII math:
+
+```scala
+private inline def parseEnPassant(
+    enPassantField: String
+)(using boundary.Label[Either[String, GameState]]): (Int, Bitboard) =
+  if enPassantField == "-" then (0, Bitboard.empty)
+  else {
+    val len = enPassantField.length
+    if len == 0 || len % 2 != 0 then break(Left(s"Invalid en-passant field '$enPassantField'"))
+
+    var epFiles     = 0
+    var enPassantBb = Bitboard.empty
+    var idx         = 0
+    while idx < len do {
+      val fileChar = enPassantField.charAt(idx)
+      val rankChar = enPassantField.charAt(idx + 1)
+
+      if fileChar < 'a' || fileChar > 'h' || rankChar < '1' || rankChar > '8' then
+        break(Left(s"Invalid en-passant notation '$fileChar$rankChar'"))
+
+      val sq = Square.fromIndex((rankChar - '1') * 8 + (fileChar - 'a'))
+      if enPassantBb.contains(sq) then break(Left(s"Duplicate en-passant square '$fileChar$rankChar'"))
+
+      epFiles |= (1 << (fileChar - 'a'))
+      enPassantBb = enPassantBb.add(sq)
+      idx += 2
+    }
+    (epFiles, enPassantBb)
+  }
+```
+
+This might look less idiomatic than standard functional Scala, but by avoiding closures, iterators, and object allocations entirely, the performance gains were staggering. 
+
+Here are the JMH results for En-Passant parsing:
+
+| En-Passant String | MVP | New (`inline` + `while` + `charAt`) | Improvement |
+| :--- | :--- | :--- | :--- |
+| **`-`** (None) | 1.95 ns | **1.35 ns** | ~30% faster |
+| **`e3`** (Standard) | 12.29 ns | **2.09 ns** | **~82% faster** |
+
+We applied this identical pattern to other fields, such as our custom dice-pool extension and the half-move/full-move clocks. For the integer parsing, we completely bypassed `String.toIntOption` (which wraps values in `Some` or `None` objects and relies on internal exception handling under the hood) by rolling our own fast ASCII digit scanner that returns `-1` on error—perfectly triggering our `break` validation without instantiating a single object.
+
 ### Conclusion
 
-For shorter strings and the empty `-` case (which are extremely common), the new single-pass approach is significantly faster because it bypasses multiple string scans and exits early. 
+For shorter strings and the empty `-` case (which are extremely common), our new single-pass and index-scanning approaches bypass expensive object allocations and exit early.
 
-Only on the full 4-character string (`"KQkq"`) does the MVP slightly pull ahead (by ~2.2 nanoseconds), mostly because 4 loops of a highly-validated `foreach` (including bitwise duplicate detection) is slightly more verbose to the JVM than 4 optimized `indexOf` checks. 
+Only on the full 4-character castling string (`"KQkq"`) does the MVP slightly pull ahead (by ~2.2 nanoseconds), mostly because 4 loops of a highly-validated `foreach` (including bitwise duplicate detection) is slightly more verbose to the JVM than 4 optimized `indexOf` checks. 
 
-However, the real victory is structural. We took a block of code with zero error handling, extracted it into a clean
-helper, added strict bounds checking, precise invalid character rejection, and seamlessly integrated it into our
-`Either` flow—and we did it while making the average parsing case *faster*.
+However, the real victory is structural. We took a block of code with zero error handling, extracted it into clean `inline` helpers, added strict bounds checking, precise invalid character rejection, and seamlessly integrated it into our `Either` flow—and we did it while dramatically increasing execution speed by avoiding garbage collection overhead.
 
-This is the power of "Parse, Don't Validate" combined with Scala 3's modern control structures!
+This is the power of "Parse, Don't Validate" combined with Scala 3's modern control structures. Sometimes, a well-placed `while` loop inside an `inline` method is exactly what you need to build a high-performance, robust library component!
