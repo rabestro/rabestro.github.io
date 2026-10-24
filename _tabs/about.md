@@ -32,13 +32,14 @@ Previously, at EPAM Systems, I was involved in developing an internal training p
 
 ## Current Projects
 
-I am the creator and developer behind [**Fortemate**](https://github.com/fortemate), an ecosystem for playing and analyzing Dice Chess across TV, web, and cloud platforms:
+I am the creator and developer behind [**Fortemate**](https://github.com/fortemate), a Connected TV (Amazon Vega OS / Fire TV) and cross-platform engineering studio building open-source developer tools and the Dice Chess ecosystem:
 
 - [**Dice Chess TV**](https://github.com/fortemate/dicechess-tv): An offline Dice Chess game for Amazon Fire TV built with TypeScript and React Native for Vega. Two players can share one screen and remote, or a single player can challenge local bots running in a background Hermes runtime. It features an interactive voice-guided tutorial, save and resume, VoiceView accessibility, and adaptive music ([project site](https://dicechess-tv.fortemate.com/) · [Amazon Appstore](https://www.amazon.com/dp/B0HL6K9N47/) · [demo video](https://youtu.be/Pp3JgSyoN18)).
+- [**Vega VVD Driver**](https://github.com/fortemate/vega-vvd-driver): An open-source automation driver and MCP server for the Amazon Vega Virtual Device, enabling scriptable D-pad control, screenshot/video/audio capture, and automated UI verification for CI/CD and AI agents.
 - [**Dice Chess Engine**](https://github.com/fortemate/dicechess-engine): A cross-platform, high-performance search engine and move generator written in Scala 3, targeting the JVM, JavaScript, and WebAssembly, featuring magic bitboards, Expectimax search, and Zobrist hashing.
 - [**Dice Chess Play**](https://github.com/fortemate/dicechess-play) & [**Play API**](https://github.com/fortemate/dicechess-play-api): A public Svelte 5 / SvelteKit web client and authoritative real-time multiplayer server with a Bot API and Glicko-2 rating ladder, backed by a Scala 3, http4s, and PostgreSQL analytics pipeline.
 
-These projects combine my passion for AI, high-performance computing, and modern software engineering.
+Through **Fortemate**, I also provide **B2B consulting and engineering services** for **Amazon Vega OS (Fire TV) migrations**, **React Native Multi-TV** architectures, and automated CTV verification.
 
 ## Beyond the Keyboard
 
@@ -46,4 +47,4 @@ When I'm not coding, I enjoy strategic challenges like Dice Chess. In 2024, I wa
 
 ## Contact
 
-Feel free to reach out to me via [email](mailto:jegors.cemisovs@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jegors-cemisovs/).
+For engineering inquiries, B2B consulting (Amazon Vega OS / Connected TV / Scala), or general questions, feel free to reach out via [email](mailto:jegors.cemisovs@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jegors-cemisovs/).
