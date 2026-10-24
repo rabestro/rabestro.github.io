@@ -20,29 +20,30 @@ Previously, at EPAM Systems, I was involved in developing an internal training p
 
 ## Skills & Core Technologies
 
-- **Primary Languages:** Scala, Python, Java
+- **Primary Languages:** Scala, Java, TypeScript, Python
 
 - **Scripting & Automation:** Bash, AWK, PowerShell, PowerQuery M
 
-- **Frameworks & Platforms:** Spring Boot, .NET, SAP BTP
+- **Frameworks & Platforms:** React Native for Vega, SvelteKit, http4s, Spring Boot, .NET, SAP BTP, PostgreSQL
 
-- **Cloud:** Microsoft Azure, AWS
+- **Cloud:** Microsoft Azure, AWS, Google Cloud, Cloudflare
 
 - **Key Certificates:** [OCP Java 11](https://www.credly.com/badges/4aeb5ea6-5180-4adb-98f8-e5f879dd2c5f), [Azure Developer (AZ-204)](https://learn.microsoft.com/en-us/users/jegors-cemisovs/credentials/certification/azure-developer?tab=credentials-tab), and several Azure fundamentals certificates (AI-900, DP-900, AZ-900).
 
 ## Current Projects
 
-I am actively developing the **Dice Chess Engine & Analytics**, a comprehensive ecosystem for analyzing and playing Dice Chess:
+I am the creator and developer behind [**Fortemate**](https://github.com/fortemate), an ecosystem for playing and analyzing Dice Chess across TV, web, and cloud platforms:
 
-- [**Dice Chess Engine**](https://github.com/rabestro/dicechess-engine-scala): A high-performance open-source search engine written in Scala 3, featuring magic bitboards, Expectimax search with virtual threads, and Zobrist hashing.
-- [**Dice Chess Analytics**](https://github.com/rabestro/dicechess-analytics): A high-performance analytical backend for storing, normalizing, and analyzing over 140,000 games. Built with Scala 3, http4s, and PostgreSQL, it serves empirical win statistics and expected value per position.
+- [**Dice Chess TV**](https://github.com/fortemate/dicechess-tv): An offline Dice Chess game for Amazon Fire TV built with TypeScript and React Native for Vega. Two players can share one screen and remote, or a single player can challenge local bots running in a background Hermes runtime. It features an interactive voice-guided tutorial, save and resume, VoiceView accessibility, and adaptive music ([project site](https://dicechess-tv.fortemate.com/) · [Amazon Appstore](https://www.amazon.com/dp/B0HL6K9N47/) · [demo video](https://youtu.be/Pp3JgSyoN18)).
+- [**Dice Chess Engine**](https://github.com/fortemate/dicechess-engine): A cross-platform, high-performance search engine and move generator written in Scala 3, targeting the JVM, JavaScript, and WebAssembly, featuring magic bitboards, Expectimax search, and Zobrist hashing.
+- [**Dice Chess Play**](https://github.com/fortemate/dicechess-play) & [**Play API**](https://github.com/fortemate/dicechess-play-api): A public Svelte 5 / SvelteKit web client and authoritative real-time multiplayer server with a Bot API and Glicko-2 rating ladder, backed by a Scala 3, http4s, and PostgreSQL analytics pipeline.
 
-These projects combine my passion for AI, high-performance computing, and modern web development.
+These projects combine my passion for AI, high-performance computing, and modern software engineering.
 
 ## Beyond the Keyboard
 
-When I'm not coding, I enjoy strategic challenges like Dice Chess. In 2024, I was thrilled to participate in the [3rd Latvian Dice Chess Championship](https://dicechess.net/3rd-latvian-dice-chess-championship-how-it-went/ "null"), an experience that was both challenging and incredibly fun.
+When I'm not coding, I enjoy strategic challenges like Dice Chess. In 2024, I was thrilled to participate in the [3rd Latvian Dice Chess Championship](https://dicechess.net/3rd-latvian-dice-chess-championship-how-it-went/), an experience that was both challenging and incredibly fun.
 
 ## Contact
 
-Feel free to reach out to me via [email](mailto:jegors.cemisovs@gmail.com "null") or connect with me on [LinkedIn](https://www.linkedin.com/in/jegors-cemisovs/).
+Feel free to reach out to me via [email](mailto:jegors.cemisovs@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/jegors-cemisovs/).
