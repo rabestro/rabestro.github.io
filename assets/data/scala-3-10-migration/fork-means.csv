@@ -1,0 +1,153 @@
+series,case,version,block,fork,mean_us
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,A,A1,1,76.89813087100876
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,A,A1,2,75.55840468782077
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,A,A2,1,76.97459084764823
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,A,A2,2,78.59456068732239
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,B,B1,1,56.733772595967366
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,B,B1,2,57.325752712936946
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,B,B2,1,56.227376885886436
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=2,B,B2,2,57.907405005909396
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,A,A1,1,25011.598412891984
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,A,A1,2,25061.80600226481
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,A,A2,1,25265.68764285714
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,A,A2,2,25191.82818621758
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,B,B1,1,19405.867925824175
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,B,B1,2,19231.368445262284
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,B,B2,1,20091.045871428574
+main,ExpectimaxSearchBenchmark.coldTree searchDepth=3,B,B2,2,19384.11773076923
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,A,A1,1,77.23784764441208
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,A,A1,2,77.64117985955436
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,A,A2,1,76.93592722627507
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,A,A2,2,77.42378595493228
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,B,B1,1,57.12968623828523
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,B,B1,2,56.730335279556854
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,B,B2,1,58.753042883112485
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=2,B,B2,2,57.64039483362956
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,A,A1,1,25760.7521281746
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,A,A1,2,25545.971382417585
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,A,A2,1,25036.02372421603
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,A,A2,2,25713.36880302198
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,B,B1,1,19714.18202652513
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,B,B1,2,19352.682529960606
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,B,B2,1,19342.57393500831
+main,ExpectimaxSearchBenchmark.coldTreeBudgeted searchDepth=3,B,B2,2,19759.94065395389
+main,MakeMoveBenchmark.makeMicroMoveQuiet,A,A1,1,0.15909720009644165
+main,MakeMoveBenchmark.makeMicroMoveQuiet,A,A1,2,0.1508585075618398
+main,MakeMoveBenchmark.makeMicroMoveQuiet,A,A2,1,0.15707436245436288
+main,MakeMoveBenchmark.makeMicroMoveQuiet,A,A2,2,0.1505700629685964
+main,MakeMoveBenchmark.makeMicroMoveQuiet,B,B1,1,0.14348616065130335
+main,MakeMoveBenchmark.makeMicroMoveQuiet,B,B1,2,0.14334979663626046
+main,MakeMoveBenchmark.makeMicroMoveQuiet,B,B2,1,0.15351248665622966
+main,MakeMoveBenchmark.makeMicroMoveQuiet,B,B2,2,0.1523373867147284
+main,MakeMoveBenchmark.makeMoveDoublePawn,A,A1,1,0.15383548456723672
+main,MakeMoveBenchmark.makeMoveDoublePawn,A,A1,2,0.15543534630552303
+main,MakeMoveBenchmark.makeMoveDoublePawn,A,A2,1,0.15492690839697582
+main,MakeMoveBenchmark.makeMoveDoublePawn,A,A2,2,0.1438689580061714
+main,MakeMoveBenchmark.makeMoveDoublePawn,B,B1,1,0.15015443841013193
+main,MakeMoveBenchmark.makeMoveDoublePawn,B,B1,2,0.1568602343941968
+main,MakeMoveBenchmark.makeMoveDoublePawn,B,B2,1,0.14989816928635483
+main,MakeMoveBenchmark.makeMoveDoublePawn,B,B2,2,0.15690642605485322
+main,MakeMoveBenchmark.makeMoveQuiet,A,A1,1,0.1538645670529042
+main,MakeMoveBenchmark.makeMoveQuiet,A,A1,2,0.1535391277123923
+main,MakeMoveBenchmark.makeMoveQuiet,A,A2,1,0.141446577295654
+main,MakeMoveBenchmark.makeMoveQuiet,A,A2,2,0.15359219213940226
+main,MakeMoveBenchmark.makeMoveQuiet,B,B1,1,0.1492032526078149
+main,MakeMoveBenchmark.makeMoveQuiet,B,B1,2,0.1453482237018007
+main,MakeMoveBenchmark.makeMoveQuiet,B,B2,1,0.1569650774920045
+main,MakeMoveBenchmark.makeMoveQuiet,B,B2,2,0.15893285856691236
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",A,A1,1,0.5357524559027756
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",A,A1,2,0.5381756333121458
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",A,A2,1,0.5392781391868621
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",A,A2,2,0.5313596033357566
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",B,B1,1,0.5374041653502162
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",B,B1,2,0.5346984032448807
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",B,B2,1,0.5427647445543368
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=initial",B,B2,2,0.5415735955659086
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",A,A1,1,1.0342551107248865
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",A,A1,2,1.0284655166716574
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",A,A2,1,1.0223578919878378
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",A,A2,2,0.9848791689455463
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",B,B1,1,1.0130061588054755
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",B,B1,2,1.0477574938205272
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",B,B2,1,1.0098735762003848
+main,"MoveGeneratorBenchmark.generateAllMoves diceRoll=1,position=kiwipete",B,B2,2,1.014185987601967
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",A,A1,1,0.49609650503922875
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",A,A1,2,0.4984352299126674
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",A,A2,1,0.5003806461674433
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",A,A2,2,0.504032273015535
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",B,B1,1,0.4899051674343012
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",B,B1,2,0.5020950323179696
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",B,B2,1,0.49521705530974275
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=initial",B,B2,2,0.4895887437889639
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",A,A1,1,0.3903716809862124
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",A,A1,2,0.4197520721705678
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",A,A2,1,0.4083224901584193
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",A,A2,2,0.42237096057469786
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",B,B1,1,0.3992323674970956
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",B,B1,2,0.3984425896056692
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",B,B2,1,0.4005165807551524
+main,"MoveGeneratorBenchmark.generateMoves diceRoll=1,position=kiwipete",B,B2,2,0.39866136859252455
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",A,A1,1,2.728760777824372
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",A,A1,2,2.7683415246425707
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",A,A2,1,2.8197919836303553
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",A,A2,2,2.853132253232198
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",B,B1,1,2.5468471260676155
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",B,B1,2,2.558471942670842
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",B,B2,1,2.682181409995388
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=endgame",B,B2,2,2.510477665121327
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",A,A1,1,288.7414408795847
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",A,A1,2,287.8888556144212
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",A,A2,1,289.4250523038002
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",A,A2,2,280.3697556085333
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",B,B1,1,242.6240605394623
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",B,B1,2,250.5430806596495
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",B,B2,1,244.47709282491797
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,3,position=initial",B,B2,2,241.6825547224123
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",A,A1,1,2.5349410546157896
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",A,A1,2,2.3967068635497006
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",A,A2,1,2.532194414468135
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",A,A2,2,2.505334821767286
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",B,B1,1,2.2871460817832707
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",B,B1,2,2.278118225738292
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",B,B2,1,2.267752497003417
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=endgame",B,B2,2,2.2449762752530975
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",A,A1,1,71.99220935653264
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",A,A1,2,72.95401769935944
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",A,A2,1,73.08285102604263
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",A,A2,2,79.42793957374344
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",B,B1,1,63.52636356511937
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",B,B1,2,62.3782339521812
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",B,B2,1,63.90856538095876
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,2,position=initial",B,B2,2,63.854306684472945
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",A,A1,1,2.3489590218501424
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",A,A1,2,2.251567043416545
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",A,A2,1,2.2690428643748835
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",A,A2,2,2.253016391077593
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",B,B1,1,2.17297345052936
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",B,B1,2,2.1251764313160013
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",B,B2,1,2.1303711904776153
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=endgame",B,B2,2,2.175866225301719
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",A,A1,1,6.569745393405051
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",A,A1,2,6.7464873844697255
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",A,A2,1,6.555124840374463
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",A,A2,2,6.727732074424249
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",B,B1,1,6.0747236865038365
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",B,B1,2,6.091613784168071
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",B,B2,1,6.019830650201765
+main,"SearchAlgorithmBenchmark.greedySearch dicePoolStr=1,position=initial",B,B2,2,6.049878171613319
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,A,A1,1,0.16167969026874682
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,A,A1,2,0.15148824410678172
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,A,A2,1,0.157833380209772
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,A,A2,2,0.15793083638592137
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,B,B1,1,0.14675433754150757
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,B,B1,2,0.15617084207766163
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,B,B2,1,0.15622643853352786
+follow-up,MakeMoveBenchmark.makeMoveDoublePawn,B,B2,2,0.15458580565578567
+follow-up,MakeMoveBenchmark.makeMoveQuiet,A,A1,1,0.14734476867425342
+follow-up,MakeMoveBenchmark.makeMoveQuiet,A,A1,2,0.1476307112296935
+follow-up,MakeMoveBenchmark.makeMoveQuiet,A,A2,1,0.14720620805432116
+follow-up,MakeMoveBenchmark.makeMoveQuiet,A,A2,2,0.14812605176895238
+follow-up,MakeMoveBenchmark.makeMoveQuiet,B,B1,1,0.1548573822731191
+follow-up,MakeMoveBenchmark.makeMoveQuiet,B,B1,2,0.1443970612941375
+follow-up,MakeMoveBenchmark.makeMoveQuiet,B,B2,1,0.14372629447652469
+follow-up,MakeMoveBenchmark.makeMoveQuiet,B,B2,2,0.1471862468701501
