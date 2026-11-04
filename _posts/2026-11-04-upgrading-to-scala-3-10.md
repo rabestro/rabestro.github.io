@@ -16,6 +16,8 @@ compatibility checks and coverage instrumentation. Then we had to answer the que
 engine: did any of the fixes make it slower?
 
 Here is what we changed, what our checks caught, and what the measurements actually let us conclude.
+Choose your publishing baseline deliberately: the [release notes][release] recommend Scala 3.9 LTS for
+libraries needing the longest support window.
 
 ## One build, two Scala versions
 
@@ -207,4 +209,4 @@ The version edit took seconds. Establishing what we had actually changed took th
 [migration]: https://github.com/fortemate/dicechess-engine/pull/450
 [measured-commit]: https://github.com/fortemate/dicechess-engine/tree/1cd3645f50859e89c18aaa60ddf55993fd6051b0
 [old-position]: https://github.com/fortemate/dicechess-engine/blob/9b515b7ba44d90317771ab81822ec8023b98cc28/shared-rules/src/main/scala/dicechess/engine/domain/Position.scala
-[data]: https://github.com/rabestro/rabestro.github.io/tree/main/assets/data/scala-3-10-migration
+[data]: https://github.com/rabestro/rabestro.github.io/tree/4944b65a233be4b028eb3f7860846a47273ece29/assets/data/scala-3-10-migration
