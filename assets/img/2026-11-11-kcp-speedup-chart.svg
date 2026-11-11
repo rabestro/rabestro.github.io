@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="100%" height="auto" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="barOld" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="barNew" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="920" height="340" rx="16" fill="url(#cardBg)" stroke="#334155" stroke-width="1.5"/>
+
+  <text x="32" y="36" fill="#f8fafc" font-size="17" font-weight="700">JMH Benchmark: Per-Roll Scratch DFS vs. 56-Bit Mask Broadcast (Lower Is Better)</text>
+  <text x="32" y="56" fill="#94a3b8" font-size="12.5">OpenJDK Temurin 25.0.4.1 · Linux x86_64 · 100% bit-for-bit identical Double outputs across all positions</text>
+
+  <!-- Row 1: Kiwipete (Black King) -->
+  <g transform="translate(32, 82)">
+    <text x="0" y="18" fill="#f8fafc" font-size="13.5" font-weight="700">Kiwipete (Black King)</text>
+    <text x="0" y="36" fill="#94a3b8" font-size="11.5">Complex tactical middlegame</text>
+
+    <!-- Baseline bar -->
+    <rect x="210" y="2" width="520" height="20" rx="4" fill="url(#barOld)"/>
+    <text x="740" y="16" fill="#fca5a5" font-size="12" font-weight="700" font-family="monospace">10,333.26 µs (10.33 ms)</text>
+
+    <!-- Optimized bar -->
+    <rect x="210" y="26" width="4" height="20" rx="2" fill="url(#barNew)"/>
+    <text x="222" y="40" fill="#4ade80" font-size="12.5" font-weight="700" font-family="monospace">8.12 µs  →  1,273× faster</text>
+  </g>
+
+  <!-- Row 2: Kiwipete (White King) -->
+  <g transform="translate(32, 146)">
+    <text x="0" y="18" fill="#f8fafc" font-size="13.5" font-weight="700">Kiwipete (White King)</text>
+    <text x="0" y="36" fill="#94a3b8" font-size="11.5">Open rays &amp; captures</text>
+
+    <!-- Baseline bar -->
+    <rect x="210" y="2" width="370" height="20" rx="4" fill="url(#barOld)"/>
+    <text x="590" y="16" fill="#fca5a5" font-size="12" font-weight="700" font-family="monospace">7,348.91 µs (7.35 ms)</text>
+
+    <!-- Optimized bar -->
+    <rect x="210" y="26" width="4" height="20" rx="2" fill="url(#barNew)"/>
+    <text x="222" y="40" fill="#4ade80" font-size="12.5" font-weight="700" font-family="monospace">7.59 µs  →  968× faster</text>
+  </g>
+
+  <!-- Row 3: Initial Position -->
+  <g transform="translate(32, 210)">
+    <text x="0" y="18" fill="#f8fafc" font-size="13.5" font-weight="700">Initial Position (White/Black)</text>
+    <text x="0" y="36" fill="#94a3b8" font-size="11.5">20 root pawn/knight moves</text>
+
+    <!-- Baseline bar -->
+    <rect x="210" y="2" width="66" height="20" rx="4" fill="url(#barOld)"/>
+    <text x="286" y="16" fill="#fca5a5" font-size="12" font-weight="700" font-family="monospace">1,316.31 µs (1.32 ms)</text>
+
+    <!-- Optimized bar -->
+    <rect x="210" y="26" width="3" height="20" rx="1.5" fill="url(#barNew)"/>
+    <text x="222" y="40" fill="#4ade80" font-size="12.5" font-weight="700" font-family="monospace">2.96 µs  →  445× faster</text>
+  </g>
+
+  <!-- Row 4: Endgame Position -->
+  <g transform="translate(32, 274)">
+    <text x="0" y="18" fill="#f8fafc" font-size="13.5" font-weight="700">Endgame Position (White)</text>
+    <text x="0" y="36" fill="#94a3b8" font-size="11.5">Sparse board</text>
+
+    <!-- Baseline bar -->
+    <rect x="210" y="2" width="22" height="20" rx="4" fill="url(#barOld)"/>
+    <text x="242" y="16" fill="#fca5a5" font-size="12" font-weight="700" font-family="monospace">413.17 µs (0.41 ms)</text>
+
+    <!-- Optimized bar -->
+    <rect x="210" y="26" width="2.5" height="20" rx="1.2" fill="url(#barNew)"/>
+    <text x="222" y="40" fill="#4ade80" font-size="12.5" font-weight="700" font-family="monospace">1.79 µs  →  231× faster</text>
+  </g>
+</svg>
