@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" width="100%" height="auto" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Main Card -->
+  <rect width="920" height="420" rx="16" fill="url(#bgGrad)" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- LEFT PANEL: 3-Micro-Move Double Unblock -->
+  <g transform="translate(28, 24)">
+    <text x="0" y="20" fill="#f8fafc" font-size="16" font-weight="700">1. A 3-Micro-Move King Capture (Roll: {1, 2, 4})</text>
+    <text x="0" y="40" fill="#94a3b8" font-size="12.5">Two friendly pieces vacate the e-file so the Rook can strike on move 3</text>
+
+    <!-- 5x5 Board Cutout (files c..g, ranks 4..8) -->
+    <g transform="translate(8, 56)">
+      <rect x="-2" y="-2" width="284" height="284" rx="6" fill="none" stroke="#475569" stroke-width="2"/>
+
+      <!-- Rank 8: c8, d8, e8, f8, g8 -->
+      <rect x="0"   y="0" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="56"  y="0" width="56" height="56" fill="#64748b"/>
+      <rect x="112" y="0" width="56" height="56" fill="#7f1d1d"/>
+      <rect x="168" y="0" width="56" height="56" fill="#64748b"/>
+      <rect x="224" y="0" width="56" height="56" fill="#cbd5e1"/>
+
+      <!-- Rank 7: c7, d7, e7, f7, g7 -->
+      <rect x="0"   y="56" width="56" height="56" fill="#64748b"/>
+      <rect x="56"  y="56" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="112" y="56" width="56" height="56" fill="#64748b"/>
+      <rect x="168" y="56" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="224" y="56" width="56" height="56" fill="#64748b"/>
+
+      <!-- Rank 6: c6, d6, e6, f6, g6 -->
+      <rect x="0"   y="112" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="56"  y="112" width="56" height="56" fill="#64748b"/>
+      <rect x="112" y="112" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="168" y="112" width="56" height="56" fill="#64748b"/>
+      <rect x="224" y="112" width="56" height="56" fill="#cbd5e1"/>
+
+      <!-- Rank 5: c5, d5, e5, f5, g5 -->
+      <rect x="0"   y="168" width="56" height="56" fill="#64748b"/>
+      <rect x="56"  y="168" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="112" y="168" width="56" height="56" fill="#64748b"/>
+      <rect x="168" y="168" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="224" y="168" width="56" height="56" fill="#64748b"/>
+
+      <!-- Rank 4: c4, d4, e4, f4, g4 -->
+      <rect x="0"   y="224" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="56"  y="224" width="56" height="56" fill="#64748b"/>
+      <rect x="112" y="224" width="56" height="56" fill="#cbd5e1"/>
+      <rect x="168" y="224" width="56" height="56" fill="#64748b"/>
+      <rect x="224" y="224" width="56" height="56" fill="#cbd5e1"/>
+
+      <!-- Coordinates -->
+      <text x="5" y="14"  fill="#1e293b" font-size="10" font-weight="700">8</text>
+      <text x="5" y="70"  fill="#e2e8f0" font-size="10" font-weight="700">7</text>
+      <text x="5" y="126" fill="#1e293b" font-size="10" font-weight="700">6</text>
+      <text x="5" y="182" fill="#e2e8f0" font-size="10" font-weight="700">5</text>
+      <text x="5" y="238" fill="#1e293b" font-size="10" font-weight="700">4</text>
+
+      <text x="45"  y="275" fill="#1e293b" font-size="10" font-weight="700">c</text>
+      <text x="101" y="275" fill="#e2e8f0" font-size="10" font-weight="700">d</text>
+      <text x="157" y="275" fill="#1e293b" font-size="10" font-weight="700">e</text>
+      <text x="213" y="275" fill="#e2e8f0" font-size="10" font-weight="700">f</text>
+      <text x="269" y="275" fill="#1e293b" font-size="10" font-weight="700">g</text>
+
+      <!-- Move 3 Ray (Rook e4 -> e8) -->
+      <line x1="140" y1="232" x2="140" y2="52" stroke="#ef4444" stroke-width="4" stroke-dasharray="6,4" marker-end="url(#arrowRed)"/>
+
+      <!-- Move 1 Arrow (Pawn e5 -> d6 capture) -->
+      <line x1="126" y1="184" x2="96" y2="152" stroke="#22c55e" stroke-width="3.5" marker-end="url(#arrowGreen)"/>
+
+      <!-- Move 2 Arrow (Knight e6 -> g7 jump) -->
+      <path d="M 156 136 Q 210 136 242 98" fill="none" stroke="#f59e0b" stroke-width="3.5" marker-end="url(#arrowAmber)"/>
+
+      <!-- Pieces -->
+      <!-- Black King on e8 (140, 28) -->
+      <circle cx="140" cy="28" r="20" fill="#0f172a" stroke="#f87171" stroke-width="2.5"/>
+      <text x="140" y="35" text-anchor="middle" fill="#f8fafc" font-size="22">♚</text>
+
+      <!-- Black Pawn on d6 (84, 140) -->
+      <circle cx="84" cy="140" r="17" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.5"/>
+      <text x="84" y="146" text-anchor="middle" fill="#e2e8f0" font-size="19">♟</text>
+
+      <!-- White Knight on e6 (140, 140) -->
+      <circle cx="140" cy="140" r="19" fill="#f8fafc" stroke="#f59e0b" stroke-width="2.5"/>
+      <text x="140" y="147" text-anchor="middle" fill="#0f172a" font-size="21">♘</text>
+
+      <!-- White Pawn on e5 (140, 196) -->
+      <circle cx="140" cy="196" r="18" fill="#f8fafc" stroke="#22c55e" stroke-width="2.5"/>
+      <text x="140" y="202" text-anchor="middle" fill="#0f172a" font-size="20">♙</text>
+
+      <!-- White Rook on e4 (140, 252) -->
+      <circle cx="140" cy="252" r="20" fill="#f8fafc" stroke="#ef4444" stroke-width="2.5"/>
+      <text x="140" y="259" text-anchor="middle" fill="#0f172a" font-size="22">♖</text>
+    </g>
+
+    <!-- Step Legend -->
+    <g transform="translate(8, 354)" font-size="11.5" font-weight="600">
+      <rect x="0" y="0" width="10" height="10" rx="2" fill="#22c55e"/>
+      <text x="15" y="9" fill="#cbd5e1">① Die 1: e5×d6</text>
+
+      <rect x="108" y="0" width="10" height="10" rx="2" fill="#f59e0b"/>
+      <text x="123" y="9" fill="#cbd5e1">② Die 2: Ne6→g7</text>
+
+      <rect x="228" y="0" width="10" height="10" rx="2" fill="#ef4444"/>
+      <text x="243" y="9" fill="#fca5a5">③ Die 4: Re4×e8</text>
+    </g>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="418" y1="24" x2="418" y2="396" stroke="#334155" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- RIGHT PANEL: 56-Bit Roll Bitmask Broadcast -->
+  <g transform="translate(442, 24)">
+    <text x="0" y="20" fill="#f8fafc" font-size="16" font-weight="700">2. One 64-Bit Long Holds All 56 Roll Multisets</text>
+    <text x="0" y="40" fill="#94a3b8" font-size="12.5">216 ordered 3d6 rolls collapse into 56 weighted bits in a single CPU register</text>
+
+    <!-- Register Layout Box -->
+    <g transform="translate(0, 62)">
+      <rect x="0" y="0" width="448" height="78" rx="8" fill="#090d16" stroke="#475569" stroke-width="1.5"/>
+      <text x="12" y="20" fill="#94a3b8" font-size="11" font-family="monospace">AllRollsMask = 0x00FFFFFFFFFFFFFFL (56 active bits)</text>
+
+      <!-- Bit segments -->
+      <!-- Unused bits 56..63 -->
+      <rect x="12" y="30" width="52" height="34" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="38" y="45" text-anchor="middle" fill="#64748b" font-size="10" font-weight="700">63..56</text>
+      <text x="38" y="58" text-anchor="middle" fill="#64748b" font-size="9">unused (0)</text>
+
+      <!-- 20 Distinct Triples (weight 6) -->
+      <rect x="70" y="30" width="144" height="34" rx="4" fill="#1e3a8a" stroke="#3b82f6"/>
+      <text x="142" y="45" text-anchor="middle" fill="#93c5fd" font-size="10.5" font-weight="700">20 Singles {a,b,c}</text>
+      <text x="142" y="58" text-anchor="middle" fill="#dbeafe" font-size="9.5">weight 6 each = 120/216</text>
+
+      <!-- 30 Pairs (weight 3) -->
+      <rect x="220" y="30" width="144" height="34" rx="4" fill="#065f46" stroke="#10b981"/>
+      <text x="292" y="45" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="700">30 Pairs {a,a,b}</text>
+      <text x="292" y="58" text-anchor="middle" fill="#d1fae5" font-size="9.5">weight 3 each = 90/216</text>
+
+      <!-- 6 Triples (weight 1) -->
+      <rect x="370" y="30" width="66" height="34" rx="4" fill="#7c2d12" stroke="#f97316"/>
+      <text x="403" y="45" text-anchor="middle" fill="#fdba74" font-size="10.5" font-weight="700">6 {a,a,a}</text>
+      <text x="403" y="58" text-anchor="middle" fill="#ffedd5" font-size="9.5">w=1 (6/216)</text>
+    </g>
+
+    <!-- Broadcast Pipeline Step Boxes -->
+    <g transform="translate(0, 158)">
+      <rect x="0" y="0" width="448" height="62" rx="8" fill="#1e293b" stroke="#334155"/>
+      <text x="14" y="22" fill="#38bdf8" font-size="12.5" font-weight="700">Depth 0 (Immediate 1-Move Capture Mask)</text>
+      <text x="14" y="41" fill="#e2e8f0" font-size="11.5" font-family="monospace">unsolved &amp;= ~rollsWithDieMask(mask0)</text>
+      <text x="14" y="55" fill="#94a3b8" font-size="10.5">Any die that captures immediately clears up to 21 roll bits in 1 cycle</text>
+    </g>
+
+    <g transform="translate(0, 230)">
+      <rect x="0" y="0" width="448" height="62" rx="8" fill="#1e293b" stroke="#334155"/>
+      <text x="14" y="22" fill="#a78bfa" font-size="12.5" font-weight="700">Depth 1 → 2 (Shared Prefix + Bitboard Reachability)</text>
+      <text x="14" y="41" fill="#e2e8f0" font-size="11.5" font-family="monospace">unsolved &amp;= ~rollsWithPairAndMask(d1)(d2)(availMask)</text>
+      <text x="14" y="55" fill="#94a3b8" font-size="10.5">Each root move m1 is generated once (not 21×); depth-2 uses bitmasks only</text>
+    </g>
+
+    <g transform="translate(0, 302)">
+      <rect x="0" y="0" width="448" height="66" rx="8" fill="#0f172a" stroke="#22c55e" stroke-width="1.5"/>
+      <text x="14" y="22" fill="#4ade80" font-size="12.5" font-weight="700">Exact Probability via Hardware POPCNT (3 Instructions)</text>
+      <text x="14" y="42" fill="#f8fafc" font-size="11" font-family="monospace">hits = bitCount(solved &amp; W1) + 3*bitCount(solved &amp; W3)</text>
+      <text x="14" y="57" fill="#f8fafc" font-size="11" font-family="monospace">     + 6*bitCount(solved &amp; W6)   // return hits / 216.0</text>
+    </g>
+  </g>
+</svg>
