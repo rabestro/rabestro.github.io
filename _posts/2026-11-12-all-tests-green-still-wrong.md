@@ -8,7 +8,7 @@ published: true
 description: "My Forth evaluator passed all 46 tests and was still wrong. A mentor found the bug, I found the same one in my AWK solution, and my Java solution turned out to be right by accident. One exercise, three languages, and what a dictionary should store."
 ---
 
-I maintain the Scala track on Exercism. Recently I solved one of its exercises, watched all 46 tests pass, and asked a mentor to review it anyway.
+I maintain the Scala track on [Exercism](https://exercism.org). Recently I solved one of its exercises, [Forth](https://exercism.org/exercises/forth), watched all 46 tests pass, and asked a mentor to review it anyway.
 
 The mentor replied with a three-line program:
 
