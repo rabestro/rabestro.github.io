@@ -293,16 +293,21 @@ One confession before I leave AWK. While fixing the binding bug I found a second
 
 All three solutions passed their test suites on the day I submitted them. Two of them were wrong, and the third was right for a reason I had not noticed.
 
-I don't hold that against the tests. A shared suite that serves many language tracks has to stop somewhere, and every extra case is one that every track and every existing solution has to live with. But it does change how I read a green checkmark. It tells me the code does what the tests ask. It says nothing about the questions nobody asked.
+I don't hold that against the tests. They are not mine: on Exercism the tests come with the exercise, and students run them rather than write them. They are also shared. The same cases are used by every language track, so they can only ask for what every language can deliver. One language has big integers and another does not; a check that is trivial in one can be impossible in the other. A suite like that has to stop somewhere.
+
+Which means the rest is my job. For someone learning a language, passing every test is a fine place to stop. I maintain the track. The question was sitting right there — what happens to `sum` when `+` changes? — and I could have asked it myself: tried three lines in a real Forth, or asked on the forum. I didn't, because the checkmark was green.
+
+A green checkmark tells me the code does what the tests ask. It says nothing about the questions nobody asked, and asking those is the part of the job that does not come with the exercise.
 
 ## Takeaways
 
 1. **What you store decides when names are resolved.** Store names, and binding happens late whether you meant it or not. Store values — functions in Java, an `enum` in Scala, renamed tokens in AWK — and it happens at definition, with nothing left to remember.
 2. **A correct solution can be an accident.** My Java code was right because of a design I picked for its looks. I learned nothing from it, and proved that by writing the same bug again three years later.
-3. **Ask someone to read your code, especially when the tests are green.** That is exactly when you have run out of other ways to find out what is wrong. Mentors on Exercism do this for free, and mine found what four years of passing tests had not.
+3. **Ask someone to read your code, especially when the tests are green.** A green suite is exactly when I stop asking questions myself, and that is when someone else's questions are worth the most. Mentors on Exercism do this for free, and mine found what four years of passing tests had not.
 
-Thank you to the mentor who read my code more carefully than my tests did.
+Thank you to the mentor who caught what the tests let through.
+
+The full code of all three solutions is in my [Exercism solutions repository](https://github.com/rabestro/exercism-solutions-sync): [Scala](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/scala/forth), [Java](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/java/forth), and [AWK](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/awk/forth).
 
 <!-- TODO: name and link the mentor here once he agrees -->
-<!-- TODO: links to the three published solutions (Scala, Java, AWK) -->
 <!-- TODO: one paragraph on the outcome of the test-suite proposal, once it is settled -->
