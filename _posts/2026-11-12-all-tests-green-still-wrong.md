@@ -306,5 +306,3 @@ That is what I really go to mentors for. Not the fix, but the habit: to keep ask
 Thank you to the mentor who caught what the tests let through.
 
 The full code of all three solutions is in my [Exercism solutions repository](https://github.com/rabestro/exercism-solutions-sync): [Scala](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/scala/forth), [Java](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/java/forth), and [AWK](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/awk/forth).
-
-<!-- TODO: one paragraph on the outcome of the test-suite proposal, once it is settled -->
