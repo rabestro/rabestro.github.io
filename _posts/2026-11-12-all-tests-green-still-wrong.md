@@ -12,7 +12,7 @@ I maintain the Scala track on Exercism. Recently I solved one of its exercises, 
 
 The mentor replied with a three-line program:
 
-```forth
+```text
 : sum + ;
 : + * ;
 2 3 sum
@@ -61,7 +61,7 @@ val expandedBody = body.flatMap(token => state.words.getOrElse(token, List(token
 
 Read it as: if the token is a word the user defined, replace it with that word's body; otherwise, keep the token as it is. For user-defined words this is correct, and the test suite has a case that proves it:
 
-```forth
+```text
 : foo 5 ;
 : bar foo ;
 : foo 6 ;
@@ -74,7 +74,7 @@ The catch hides in "otherwise, keep the token". `+` was not in the map. Built-in
 
 The mentor's second example was shorter and worse:
 
-```forth
+```text
 : dup dup ;
 1 dup
 ```
