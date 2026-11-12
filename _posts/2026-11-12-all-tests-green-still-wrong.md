@@ -234,8 +234,6 @@ It is worth comparing with Scala. The Scala version stores a description of the 
 
 I met AWK on a project at EPAM, where I had to chew through a large pile of text files — logs, as far as I remember. I found a short course, expected a tool, and found a language: tiny, carefully thought out, and built on an idea that was new to me. Java is object-oriented first. Scala is mostly functional. AWK is data-driven. You don't write a program that reads input. You write rules of the form _pattern { action }_, and AWK runs the input past them, line by line. I liked it enough to give a talk about it at one of EPAM's internal learning events, streamed to the company and recorded.
 
-<!-- TODO: link to the recording of the AWK talk, if it is public -->
-
 It is also almost fifty years old. Aho, Weinberger and Kernighan wrote it at Bell Labs in 1977, a decade before Perl, which borrowed from it openly. Some of its notation shows up in unexpected places. In AWK, `$0` is the whole line and `$1` is its first field. If you have ever written `$1` in a regex replacement in Java or Scala, you have seen the family resemblance.
 
 Here is the whole control flow of my Forth evaluator, written in GNU AWK:
@@ -295,9 +293,7 @@ All three solutions passed their test suites on the day I submitted them. Two of
 
 I don't hold that against the tests. They are not mine: on Exercism the tests come with the exercise, and students run them rather than write them. They are also shared. The same cases are used by every language track, so they can only ask for what every language can deliver. One language has big integers and another does not; a check that is trivial in one can be impossible in the other. A suite like that has to stop somewhere.
 
-Which means the rest is my job. For someone learning a language, passing every test is a fine place to stop. I maintain the track. The question was sitting right there — what happens to `sum` when `+` changes? — and I could have asked it myself: tried three lines in a real Forth, or asked on the forum. I didn't, because the checkmark was green.
-
-A green checkmark tells me the code does what the tests ask. It says nothing about the questions nobody asked, and asking those is the part of the job that does not come with the exercise.
+Which means the rest is my job. The question was sitting right there — what happens to `sum` when `+` changes? — and I could have asked it myself: tried three lines in a real Forth, or asked on the forum. I didn't, because the checkmark was green.
 
 ## Takeaways
 
@@ -309,5 +305,4 @@ Thank you to the mentor who caught what the tests let through.
 
 The full code of all three solutions is in my [Exercism solutions repository](https://github.com/rabestro/exercism-solutions-sync): [Scala](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/scala/forth), [Java](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/java/forth), and [AWK](https://github.com/rabestro/exercism-solutions-sync/tree/main/solutions/awk/forth).
 
-<!-- TODO: name and link the mentor here once he agrees -->
 <!-- TODO: one paragraph on the outcome of the test-suite proposal, once it is settled -->
