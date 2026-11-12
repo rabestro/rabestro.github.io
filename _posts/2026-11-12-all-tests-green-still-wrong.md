@@ -4,7 +4,7 @@ title: "All Tests Green, Still Wrong: One Forth Bug in Three Languages"
 date: 2026-11-12 12:00:00 +0200
 categories: [Exercism, Scala 3]
 tags: [exercism, forth, scala3, java, awk, mentoring, interpreters]
-published: false
+published: true
 description: "My Forth evaluator passed all 46 tests and was still wrong. A mentor found the bug, I found the same one in my AWK solution, and my Java solution turned out to be right by accident. One exercise, three languages, and what a dictionary should store."
 ---
 
