@@ -270,7 +270,7 @@ function resolve(first, last,   i, resolved) {
 
 Define `: sum + ;` and the stored body is `@+`. Redefine `+` as often as you like: `@+` still means addition, because the public name is no longer in there. It is the same idea as in Java and Scala — store the meaning, not the name — done by renaming, which is what a text-processing language does best.
 
-Two idioms in this code make me smile every time. The first is `$0 = resolve(1, NF)`. Assigning to `$0` replaces the current line, and AWK splits it into fields again, so the translated program simply becomes the input. The second is how the stack gets printed:
+Two idioms in this code are worth a look. The first is `$0 = resolve(1, NF)`. Assigning to `$0` replaces the current line, and AWK splits it into fields again, so the translated program simply becomes the input. The second is how the stack gets printed:
 
 ```awk
 ENDFILE {
@@ -295,11 +295,13 @@ I don't hold that against the tests. They are not mine: on Exercism the tests co
 
 Which means the rest is my job. The question was sitting right there — what happens to `sum` when `+` changes? — and I could have asked it myself: tried three lines in a real Forth, or asked on the forum. I didn't, because the checkmark was green.
 
+That is what I really go to mentors for. Not the fix, but the habit: to keep asking questions after the tests have stopped.
+
 ## Takeaways
 
 1. **What you store decides when names are resolved.** Store names, and binding happens late whether you meant it or not. Store values — functions in Java, an `enum` in Scala, renamed tokens in AWK — and it happens at definition, with nothing left to remember.
 2. **A correct solution can be an accident.** My Java code was right because of a design I picked for its looks. I learned nothing from it, and proved that by writing the same bug again three years later.
-3. **Ask someone to read your code, especially when the tests are green.** A green suite is exactly when I stop asking questions myself, and that is when someone else's questions are worth the most. Mentors on Exercism do this for free, and mine found what four years of passing tests had not.
+3. **Ask someone to read your code, especially when the tests are green.** Mentors on Exercism do this for free, and mine found what four years of passing tests had not.
 
 Thank you to the mentor who caught what the tests let through.
 
